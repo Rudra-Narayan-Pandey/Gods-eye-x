@@ -159,10 +159,10 @@ export default function IntelligencePanel({ selectedNode }: { selectedNode?: any
       <div className="p-3 border-t border-glass-border bg-black text-[9px] font-mono text-[#00ff00]/60 flex flex-col gap-1 h-20 overflow-hidden">
         {selectedNode ? (
           <>
-            <span className="animate-pulse text-accent">> Establishing direct telemetry with Node {selectedNode.id?.substring(0,6)}...</span>
-            <span>> Bypassing encryption layers...</span>
-            <span>> Synchronizing neural pathways...</span>
-            <span>> Data stream active.</span>
+            <span className="animate-pulse text-accent">&gt; Establishing direct telemetry with Node {selectedNode.id?.substring(0,6)}...</span>
+            <span>&gt; Bypassing encryption layers...</span>
+            <span>&gt; Synchronizing neural pathways...</span>
+            <span>&gt; Data stream active.</span>
           </>
         ) : (
           <>
