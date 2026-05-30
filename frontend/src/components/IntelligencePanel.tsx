@@ -10,8 +10,8 @@ export default function IntelligencePanel({ selectedNode }: { selectedNode?: any
 
   useEffect(() => {
     Promise.all([
-      fetch("http://localhost:8000/api/dashboard/feed").then(res => res.json()),
-      fetch("http://localhost:8000/api/graph/stats").then(res => res.json())
+      fetch("/api/dashboard/feed").then(res => res.json()),
+      fetch("/api/graph/stats").then(res => res.json())
     ])
       .then(([feedData, statsData]) => {
         setFeed(feedData);
@@ -124,7 +124,7 @@ export default function IntelligencePanel({ selectedNode }: { selectedNode?: any
                 <span className="text-white/70 line-clamp-2">{anom.description}</span>
               </div>
             ))}
-            {feed.anomalies.length === 0 && !loading && <span className="text-white/30 text-xs font-mono">> NO ACTIVE ANOMALIES DETECTED.</span>}
+            {feed.anomalies.length === 0 && !loading && <span className="text-white/30 text-xs font-mono">&gt; NO ACTIVE ANOMALIES DETECTED.</span>}
           </div>
         </div>
         
@@ -147,7 +147,7 @@ export default function IntelligencePanel({ selectedNode }: { selectedNode?: any
                 </div>
               </div>
             ))}
-            {feed.opportunities.length === 0 && !loading && <span className="text-white/30 text-xs font-mono">> AWAITING EXPLOIT MATRICES.</span>}
+            {feed.opportunities.length === 0 && !loading && <span className="text-white/30 text-xs font-mono">&gt; AWAITING EXPLOIT MATRICES.</span>}
           </div>
         </div>
           </>
@@ -166,10 +166,10 @@ export default function IntelligencePanel({ selectedNode }: { selectedNode?: any
           </>
         ) : (
           <>
-            <span className="animate-pulse">> Intercepting global signal streams...</span>
-            <span>> Parsing 14,032 encrypted subnets...</span>
-            <span>> Cryptographic consensus reached on 295 subsystems.</span>
-            <span>> Awaiting command...</span>
+            <span className="animate-pulse">&gt; Intercepting global signal streams...</span>
+            <span>&gt; Parsing 14,032 encrypted subnets...</span>
+            <span>&gt; Cryptographic consensus reached on 295 subsystems.</span>
+            <span>&gt; Awaiting command...</span>
           </>
         )}
       </div>
