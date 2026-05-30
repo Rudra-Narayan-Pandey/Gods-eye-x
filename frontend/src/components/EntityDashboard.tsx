@@ -21,13 +21,13 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
           <div>
             <h5 className="text-accent-neon font-bold text-xs mb-1">II. UNDERLYING CATALYSTS</h5>
             <p className="text-sm font-mono leading-relaxed text-white/80 text-justify bg-white/5 p-3 border border-white/10">
-              > {intelligence?.ultimate_summary?.why_it_is_happening || "ANALYZING HIDDEN CATALYSTS."}
+              &gt; {intelligence?.ultimate_summary?.why_it_is_happening || "ANALYZING HIDDEN CATALYSTS."}
             </p>
           </div>
           <div>
             <h5 className="text-[#00ff00] font-bold text-xs mb-1">III. PREDICTIVE TRAJECTORY</h5>
             <p className="text-sm font-mono leading-relaxed text-[#00ff00]/90 text-justify bg-[#00ff00]/5 p-3 border border-[#00ff00]/20">
-              > {intelligence?.ultimate_summary?.what_next || "AWAITING FURTHER SIGNALS."}
+              &gt; {intelligence?.ultimate_summary?.what_next || "AWAITING FURTHER SIGNALS."}
               <span className="cursor-blink inline-block ml-1 w-2 h-3 bg-[#00ff00]"></span>
             </p>
           </div>
