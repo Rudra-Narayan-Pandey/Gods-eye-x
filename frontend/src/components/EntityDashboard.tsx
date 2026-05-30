@@ -15,7 +15,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
           <div>
             <h5 className="text-accent-neon font-bold text-xs mb-1">I. CURRENT TACTICAL SITUATION</h5>
             <p className="text-sm font-mono leading-relaxed text-white/90 text-justify bg-accent-neon/5 p-3 border border-accent-neon/20">
-              > {intelligence?.ultimate_summary?.what_is_happening || entity.description || "INTELLIGENCE SCANNING COMPLETE."}
+              &gt; {intelligence?.ultimate_summary?.what_is_happening || entity.description || "INTELLIGENCE SCANNING COMPLETE."}
             </p>
           </div>
           <div>
