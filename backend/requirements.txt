@@ -12,3 +12,5 @@ duckduckgo-search
 g4f
 curl_cffi
 wikipedia
+requests
+python-dotenv
