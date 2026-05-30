@@ -1,0 +1,117 @@
+// ─── GOD'S EYE X — Anomalies Mock Data ─────────────────────────────
+// 8 dramatic anomalies detected by the intelligence engine
+
+export const anomalies = [
+  {
+    id: 'anom-001',
+    anomalyType: 'hiring',
+    entityName: 'Figure AI',
+    entityType: 'startup',
+    metricName: 'Engineering Headcount Growth',
+    actualValue: 340,
+    expectedValue: 120,
+    deviationPercentage: 183,
+    severity: 'critical',
+    description: 'Figure AI\'s engineering team has tripled in 60 days — 340 new hires vs. expected 120. Massive recruiting blitz targeting Tesla Optimus, Boston Dynamics, and Google DeepMind robotics engineers. Signals imminent product launch or major manufacturing scale-up.',
+    detectedAt: '2026-05-28T08:22:00Z',
+    status: 'investigating'
+  },
+  {
+    id: 'anom-002',
+    anomalyType: 'funding',
+    entityName: 'Poolside',
+    entityType: 'startup',
+    metricName: 'Cumulative Funding Velocity',
+    actualValue: 626_000_000,
+    expectedValue: 180_000_000,
+    deviationPercentage: 248,
+    severity: 'high',
+    description: 'Poolside raised $626M within 18 months of founding — 3.5x the typical trajectory for developer tools startups. Unusual investor composition includes sovereign wealth funds typically reserved for defense and energy deals.',
+    detectedAt: '2026-05-27T14:10:00Z',
+    status: 'new'
+  },
+  {
+    id: 'anom-003',
+    anomalyType: 'mentions',
+    entityName: 'Anthropic',
+    entityType: 'company',
+    metricName: 'Government Document Mentions',
+    actualValue: 847,
+    expectedValue: 180,
+    deviationPercentage: 370,
+    severity: 'critical',
+    description: 'Anthropic mentions in US government procurement documents spiked 370% in 14 days. Correlated with classified briefing schedules and new ITAR-related job postings. Possible major government AI contract imminent.',
+    detectedAt: '2026-05-26T11:45:00Z',
+    status: 'investigating'
+  },
+  {
+    id: 'anom-004',
+    anomalyType: 'market',
+    entityName: 'NVIDIA',
+    entityType: 'company',
+    metricName: 'Options Unusual Activity Index',
+    actualValue: 94.7,
+    expectedValue: 35.0,
+    deviationPercentage: 170,
+    severity: 'high',
+    description: 'NVIDIA call options volume at 2.7x normal levels concentrated in far OTM strikes for August expiry. Pattern matches previous pre-announcement insider activity. Dark pool volume also elevated 40% above 90-day average.',
+    detectedAt: '2026-05-29T09:30:00Z',
+    status: 'new'
+  },
+  {
+    id: 'anom-005',
+    anomalyType: 'hiring',
+    entityName: 'Apple',
+    entityType: 'company',
+    metricName: 'AI Research Scientist Postings',
+    actualValue: 285,
+    expectedValue: 60,
+    deviationPercentage: 375,
+    severity: 'critical',
+    description: 'Apple posted 285 AI research scientist positions in a single week — 4.75x their historical norm. Postings concentrated in multimodal AI, on-device inference, and "spatial intelligence." Likely preparing a major AI product offensive for WWDC 2026.',
+    detectedAt: '2026-05-25T16:00:00Z',
+    status: 'investigating'
+  },
+  {
+    id: 'anom-006',
+    anomalyType: 'funding',
+    entityName: 'Mistral AI',
+    entityType: 'company',
+    metricName: 'Funding Round Valuation Multiple',
+    actualValue: 73,
+    expectedValue: 25,
+    deviationPercentage: 192,
+    severity: 'medium',
+    description: 'Mistral AI\'s latest round values the company at 73x revenue — significantly above the 25x median for AI companies at their stage. Premium attributed to European sovereign AI tailwinds and pending EU procurement contracts.',
+    detectedAt: '2026-05-24T10:15:00Z',
+    status: 'new'
+  },
+  {
+    id: 'anom-007',
+    anomalyType: 'mentions',
+    entityName: 'Groq',
+    entityType: 'startup',
+    metricName: 'Patent Filing Velocity',
+    actualValue: 48,
+    expectedValue: 12,
+    deviationPercentage: 300,
+    severity: 'high',
+    description: 'Groq filed 48 patents in Q1 2026 — 4x their quarterly average. Patents span novel LPU architectures, memory hierarchy designs, and cooling systems. Pattern consistent with next-generation chip tape-out preparation.',
+    detectedAt: '2026-05-23T13:30:00Z',
+    status: 'investigating'
+  },
+  {
+    id: 'anom-008',
+    anomalyType: 'market',
+    entityName: 'Palantir',
+    entityType: 'company',
+    metricName: 'Government Contract Win Rate',
+    actualValue: 87,
+    expectedValue: 45,
+    deviationPercentage: 93,
+    severity: 'medium',
+    description: 'Palantir\'s government contract win rate jumped to 87% in the last quarter, nearly doubling historical averages. AIP platform being mandated as standard across multiple DoD programs. Competitors like Booz Allen and Leidos losing share rapidly.',
+    detectedAt: '2026-05-22T15:45:00Z',
+    status: 'new'
+  }
+];

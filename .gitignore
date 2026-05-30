@@ -1,0 +1,17 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+
+# Frontend Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+frontend/.vercel/
+
+# Root Vite / Node
+node_modules/
+dist/
+build/

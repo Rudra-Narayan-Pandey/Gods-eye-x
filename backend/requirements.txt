@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+psycopg2-binary
+neo4j
+qdrant-client
+redis
+yfinance
+feedparser
+duckduckgo-search
+g4f
+curl_cffi
+wikipedia

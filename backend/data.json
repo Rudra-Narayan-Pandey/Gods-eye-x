@@ -1,0 +1,4469 @@
+{
+  "companies": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "ticker": null,
+      "logo": "🤖",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "OpenAI is an AI research and deployment company whose mission is to ensure artificial general intelligence benefits all of humanity. Developers of ChatGPT, GPT-4o, Sora, and DALL-E 3.",
+      "industry": "Artificial Intelligence",
+      "founded": 2015,
+      "funding": 17700000000,
+      "valuation": 157000000000,
+      "revenue": 3400000000,
+      "employees": 1774,
+      "hiringVelocity": 67,
+      "momentum": 0.96,
+      "tags": [
+        "LLM",
+        "AGI",
+        "ChatGPT",
+        "API",
+        "Multimodal"
+      ],
+      "website": "openai.com",
+      "trendData": [
+        40,
+        52,
+        58,
+        61,
+        70,
+        78,
+        85,
+        90,
+        88,
+        95,
+        98,
+        100
+      ],
+      "mediaMentions": 8420,
+      "partnerships": 47,
+      "patents": 312,
+      "stage": "late",
+      "keyProducts": [
+        "ChatGPT",
+        "GPT-4o",
+        "DALL-E 3",
+        "Sora",
+        "OpenAI API"
+      ]
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "ticker": "NVDA",
+      "logo": "⚡",
+      "headquarters": {
+        "city": "Santa Clara",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "NVIDIA is the dominant AI infrastructure company producing GPUs that power virtually all AI training. Its H100 and Blackwell chips are the foundation of the AI revolution.",
+      "industry": "Semiconductors",
+      "founded": 1993,
+      "funding": null,
+      "valuation": 3200000000000,
+      "revenue": 96000000000,
+      "employees": 29600,
+      "hiringVelocity": 42,
+      "momentum": 0.98,
+      "tags": [
+        "GPU",
+        "AI Infrastructure",
+        "CUDA",
+        "Data Center",
+        "Blackwell"
+      ],
+      "website": "nvidia.com",
+      "trendData": [
+        30,
+        38,
+        45,
+        60,
+        72,
+        80,
+        85,
+        91,
+        95,
+        98,
+        100,
+        100
+      ],
+      "mediaMentions": 12300,
+      "partnerships": 890,
+      "patents": 12400,
+      "stage": "public",
+      "keyProducts": [
+        "H100",
+        "Blackwell B200",
+        "DGX Cloud",
+        "CUDA",
+        "NIM"
+      ]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "ticker": null,
+      "logo": "🧠",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "Anthropic is an AI safety company building reliable, interpretable AI systems. Founded by ex-OpenAI researchers, it develops the Claude series and pioneered Constitutional AI.",
+      "industry": "AI Safety",
+      "founded": 2021,
+      "funding": 14300000000,
+      "valuation": 61000000000,
+      "revenue": 850000000,
+      "employees": 850,
+      "hiringVelocity": 89,
+      "momentum": 0.91,
+      "tags": [
+        "AI Safety",
+        "LLM",
+        "Claude",
+        "Constitutional AI",
+        "Research"
+      ],
+      "website": "anthropic.com",
+      "trendData": [
+        20,
+        28,
+        35,
+        48,
+        55,
+        62,
+        70,
+        78,
+        82,
+        87,
+        91,
+        93
+      ],
+      "mediaMentions": 3210,
+      "partnerships": 28,
+      "patents": 87,
+      "stage": "late",
+      "keyProducts": [
+        "Claude 3.5 Sonnet",
+        "Claude 3 Opus",
+        "Claude API",
+        "Claude for Work"
+      ]
+    },
+    {
+      "id": "google-deepmind",
+      "name": "Google DeepMind",
+      "ticker": "GOOG",
+      "logo": "🔬",
+      "headquarters": {
+        "city": "London",
+        "country": "UK",
+        "flag": "🇬🇧"
+      },
+      "description": "Google DeepMind merges two world-class AI research teams to advance AI safety and scientific discovery. Home of Gemini Ultra, AlphaFold 3, and robotics research.",
+      "industry": "AI Research",
+      "founded": 2010,
+      "funding": null,
+      "valuation": null,
+      "revenue": 280000000000,
+      "employees": 4800,
+      "hiringVelocity": 31,
+      "momentum": 0.89,
+      "tags": [
+        "Gemini",
+        "AlphaFold",
+        "Robotics",
+        "Science AI",
+        "Research"
+      ],
+      "website": "deepmind.google",
+      "trendData": [
+        55,
+        58,
+        60,
+        65,
+        70,
+        72,
+        75,
+        80,
+        82,
+        86,
+        88,
+        89
+      ],
+      "mediaMentions": 5670,
+      "partnerships": 120,
+      "patents": 8900,
+      "stage": "public",
+      "keyProducts": [
+        "Gemini Ultra",
+        "AlphaFold 3",
+        "Veo 2",
+        "Project Astra"
+      ]
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "logo": "🪟",
+      "headquarters": {
+        "city": "Redmond",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "Microsoft is the world's largest AI-enabled software company through its $13B OpenAI partnership. Azure AI, Copilot, and GitHub Copilot are reshaping enterprise productivity.",
+      "industry": "Technology",
+      "founded": 1975,
+      "funding": null,
+      "valuation": 3100000000000,
+      "revenue": 245000000000,
+      "employees": 221000,
+      "hiringVelocity": 18,
+      "momentum": 0.87,
+      "tags": [
+        "Azure AI",
+        "Copilot",
+        "Enterprise",
+        "Cloud",
+        "OpenAI Partner"
+      ],
+      "website": "microsoft.com",
+      "trendData": [
+        60,
+        62,
+        65,
+        68,
+        72,
+        74,
+        78,
+        80,
+        82,
+        84,
+        86,
+        87
+      ],
+      "mediaMentions": 9100,
+      "partnerships": 2400,
+      "patents": 78000,
+      "stage": "public",
+      "keyProducts": [
+        "Azure OpenAI",
+        "Microsoft Copilot",
+        "GitHub Copilot",
+        "Phi-3"
+      ]
+    },
+    {
+      "id": "spacex",
+      "name": "SpaceX",
+      "ticker": null,
+      "logo": "🚀",
+      "headquarters": {
+        "city": "Hawthorne",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "SpaceX is revolutionizing space transportation with reusable rockets and Starship — the most powerful rocket ever built. Starlink provides global satellite internet to 3M+ users.",
+      "industry": "Aerospace",
+      "founded": 2002,
+      "funding": 9000000000,
+      "valuation": 210000000000,
+      "revenue": 9000000000,
+      "employees": 13000,
+      "hiringVelocity": 24,
+      "momentum": 0.88,
+      "tags": [
+        "Space",
+        "Rockets",
+        "Starlink",
+        "Starship",
+        "Satellites"
+      ],
+      "website": "spacex.com",
+      "trendData": [
+        50,
+        55,
+        60,
+        65,
+        68,
+        72,
+        78,
+        82,
+        84,
+        86,
+        88,
+        88
+      ],
+      "mediaMentions": 6540,
+      "partnerships": 78,
+      "patents": 2100,
+      "stage": "late",
+      "keyProducts": [
+        "Starship",
+        "Falcon 9",
+        "Starlink",
+        "Dragon Capsule"
+      ]
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "ticker": "PLTR",
+      "logo": "👁️",
+      "headquarters": {
+        "city": "Denver",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "Palantir builds AI-powered data intelligence platforms for government and enterprise. Its AIP platform is accelerating AI deployment in defense, intelligence, and commercial sectors.",
+      "industry": "Defense Tech / AI",
+      "founded": 2003,
+      "funding": null,
+      "valuation": 85000000000,
+      "revenue": 2230000000,
+      "employees": 3900,
+      "hiringVelocity": 38,
+      "momentum": 0.85,
+      "tags": [
+        "Defense AI",
+        "Data Intelligence",
+        "Government",
+        "AIP",
+        "Analytics"
+      ],
+      "website": "palantir.com",
+      "trendData": [
+        35,
+        40,
+        48,
+        55,
+        60,
+        68,
+        72,
+        75,
+        78,
+        81,
+        84,
+        85
+      ],
+      "mediaMentions": 2100,
+      "partnerships": 156,
+      "patents": 890,
+      "stage": "public",
+      "keyProducts": [
+        "Palantir AIP",
+        "Gotham",
+        "Foundry",
+        "Apollo"
+      ]
+    },
+    {
+      "id": "anduril",
+      "name": "Anduril Industries",
+      "ticker": null,
+      "logo": "⚔️",
+      "headquarters": {
+        "city": "Costa Mesa",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "Anduril builds autonomous defense systems powered by Lattice AI OS. Founded by tech veterans, it's redefining modern warfare with AI-enabled autonomous weapons and drones.",
+      "industry": "Defense Technology",
+      "founded": 2017,
+      "funding": 3900000000,
+      "valuation": 28000000000,
+      "revenue": 500000000,
+      "employees": 3000,
+      "hiringVelocity": 78,
+      "momentum": 0.9,
+      "tags": [
+        "Defense",
+        "Autonomous Weapons",
+        "Drones",
+        "Lattice AI",
+        "DoD"
+      ],
+      "website": "anduril.com",
+      "trendData": [
+        20,
+        28,
+        35,
+        45,
+        55,
+        62,
+        70,
+        76,
+        80,
+        85,
+        88,
+        90
+      ],
+      "mediaMentions": 1200,
+      "partnerships": 42,
+      "patents": 280,
+      "stage": "growth",
+      "keyProducts": [
+        "Lattice OS",
+        "Ghost Drone",
+        "Pulsar EW",
+        "Altius UAS"
+      ]
+    },
+    {
+      "id": "databricks",
+      "name": "Databricks",
+      "ticker": null,
+      "logo": "🔥",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "Databricks is the Data + AI company providing a unified platform for data engineering and ML. Its DBRX open model and MosaicML acquisition position it as the enterprise AI data leader.",
+      "industry": "Data & AI Platform",
+      "founded": 2013,
+      "funding": 14000000000,
+      "valuation": 62000000000,
+      "revenue": 1600000000,
+      "employees": 6800,
+      "hiringVelocity": 52,
+      "momentum": 0.87,
+      "tags": [
+        "Data Platform",
+        "MLOps",
+        "DBRX",
+        "Apache Spark",
+        "Lakehouse"
+      ],
+      "website": "databricks.com",
+      "trendData": [
+        30,
+        38,
+        45,
+        52,
+        58,
+        65,
+        70,
+        75,
+        79,
+        82,
+        85,
+        87
+      ],
+      "mediaMentions": 1890,
+      "partnerships": 340,
+      "patents": 420,
+      "stage": "late",
+      "keyProducts": [
+        "Databricks Platform",
+        "DBRX",
+        "MosaicML",
+        "Delta Lake"
+      ]
+    },
+    {
+      "id": "scale-ai",
+      "name": "Scale AI",
+      "ticker": null,
+      "logo": "📐",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "Scale AI provides the data infrastructure powering AI development with high-quality training data. Its RLHF and Government divisions serve OpenAI, Anthropic, and the US Department of Defense.",
+      "industry": "AI Data Infrastructure",
+      "founded": 2016,
+      "funding": 1600000000,
+      "valuation": 14000000000,
+      "revenue": 670000000,
+      "employees": 1000,
+      "hiringVelocity": 45,
+      "momentum": 0.82,
+      "tags": [
+        "Training Data",
+        "RLHF",
+        "AI Infrastructure",
+        "Government AI",
+        "Data Labeling"
+      ],
+      "website": "scale.com",
+      "trendData": [
+        30,
+        36,
+        42,
+        50,
+        55,
+        60,
+        65,
+        70,
+        73,
+        77,
+        80,
+        82
+      ],
+      "mediaMentions": 980,
+      "partnerships": 67,
+      "patents": 45,
+      "stage": "growth",
+      "keyProducts": [
+        "Scale Donovan",
+        "RLHF Platform",
+        "Scale Data Engine"
+      ]
+    },
+    {
+      "id": "mistral-ai",
+      "name": "Mistral AI",
+      "ticker": null,
+      "logo": "🌬️",
+      "headquarters": {
+        "city": "Paris",
+        "country": "France",
+        "flag": "🇫🇷"
+      },
+      "description": "Mistral AI is Europe's leading AI company, building efficient open-weight models that rival GPT-4. Known for performance-per-compute efficiency and Apache 2.0 licensing.",
+      "industry": "AI Research",
+      "founded": 2023,
+      "funding": 1100000000,
+      "valuation": 6000000000,
+      "revenue": 50000000,
+      "employees": 200,
+      "hiringVelocity": 120,
+      "momentum": 0.84,
+      "tags": [
+        "Open Source",
+        "LLM",
+        "European AI",
+        "Efficient AI",
+        "MoE"
+      ],
+      "website": "mistral.ai",
+      "trendData": [
+        10,
+        18,
+        28,
+        40,
+        52,
+        62,
+        68,
+        73,
+        77,
+        80,
+        83,
+        84
+      ],
+      "mediaMentions": 1800,
+      "partnerships": 18,
+      "patents": 12,
+      "stage": "growth",
+      "keyProducts": [
+        "Mistral Large 2",
+        "Mixtral 8x22B",
+        "Codestral",
+        "Le Chat"
+      ]
+    },
+    {
+      "id": "crowdstrike",
+      "name": "CrowdStrike",
+      "ticker": "CRWD",
+      "logo": "🦅",
+      "headquarters": {
+        "city": "Austin",
+        "country": "USA",
+        "flag": "🇺🇸"
+      },
+      "description": "CrowdStrike is the AI-native cybersecurity leader protecting endpoints, cloud workloads, and identities. Its Falcon platform processes 2 trillion security events per week using AI.",
+      "industry": "Cybersecurity",
+      "founded": 2011,
+      "funding": null,
+      "valuation": 87000000000,
+      "revenue": 3580000000,
+      "employees": 8200,
+      "hiringVelocity": 22,
+      "momentum": 0.8,
+      "tags": [
+        "Cybersecurity",
+        "AI Security",
+        "EDR",
+        "Cloud Security",
+        "Falcon"
+      ],
+      "website": "crowdstrike.com",
+      "trendData": [
+        55,
+        58,
+        60,
+        63,
+        65,
+        68,
+        70,
+        73,
+        75,
+        77,
+        79,
+        80
+      ],
+      "mediaMentions": 3400,
+      "partnerships": 420,
+      "patents": 1200,
+      "stage": "public",
+      "keyProducts": [
+        "Falcon Platform",
+        "Charlotte AI",
+        "Falcon Go"
+      ]
+    }
+  ],
+  "countryScores": [
+    {
+      "code": "USA",
+      "name": "United States",
+      "score": 95,
+      "x": 15,
+      "y": 40,
+      "w": 18,
+      "h": 14
+    },
+    {
+      "code": "CHN",
+      "name": "China",
+      "score": 88,
+      "x": 68,
+      "y": 38,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "code": "IND",
+      "name": "India",
+      "score": 72,
+      "x": 62,
+      "y": 48,
+      "w": 8,
+      "h": 10
+    },
+    {
+      "code": "GBR",
+      "name": "United Kingdom",
+      "score": 78,
+      "x": 42,
+      "y": 28,
+      "w": 4,
+      "h": 4
+    },
+    {
+      "code": "DEU",
+      "name": "Germany",
+      "score": 76,
+      "x": 46,
+      "y": 30,
+      "w": 4,
+      "h": 5
+    },
+    {
+      "code": "JPN",
+      "name": "Japan",
+      "score": 82,
+      "x": 80,
+      "y": 36,
+      "w": 5,
+      "h": 6
+    },
+    {
+      "code": "FRA",
+      "name": "France",
+      "score": 70,
+      "x": 43,
+      "y": 34,
+      "w": 5,
+      "h": 5
+    },
+    {
+      "code": "ISR",
+      "name": "Israel",
+      "score": 85,
+      "x": 52,
+      "y": 42,
+      "w": 2,
+      "h": 3
+    },
+    {
+      "code": "ARE",
+      "name": "UAE",
+      "score": 68,
+      "x": 55,
+      "y": 46,
+      "w": 3,
+      "h": 3
+    },
+    {
+      "code": "KOR",
+      "name": "South Korea",
+      "score": 80,
+      "x": 78,
+      "y": 38,
+      "w": 3,
+      "h": 4
+    },
+    {
+      "code": "CAN",
+      "name": "Canada",
+      "score": 65,
+      "x": 14,
+      "y": 26,
+      "w": 20,
+      "h": 12
+    },
+    {
+      "code": "SGP",
+      "name": "Singapore",
+      "score": 74,
+      "x": 72,
+      "y": 56,
+      "w": 2,
+      "h": 2
+    }
+  ],
+  "technologies": [
+    {
+      "id": "tech-1",
+      "name": "Transformer Architecture",
+      "type": "technology",
+      "icon": "🧠",
+      "category": "AI / Machine Learning",
+      "description": "Self-attention-based neural network architecture that has become the foundation for modern language models, vision models, and multimodal AI systems.",
+      "maturity": 92,
+      "adoptionRate": 88,
+      "trendDirection": "up",
+      "momentum": 0.95,
+      "tags": [
+        "Deep Learning",
+        "NLP",
+        "Computer Vision"
+      ],
+      "sparkline": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        82,
+        85,
+        88,
+        90,
+        92,
+        94,
+        95
+      ],
+      "relatedEntities": [
+        "Anthropic",
+        "OpenAI",
+        "Google DeepMind"
+      ]
+    },
+    {
+      "id": "tech-2",
+      "name": "Quantum Error Correction",
+      "type": "technology",
+      "icon": "⚛️",
+      "category": "Quantum Computing",
+      "description": "Techniques for protecting quantum information from errors due to decoherence and quantum noise, essential for building fault-tolerant quantum computers.",
+      "maturity": 35,
+      "adoptionRate": 8,
+      "trendDirection": "up",
+      "momentum": 0.78,
+      "tags": [
+        "Quantum",
+        "Error Correction",
+        "Research"
+      ],
+      "sparkline": [
+        10,
+        12,
+        15,
+        18,
+        22,
+        25,
+        28,
+        32,
+        35,
+        38,
+        40,
+        42
+      ],
+      "relatedEntities": [
+        "IBM Quantum",
+        "Google Quantum AI",
+        "IonQ"
+      ]
+    },
+    {
+      "id": "tech-3",
+      "name": "Solid-State Batteries",
+      "type": "technology",
+      "icon": "🔋",
+      "category": "Energy Storage",
+      "description": "Next-generation battery technology using solid electrolytes instead of liquid, offering higher energy density, faster charging, and improved safety.",
+      "maturity": 45,
+      "adoptionRate": 5,
+      "trendDirection": "up",
+      "momentum": 0.72,
+      "tags": [
+        "Energy",
+        "EV",
+        "Materials Science"
+      ],
+      "sparkline": [
+        20,
+        22,
+        25,
+        28,
+        30,
+        33,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46
+      ],
+      "relatedEntities": [
+        "QuantumScape",
+        "Toyota",
+        "Samsung SDI"
+      ]
+    },
+    {
+      "id": "tech-4",
+      "name": "Neuromorphic Computing",
+      "type": "technology",
+      "icon": "🔮",
+      "category": "Computing",
+      "description": "Brain-inspired computing architecture that processes information using spiking neural networks, enabling ultra-low-power edge AI and real-time pattern recognition.",
+      "maturity": 28,
+      "adoptionRate": 3,
+      "trendDirection": "up",
+      "momentum": 0.65,
+      "tags": [
+        "Edge AI",
+        "Brain-Inspired",
+        "Low Power"
+      ],
+      "sparkline": [
+        8,
+        10,
+        12,
+        15,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32
+      ],
+      "relatedEntities": [
+        "Intel Loihi",
+        "IBM",
+        "BrainChip"
+      ]
+    },
+    {
+      "id": "tech-5",
+      "name": "CRISPR Gene Editing",
+      "type": "technology",
+      "icon": "🧬",
+      "category": "Biotechnology",
+      "description": "Precise genome editing tool enabling targeted modifications to DNA sequences. Revolutionizing medicine, agriculture, and biological research.",
+      "maturity": 68,
+      "adoptionRate": 42,
+      "trendDirection": "stable",
+      "momentum": 0.8,
+      "tags": [
+        "Biotech",
+        "Gene Therapy",
+        "Medicine"
+      ],
+      "sparkline": [
+        45,
+        48,
+        50,
+        52,
+        55,
+        58,
+        60,
+        62,
+        64,
+        66,
+        68,
+        68
+      ],
+      "relatedEntities": [
+        "CRISPR Therapeutics",
+        "Editas",
+        "Intellia"
+      ]
+    },
+    {
+      "id": "tech-6",
+      "name": "Fusion Energy",
+      "type": "technology",
+      "icon": "☀️",
+      "category": "Energy",
+      "description": "Clean energy technology that replicates the power of stars by fusing hydrogen atoms. Multiple startups approaching net energy gain with novel confinement approaches.",
+      "maturity": 22,
+      "adoptionRate": 0,
+      "trendDirection": "up",
+      "momentum": 0.7,
+      "tags": [
+        "Clean Energy",
+        "Plasma Physics",
+        "Power"
+      ],
+      "sparkline": [
+        5,
+        8,
+        10,
+        12,
+        15,
+        16,
+        18,
+        20,
+        21,
+        22,
+        24,
+        26
+      ],
+      "relatedEntities": [
+        "Commonwealth Fusion",
+        "TAE Technologies",
+        "Helion"
+      ]
+    }
+  ],
+  "startups": [
+    {
+      "id": "startup-001",
+      "name": "Groq",
+      "logo": "⚡",
+      "headquarters": {
+        "city": "Mountain View",
+        "country": "USA"
+      },
+      "description": "Building the world's fastest AI inference chips — LPU (Language Processing Unit) architecture delivers 10x speed and 10x lower cost than GPU-based inference. Making real-time AI accessible.",
+      "founded": 2016,
+      "stage": "series-d",
+      "lastFunding": {
+        "amount": 640000000,
+        "date": "2024-08-05"
+      },
+      "totalFunding": 1060000000,
+      "valuation": 2800000000,
+      "employees": 320,
+      "hiringVelocity": 65,
+      "momentum": 0.91,
+      "investors": [
+        "Tiger Global",
+        "D1 Capital",
+        "BlackRock",
+        "Samsung",
+        "Cisco Investments"
+      ],
+      "tags": [
+        "AI Hardware",
+        "Inference",
+        "Custom Silicon",
+        "LPU"
+      ],
+      "trendData": [
+        15,
+        20,
+        28,
+        38,
+        50,
+        62,
+        72,
+        80,
+        86,
+        91,
+        95,
+        100
+      ],
+      "sector": "AI Infrastructure"
+    },
+    {
+      "id": "startup-002",
+      "name": "Cerebras",
+      "logo": "🔲",
+      "headquarters": {
+        "city": "Sunnyvale",
+        "country": "USA"
+      },
+      "description": "Creator of the world's largest chip — the Wafer Scale Engine. A single Cerebras system replaces thousands of GPUs for AI training, with radical simplicity and energy efficiency.",
+      "founded": 2016,
+      "stage": "series-d",
+      "lastFunding": {
+        "amount": 250000000,
+        "date": "2024-06-12"
+      },
+      "totalFunding": 720000000,
+      "valuation": 4200000000,
+      "employees": 450,
+      "hiringVelocity": 28,
+      "momentum": 0.84,
+      "investors": [
+        "Alpha Wave Global",
+        "Altimeter Capital",
+        "Coatue",
+        "Abu Dhabi Growth Fund"
+      ],
+      "tags": [
+        "AI Hardware",
+        "Wafer Scale",
+        "Training",
+        "HPC"
+      ],
+      "trendData": [
+        22,
+        26,
+        30,
+        35,
+        40,
+        46,
+        52,
+        58,
+        64,
+        70,
+        76,
+        82
+      ],
+      "sector": "AI Infrastructure"
+    },
+    {
+      "id": "startup-003",
+      "name": "Together AI",
+      "logo": "🤝",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "description": "Open-source AI cloud platform enabling researchers and companies to train, fine-tune, and deploy open models at scale. Fastest growing open AI inference platform globally.",
+      "founded": 2022,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 305000000,
+        "date": "2025-01-22"
+      },
+      "totalFunding": 425000000,
+      "valuation": 3300000000,
+      "employees": 180,
+      "hiringVelocity": 72,
+      "momentum": 0.87,
+      "investors": [
+        "Salesforce Ventures",
+        "Kleiner Perkins",
+        "NVIDIA",
+        "Tiger Global",
+        "Emergence Capital"
+      ],
+      "tags": [
+        "Open Source",
+        "AI Cloud",
+        "Inference",
+        "Fine-tuning"
+      ],
+      "trendData": [
+        8,
+        14,
+        22,
+        32,
+        42,
+        52,
+        60,
+        68,
+        75,
+        82,
+        89,
+        95
+      ],
+      "sector": "AI Infrastructure"
+    },
+    {
+      "id": "startup-004",
+      "name": "Runway",
+      "logo": "🎬",
+      "headquarters": {
+        "city": "New York",
+        "country": "USA"
+      },
+      "description": "Pioneering generative AI for video and visual storytelling. Gen-3 Alpha creates cinematic-quality video from text prompts, redefining filmmaking, advertising, and creative production.",
+      "founded": 2018,
+      "stage": "series-d",
+      "lastFunding": {
+        "amount": 141000000,
+        "date": "2024-06-17"
+      },
+      "totalFunding": 335000000,
+      "valuation": 4000000000,
+      "employees": 160,
+      "hiringVelocity": 45,
+      "momentum": 0.86,
+      "investors": [
+        "Lux Capital",
+        "Felicis Ventures",
+        "Google",
+        "NVIDIA",
+        "Salesforce Ventures"
+      ],
+      "tags": [
+        "Video AI",
+        "Creative Tools",
+        "Generative AI",
+        "Hollywood"
+      ],
+      "trendData": [
+        18,
+        24,
+        30,
+        38,
+        46,
+        54,
+        62,
+        68,
+        74,
+        80,
+        86,
+        92
+      ],
+      "sector": "Creative AI"
+    },
+    {
+      "id": "startup-005",
+      "name": "Midjourney",
+      "logo": "🎨",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "description": "Self-funded AI art powerhouse generating stunning images from text descriptions. V6 model produces photorealistic imagery rivaling professional photography and illustration.",
+      "founded": 2021,
+      "stage": "series-a",
+      "lastFunding": {
+        "amount": 0,
+        "date": null
+      },
+      "totalFunding": 0,
+      "valuation": 10000000000,
+      "employees": 55,
+      "hiringVelocity": 18,
+      "momentum": 0.82,
+      "investors": [
+        "Self-funded — profitable from day one"
+      ],
+      "tags": [
+        "Image Generation",
+        "Creative AI",
+        "Art",
+        "Design"
+      ],
+      "trendData": [
+        25,
+        35,
+        48,
+        58,
+        65,
+        72,
+        76,
+        80,
+        83,
+        85,
+        87,
+        90
+      ],
+      "sector": "Creative AI"
+    },
+    {
+      "id": "startup-006",
+      "name": "Perplexity",
+      "logo": "🔍",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "description": "AI-powered answer engine disrupting traditional search. Combines real-time web search with large language models to deliver instant, sourced, and accurate answers to complex queries.",
+      "founded": 2022,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 250000000,
+        "date": "2025-03-15"
+      },
+      "totalFunding": 500000000,
+      "valuation": 9000000000,
+      "employees": 220,
+      "hiringVelocity": 85,
+      "momentum": 0.93,
+      "investors": [
+        "IVP",
+        "NEA",
+        "Jeff Bezos",
+        "Tobi Lütke",
+        "NVIDIA",
+        "Databricks"
+      ],
+      "tags": [
+        "AI Search",
+        "Answer Engine",
+        "Knowledge",
+        "Research"
+      ],
+      "trendData": [
+        10,
+        18,
+        28,
+        40,
+        52,
+        62,
+        72,
+        80,
+        86,
+        92,
+        96,
+        100
+      ],
+      "sector": "AI Applications"
+    },
+    {
+      "id": "startup-007",
+      "name": "Character.AI",
+      "logo": "💬",
+      "headquarters": {
+        "city": "Palo Alto",
+        "country": "USA"
+      },
+      "description": "Platform for creating and chatting with AI characters, achieving massive consumer engagement. Pioneering personalized AI companions with emotional intelligence and persistent memory.",
+      "founded": 2021,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 200000000,
+        "date": "2024-03-20"
+      },
+      "totalFunding": 350000000,
+      "valuation": 5000000000,
+      "employees": 140,
+      "hiringVelocity": 22,
+      "momentum": 0.74,
+      "investors": [
+        "Andreessen Horowitz",
+        "Google",
+        "SV Angel",
+        "Nat Friedman"
+      ],
+      "tags": [
+        "Consumer AI",
+        "Characters",
+        "Entertainment",
+        "Social"
+      ],
+      "trendData": [
+        30,
+        42,
+        55,
+        65,
+        72,
+        78,
+        80,
+        78,
+        75,
+        73,
+        72,
+        70
+      ],
+      "sector": "Consumer AI"
+    },
+    {
+      "id": "startup-008",
+      "name": "Figure AI",
+      "logo": "🦾",
+      "headquarters": {
+        "city": "Sunnyvale",
+        "country": "USA"
+      },
+      "description": "Building the world's first commercially viable general-purpose humanoid robot. Figure 02 integrates OpenAI vision-language models for natural human interaction and autonomous task completion.",
+      "founded": 2022,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 675000000,
+        "date": "2024-02-29"
+      },
+      "totalFunding": 754000000,
+      "valuation": 2600000000,
+      "employees": 850,
+      "hiringVelocity": 120,
+      "momentum": 0.94,
+      "investors": [
+        "Microsoft",
+        "OpenAI",
+        "NVIDIA",
+        "Jeff Bezos",
+        "Intel Capital",
+        "Samsung"
+      ],
+      "tags": [
+        "Humanoid Robot",
+        "Robotics",
+        "AI",
+        "Manufacturing"
+      ],
+      "trendData": [
+        5,
+        10,
+        18,
+        28,
+        40,
+        52,
+        64,
+        74,
+        82,
+        89,
+        95,
+        100
+      ],
+      "sector": "Robotics"
+    },
+    {
+      "id": "startup-009",
+      "name": "Wayve",
+      "logo": "🛣️",
+      "headquarters": {
+        "city": "London",
+        "country": "UK"
+      },
+      "description": "UK-based autonomous driving startup using end-to-end learned driving models instead of hand-coded rules. AV2.0 approach generalizes across cities, vehicles, and conditions with minimal mapping.",
+      "founded": 2017,
+      "stage": "series-c",
+      "lastFunding": {
+        "amount": 1050000000,
+        "date": "2024-05-07"
+      },
+      "totalFunding": 1280000000,
+      "valuation": 4500000000,
+      "employees": 380,
+      "hiringVelocity": 40,
+      "momentum": 0.85,
+      "investors": [
+        "SoftBank",
+        "NVIDIA",
+        "Microsoft",
+        "Eclipse Ventures",
+        "Uber"
+      ],
+      "tags": [
+        "Autonomous Driving",
+        "End-to-End AI",
+        "Embodied AI"
+      ],
+      "trendData": [
+        20,
+        24,
+        28,
+        33,
+        38,
+        44,
+        50,
+        57,
+        64,
+        72,
+        80,
+        88
+      ],
+      "sector": "Autonomous Vehicles"
+    },
+    {
+      "id": "startup-010",
+      "name": "Aleph Alpha",
+      "logo": "🇩🇪",
+      "headquarters": {
+        "city": "Heidelberg",
+        "country": "Germany"
+      },
+      "description": "European sovereign AI champion building secure, GDPR-compliant large language models for government and enterprise. Luminous model family serves defense and critical infrastructure clients.",
+      "founded": 2019,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 500000000,
+        "date": "2023-11-06"
+      },
+      "totalFunding": 653000000,
+      "valuation": 2200000000,
+      "employees": 210,
+      "hiringVelocity": 25,
+      "momentum": 0.72,
+      "investors": [
+        "Innovation Park AI",
+        "Bosch Ventures",
+        "SAP",
+        "Christ&Company",
+        "Earlybird VC"
+      ],
+      "tags": [
+        "Sovereign AI",
+        "Enterprise",
+        "European AI",
+        "Government"
+      ],
+      "trendData": [
+        15,
+        18,
+        22,
+        28,
+        35,
+        40,
+        44,
+        48,
+        52,
+        55,
+        58,
+        62
+      ],
+      "sector": "Enterprise AI"
+    },
+    {
+      "id": "startup-011",
+      "name": "Sakana AI",
+      "logo": "🐟",
+      "headquarters": {
+        "city": "Tokyo",
+        "country": "Japan"
+      },
+      "description": "Nature-inspired AI lab founded by ex-Google Brain researchers exploring evolutionary and swarm-intelligence approaches to building foundation models. Pioneering AI-generating-AI methods.",
+      "founded": 2023,
+      "stage": "series-a",
+      "lastFunding": {
+        "amount": 214000000,
+        "date": "2024-09-18"
+      },
+      "totalFunding": 314000000,
+      "valuation": 1500000000,
+      "employees": 55,
+      "hiringVelocity": 95,
+      "momentum": 0.8,
+      "investors": [
+        "Lux Capital",
+        "Khosla Ventures",
+        "NVIDIA",
+        "NTT Group",
+        "Google"
+      ],
+      "tags": [
+        "Nature-Inspired AI",
+        "Research",
+        "Japan",
+        "Evolutionary AI"
+      ],
+      "trendData": [
+        3,
+        8,
+        16,
+        25,
+        34,
+        42,
+        50,
+        58,
+        65,
+        72,
+        78,
+        85
+      ],
+      "sector": "AI Research"
+    },
+    {
+      "id": "startup-012",
+      "name": "Poolside",
+      "logo": "🏊",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "description": "Building the next frontier in AI-assisted software engineering. Training models specifically for code generation, debugging, and full-stack development with reinforcement learning from execution.",
+      "founded": 2023,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 500000000,
+        "date": "2024-10-03"
+      },
+      "totalFunding": 626000000,
+      "valuation": 3000000000,
+      "employees": 80,
+      "hiringVelocity": 110,
+      "momentum": 0.88,
+      "investors": [
+        "Bain Capital Ventures",
+        "Redpoint Ventures",
+        "Balderton Capital",
+        "Felicis Ventures"
+      ],
+      "tags": [
+        "Coding AI",
+        "Developer Tools",
+        "SWE Agent",
+        "Code Generation"
+      ],
+      "trendData": [
+        2,
+        6,
+        14,
+        24,
+        36,
+        48,
+        58,
+        68,
+        76,
+        84,
+        90,
+        96
+      ],
+      "sector": "Developer Tools"
+    },
+    {
+      "id": "startup-013",
+      "name": "Magic AI",
+      "logo": "🪄",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "description": "Building AI with ultra-long context windows exceeding 100M tokens. Magic's LTM (Long-Term Memory) architecture enables AI to reason over entire codebases, books, and organizational knowledge.",
+      "founded": 2022,
+      "stage": "series-c",
+      "lastFunding": {
+        "amount": 465000000,
+        "date": "2024-08-28"
+      },
+      "totalFunding": 645000000,
+      "valuation": 2500000000,
+      "employees": 95,
+      "hiringVelocity": 58,
+      "momentum": 0.83,
+      "investors": [
+        "Sequoia Capital",
+        "CapitalG",
+        "Atlassian Ventures",
+        "NVIDIA",
+        "Eric Schmidt"
+      ],
+      "tags": [
+        "Long Context",
+        "Coding AI",
+        "Memory",
+        "Developer Tools"
+      ],
+      "trendData": [
+        5,
+        10,
+        18,
+        28,
+        38,
+        48,
+        56,
+        64,
+        70,
+        76,
+        82,
+        88
+      ],
+      "sector": "AI Research"
+    },
+    {
+      "id": "startup-014",
+      "name": "Replit",
+      "logo": "💻",
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "description": "AI-native collaborative coding platform with millions of developers. Replit Agent can build and deploy full-stack applications from natural language, democratizing software development.",
+      "founded": 2016,
+      "stage": "series-c",
+      "lastFunding": {
+        "amount": 200000000,
+        "date": "2025-02-10"
+      },
+      "totalFunding": 346000000,
+      "valuation": 2000000000,
+      "employees": 280,
+      "hiringVelocity": 35,
+      "momentum": 0.81,
+      "investors": [
+        "Andreessen Horowitz",
+        "Khosla Ventures",
+        "Craft Ventures",
+        "GV",
+        "Y Combinator"
+      ],
+      "tags": [
+        "IDE",
+        "AI Coding",
+        "Developer Platform",
+        "Education"
+      ],
+      "trendData": [
+        30,
+        34,
+        38,
+        42,
+        47,
+        52,
+        58,
+        64,
+        70,
+        75,
+        80,
+        85
+      ],
+      "sector": "Developer Tools"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "opp-001",
+      "title": "AI Inference Chip Market Disruption",
+      "description": "Custom silicon startups (Groq, Cerebras, Etched) are demonstrating 10-100x cost/performance gains over NVIDIA GPUs for inference workloads. The $85B inference market is ripe for disruption as cloud providers seek alternatives to NVIDIA dependency.",
+      "category": "AI Infrastructure",
+      "confidenceScore": 0.89,
+      "impactScore": 0.94,
+      "evidence": [
+        {
+          "source": "Bloomberg",
+          "snippet": "Groq's LPU architecture achieves 10x lower cost-per-token vs. H100 in independent benchmarks.",
+          "date": "2026-05-18"
+        },
+        {
+          "source": "TechCrunch",
+          "snippet": "AWS and Microsoft are both testing Groq and Cerebras chips for internal inference workloads.",
+          "date": "2026-05-14"
+        },
+        {
+          "source": "ArXiv",
+          "snippet": "Novel deterministic scheduling on LPU shows 18x throughput improvement on Llama 3 70B.",
+          "date": "2026-05-10"
+        }
+      ],
+      "relatedEntities": [
+        "Groq",
+        "Cerebras",
+        "NVIDIA",
+        "Amazon AWS",
+        "Microsoft"
+      ],
+      "detectedAt": "2026-05-20T14:30:00Z",
+      "timeHorizon": "medium",
+      "potentialValue": "$50B-85B addressable market by 2028"
+    },
+    {
+      "id": "opp-002",
+      "title": "European Sovereign AI Mandate",
+      "description": "EU regulation requiring critical infrastructure AI to be trained and hosted within European borders is creating a massive captive market. European AI champions will capture $30B+ in government and enterprise contracts.",
+      "category": "AI Infrastructure",
+      "confidenceScore": 0.82,
+      "impactScore": 0.88,
+      "evidence": [
+        {
+          "source": "Reuters",
+          "snippet": "European Commission drafts Digital Sovereignty Act mandating EU-hosted AI for government operations.",
+          "date": "2026-05-22"
+        },
+        {
+          "source": "Financial Times",
+          "snippet": "Mistral AI and Aleph Alpha positioned as primary beneficiaries of EU sovereign AI procurement.",
+          "date": "2026-05-19"
+        },
+        {
+          "source": "Politico EU",
+          "snippet": "France and Germany jointly pledge €8B for sovereign AI compute infrastructure.",
+          "date": "2026-05-15"
+        }
+      ],
+      "relatedEntities": [
+        "Mistral AI",
+        "Aleph Alpha",
+        "France",
+        "Germany",
+        "UK"
+      ],
+      "detectedAt": "2026-05-22T09:15:00Z",
+      "timeHorizon": "medium",
+      "potentialValue": "$25B-40B European AI market by 2029"
+    },
+    {
+      "id": "opp-003",
+      "title": "Humanoid Robotics Commercialization Wave",
+      "description": "Multiple humanoid robot startups are simultaneously reaching manufacturing readiness. BMW, Amazon, and Tesla factory deployments signal the beginning of a massive new labor automation market. First-mover advantage is critical.",
+      "category": "Robotics",
+      "confidenceScore": 0.85,
+      "impactScore": 0.96,
+      "evidence": [
+        {
+          "source": "Wall Street Journal",
+          "snippet": "Figure AI deploys 50 humanoid robots at BMW's Spartanburg plant for assembly line tasks.",
+          "date": "2026-05-25"
+        },
+        {
+          "source": "MIT Technology Review",
+          "snippet": "Foundation models for robotics enabling zero-shot task generalization in warehouse environments.",
+          "date": "2026-05-20"
+        },
+        {
+          "source": "Bloomberg",
+          "snippet": "Global humanoid robot market projected at $154B by 2030, up from $3B in 2025.",
+          "date": "2026-05-12"
+        }
+      ],
+      "relatedEntities": [
+        "Figure AI",
+        "Tesla",
+        "NVIDIA",
+        "Boston Dynamics",
+        "1X Technologies"
+      ],
+      "detectedAt": "2026-05-25T11:00:00Z",
+      "timeHorizon": "medium",
+      "potentialValue": "$100B-154B market by 2030"
+    },
+    {
+      "id": "opp-004",
+      "title": "Fusion Energy Breakthrough Timeline Compressed",
+      "description": "Commonwealth Fusion Systems and Helion Energy both report achieving key milestones ahead of schedule. Private fusion companies may demonstrate net energy gain 2-3 years earlier than expected, reshaping the energy investment landscape.",
+      "category": "Energy",
+      "confidenceScore": 0.68,
+      "impactScore": 0.99,
+      "evidence": [
+        {
+          "source": "Nature Energy",
+          "snippet": "CFS SPARC tokamak achieves record plasma temperatures using HTS magnets ahead of schedule.",
+          "date": "2026-05-21"
+        },
+        {
+          "source": "TechCrunch",
+          "snippet": "Helion Energy signs additional power purchase agreements totaling 1.5 GW with Microsoft and Nucor.",
+          "date": "2026-05-17"
+        },
+        {
+          "source": "Science",
+          "snippet": "New superconductor materials reduce cost of fusion magnets by 40%, accelerating commercialization.",
+          "date": "2026-05-08"
+        }
+      ],
+      "relatedEntities": [
+        "Commonwealth Fusion Systems",
+        "Helion Energy",
+        "Microsoft",
+        "OpenAI"
+      ],
+      "detectedAt": "2026-05-21T16:45:00Z",
+      "timeHorizon": "long",
+      "potentialValue": "$2T+ global energy market transformation"
+    },
+    {
+      "id": "opp-005",
+      "title": "AI Agent Platform Wars Begin",
+      "description": "Enterprise AI agent platforms are emerging as the next major software category. Companies deploying autonomous AI agents for customer support, engineering, and operations are seeing 5-10x productivity gains. Platform lock-in dynamics are forming.",
+      "category": "AI Infrastructure",
+      "confidenceScore": 0.91,
+      "impactScore": 0.9,
+      "evidence": [
+        {
+          "source": "Sequoia Capital",
+          "snippet": "AI agent startups raised $12B in H1 2026, making it the fastest-growing enterprise category.",
+          "date": "2026-05-24"
+        },
+        {
+          "source": "Forbes",
+          "snippet": "Enterprise AI agent adoption jumped from 8% to 35% in the last 12 months.",
+          "date": "2026-05-20"
+        },
+        {
+          "source": "The Information",
+          "snippet": "Anthropic, OpenAI, and Google all launch competing agent frameworks within 30 days.",
+          "date": "2026-05-16"
+        }
+      ],
+      "relatedEntities": [
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind",
+        "Microsoft",
+        "Replit"
+      ],
+      "detectedAt": "2026-05-24T08:30:00Z",
+      "timeHorizon": "short",
+      "potentialValue": "$45B-70B enterprise agent market by 2028"
+    },
+    {
+      "id": "opp-006",
+      "title": "Autonomous Defense Systems Procurement Surge",
+      "description": "NATO and Five Eyes nations are massively increasing procurement of autonomous defense systems following recent geopolitical tensions. Anduril, Palantir, and Shield AI are best positioned to capture this unprecedented spending cycle.",
+      "category": "Defense",
+      "confidenceScore": 0.87,
+      "impactScore": 0.92,
+      "evidence": [
+        {
+          "source": "Defense One",
+          "snippet": "Pentagon Replicator initiative orders 10,000 autonomous drones from Anduril and Shield AI.",
+          "date": "2026-05-23"
+        },
+        {
+          "source": "Jane's Defence",
+          "snippet": "NATO AI defense procurement budget increased 340% year-over-year to $18B.",
+          "date": "2026-05-18"
+        },
+        {
+          "source": "Wall Street Journal",
+          "snippet": "Anduril wins $3.2B contract for counter-UAS systems across Indo-Pacific command.",
+          "date": "2026-05-11"
+        }
+      ],
+      "relatedEntities": [
+        "Anduril",
+        "Palantir",
+        "Scale AI",
+        "CrowdStrike"
+      ],
+      "detectedAt": "2026-05-23T13:20:00Z",
+      "timeHorizon": "short",
+      "potentialValue": "$50B-80B annual defense AI spending"
+    },
+    {
+      "id": "opp-007",
+      "title": "Quantum Advantage in Drug Discovery",
+      "description": "Quantum computing is reaching practical utility for molecular simulation in pharma. Early quantum-classical hybrid algorithms are outperforming classical methods for specific protein-ligand interactions, signaling a new era in drug design.",
+      "category": "Quantum",
+      "confidenceScore": 0.62,
+      "impactScore": 0.88,
+      "evidence": [
+        {
+          "source": "Nature",
+          "snippet": "IBM Heron processor demonstrates quantum advantage for small-molecule simulation with error mitigation.",
+          "date": "2026-05-19"
+        },
+        {
+          "source": "STAT News",
+          "snippet": "Pfizer and Roche invest $2B combined in quantum computing drug discovery pipelines.",
+          "date": "2026-05-15"
+        },
+        {
+          "source": "ArXiv",
+          "snippet": "Novel variational quantum eigensolver achieves chemical accuracy for drug candidate screening.",
+          "date": "2026-05-09"
+        }
+      ],
+      "relatedEntities": [
+        "IBM",
+        "Google DeepMind",
+        "IonQ",
+        "Rigetti"
+      ],
+      "detectedAt": "2026-05-19T10:00:00Z",
+      "timeHorizon": "long",
+      "potentialValue": "$15B-25B quantum pharma market by 2032"
+    },
+    {
+      "id": "opp-008",
+      "title": "Space-Based Data Center Infrastructure",
+      "description": "Emerging convergence of orbital computing and Earth observation is creating a new space data infrastructure market. LEO constellations for edge computing could serve remote and latency-sensitive applications that ground infrastructure cannot reach.",
+      "category": "Space",
+      "confidenceScore": 0.55,
+      "impactScore": 0.78,
+      "evidence": [
+        {
+          "source": "SpaceNews",
+          "snippet": "SpaceX files FCC application for compute payload integration on next-gen Starlink satellites.",
+          "date": "2026-05-22"
+        },
+        {
+          "source": "Wired",
+          "snippet": "Microsoft and Lumen Orbit demonstrate GPU computing in orbit for satellite imagery processing.",
+          "date": "2026-05-16"
+        },
+        {
+          "source": "TechCrunch",
+          "snippet": "Orbital computing startup raises $180M to deploy AI inference nodes on satellite constellation.",
+          "date": "2026-05-10"
+        }
+      ],
+      "relatedEntities": [
+        "SpaceX",
+        "Microsoft",
+        "Amazon AWS"
+      ],
+      "detectedAt": "2026-05-22T15:30:00Z",
+      "timeHorizon": "long",
+      "potentialValue": "$8B-15B orbital compute market by 2033"
+    },
+    {
+      "id": "opp-009",
+      "title": "Synthetic Biology Manufacturing Revolution",
+      "description": "AI-designed proteins and organisms are enabling bio-manufacturing of materials, fuels, and medicines at industrial scale. The convergence of generative AI and synthetic biology is creating entirely new supply chains.",
+      "category": "Biotech",
+      "confidenceScore": 0.74,
+      "impactScore": 0.86,
+      "evidence": [
+        {
+          "source": "MIT Technology Review",
+          "snippet": "Generative AI designs novel enzymes for plastic recycling with 95% degradation efficiency.",
+          "date": "2026-05-24"
+        },
+        {
+          "source": "Bloomberg",
+          "snippet": "Synthetic biology market reaches $28B, growing at 32% CAGR driven by AI-designed organisms.",
+          "date": "2026-05-18"
+        },
+        {
+          "source": "Nature Biotechnology",
+          "snippet": "AlphaFold 3 predictions enable first fully AI-designed therapeutic antibody entering Phase I trials.",
+          "date": "2026-05-12"
+        }
+      ],
+      "relatedEntities": [
+        "Google DeepMind",
+        "Ginkgo Bioworks",
+        "Recursion"
+      ],
+      "detectedAt": "2026-05-24T12:00:00Z",
+      "timeHorizon": "medium",
+      "potentialValue": "$80B-120B bio-manufacturing market by 2031"
+    },
+    {
+      "id": "opp-010",
+      "title": "AI-Native Cybersecurity Paradigm Shift",
+      "description": "Traditional rule-based cybersecurity is failing against AI-powered attacks. Next-generation AI-native security platforms using autonomous threat hunting and real-time adaptive defense are capturing market share at unprecedented speed.",
+      "category": "AI Infrastructure",
+      "confidenceScore": 0.86,
+      "impactScore": 0.84,
+      "evidence": [
+        {
+          "source": "CyberScoop",
+          "snippet": "AI-generated phishing attacks increase 1400% year-over-year, overwhelming legacy security tools.",
+          "date": "2026-05-25"
+        },
+        {
+          "source": "Gartner",
+          "snippet": "AI-native security platforms to capture 60% of enterprise security budgets by 2028.",
+          "date": "2026-05-20"
+        },
+        {
+          "source": "Dark Reading",
+          "snippet": "CrowdStrike Charlotte AI autonomously resolves 78% of security incidents without human intervention.",
+          "date": "2026-05-14"
+        }
+      ],
+      "relatedEntities": [
+        "CrowdStrike",
+        "Palantir",
+        "Microsoft",
+        "Google DeepMind"
+      ],
+      "detectedAt": "2026-05-25T09:45:00Z",
+      "timeHorizon": "short",
+      "potentialValue": "$35B-55B AI security market by 2028"
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "anom-001",
+      "anomalyType": "hiring",
+      "entityName": "Figure AI",
+      "entityType": "startup",
+      "metricName": "Engineering Headcount Growth",
+      "actualValue": 340,
+      "expectedValue": 120,
+      "deviationPercentage": 183,
+      "severity": "critical",
+      "description": "Figure AI's engineering team has tripled in 60 days — 340 new hires vs. expected 120. Massive recruiting blitz targeting Tesla Optimus, Boston Dynamics, and Google DeepMind robotics engineers. Signals imminent product launch or major manufacturing scale-up.",
+      "detectedAt": "2026-05-28T08:22:00Z",
+      "status": "investigating"
+    },
+    {
+      "id": "anom-002",
+      "anomalyType": "funding",
+      "entityName": "Poolside",
+      "entityType": "startup",
+      "metricName": "Cumulative Funding Velocity",
+      "actualValue": 626000000,
+      "expectedValue": 180000000,
+      "deviationPercentage": 248,
+      "severity": "high",
+      "description": "Poolside raised $626M within 18 months of founding — 3.5x the typical trajectory for developer tools startups. Unusual investor composition includes sovereign wealth funds typically reserved for defense and energy deals.",
+      "detectedAt": "2026-05-27T14:10:00Z",
+      "status": "new"
+    },
+    {
+      "id": "anom-003",
+      "anomalyType": "mentions",
+      "entityName": "Anthropic",
+      "entityType": "company",
+      "metricName": "Government Document Mentions",
+      "actualValue": 847,
+      "expectedValue": 180,
+      "deviationPercentage": 370,
+      "severity": "critical",
+      "description": "Anthropic mentions in US government procurement documents spiked 370% in 14 days. Correlated with classified briefing schedules and new ITAR-related job postings. Possible major government AI contract imminent.",
+      "detectedAt": "2026-05-26T11:45:00Z",
+      "status": "investigating"
+    },
+    {
+      "id": "anom-004",
+      "anomalyType": "market",
+      "entityName": "NVIDIA",
+      "entityType": "company",
+      "metricName": "Options Unusual Activity Index",
+      "actualValue": 94.7,
+      "expectedValue": 35,
+      "deviationPercentage": 170,
+      "severity": "high",
+      "description": "NVIDIA call options volume at 2.7x normal levels concentrated in far OTM strikes for August expiry. Pattern matches previous pre-announcement insider activity. Dark pool volume also elevated 40% above 90-day average.",
+      "detectedAt": "2026-05-29T09:30:00Z",
+      "status": "new"
+    },
+    {
+      "id": "anom-005",
+      "anomalyType": "hiring",
+      "entityName": "Apple",
+      "entityType": "company",
+      "metricName": "AI Research Scientist Postings",
+      "actualValue": 285,
+      "expectedValue": 60,
+      "deviationPercentage": 375,
+      "severity": "critical",
+      "description": "Apple posted 285 AI research scientist positions in a single week — 4.75x their historical norm. Postings concentrated in multimodal AI, on-device inference, and \"spatial intelligence.\" Likely preparing a major AI product offensive for WWDC 2026.",
+      "detectedAt": "2026-05-25T16:00:00Z",
+      "status": "investigating"
+    },
+    {
+      "id": "anom-006",
+      "anomalyType": "funding",
+      "entityName": "Mistral AI",
+      "entityType": "company",
+      "metricName": "Funding Round Valuation Multiple",
+      "actualValue": 73,
+      "expectedValue": 25,
+      "deviationPercentage": 192,
+      "severity": "medium",
+      "description": "Mistral AI's latest round values the company at 73x revenue — significantly above the 25x median for AI companies at their stage. Premium attributed to European sovereign AI tailwinds and pending EU procurement contracts.",
+      "detectedAt": "2026-05-24T10:15:00Z",
+      "status": "new"
+    },
+    {
+      "id": "anom-007",
+      "anomalyType": "mentions",
+      "entityName": "Groq",
+      "entityType": "startup",
+      "metricName": "Patent Filing Velocity",
+      "actualValue": 48,
+      "expectedValue": 12,
+      "deviationPercentage": 300,
+      "severity": "high",
+      "description": "Groq filed 48 patents in Q1 2026 — 4x their quarterly average. Patents span novel LPU architectures, memory hierarchy designs, and cooling systems. Pattern consistent with next-generation chip tape-out preparation.",
+      "detectedAt": "2026-05-23T13:30:00Z",
+      "status": "investigating"
+    },
+    {
+      "id": "anom-008",
+      "anomalyType": "market",
+      "entityName": "Palantir",
+      "entityType": "company",
+      "metricName": "Government Contract Win Rate",
+      "actualValue": 87,
+      "expectedValue": 45,
+      "deviationPercentage": 93,
+      "severity": "medium",
+      "description": "Palantir's government contract win rate jumped to 87% in the last quarter, nearly doubling historical averages. AIP platform being mandated as standard across multiple DoD programs. Competitors like Booz Allen and Leidos losing share rapidly.",
+      "detectedAt": "2026-05-22T15:45:00Z",
+      "status": "new"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-001",
+      "source": "Bloomberg",
+      "title": "NVIDIA Blackwell Ultra Chips Sell Out Through 2027",
+      "snippet": "NVIDIA's next-generation Blackwell Ultra AI accelerators are fully allocated through 2027, with hyperscalers committing $40B+ in advance orders. Demand continues to outstrip supply by 3x.",
+      "url": "https://bloomberg.com/news/nvidia-blackwell-ultra-sellout-2027",
+      "publishedAt": "2026-05-28T14:30:00Z",
+      "trustScore": 0.96,
+      "category": "Market Intelligence",
+      "relatedEntities": [
+        "NVIDIA",
+        "Microsoft",
+        "Amazon AWS",
+        "Google DeepMind"
+      ]
+    },
+    {
+      "id": "ev-002",
+      "source": "Reuters",
+      "title": "EU Digital Sovereignty Act Mandates European AI for Government",
+      "snippet": "The European Commission formally proposes the Digital Sovereignty Act, requiring all EU government agencies to use AI models trained and hosted within EU borders by 2028.",
+      "url": "https://reuters.com/technology/eu-digital-sovereignty-act-ai-mandate",
+      "publishedAt": "2026-05-27T09:15:00Z",
+      "trustScore": 0.95,
+      "category": "Regulatory",
+      "relatedEntities": [
+        "Mistral AI",
+        "Aleph Alpha",
+        "France",
+        "Germany"
+      ]
+    },
+    {
+      "id": "ev-003",
+      "source": "TechCrunch",
+      "title": "Perplexity Raises $250M at $9B Valuation, Revenue Triples",
+      "snippet": "AI search startup Perplexity closed a $250M Series B at a $9B valuation. The company reports revenue tripled year-over-year to $180M ARR as enterprise adoption accelerates.",
+      "url": "https://techcrunch.com/2026/05/perplexity-series-b-9b-valuation",
+      "publishedAt": "2026-05-26T16:00:00Z",
+      "trustScore": 0.92,
+      "category": "Funding",
+      "relatedEntities": [
+        "Perplexity",
+        "NVIDIA",
+        "Jeff Bezos"
+      ]
+    },
+    {
+      "id": "ev-004",
+      "source": "Wall Street Journal",
+      "title": "Pentagon Awards Anduril $3.2B Counter-Drone Contract",
+      "snippet": "Anduril Industries wins the largest autonomous defense contract in history — a $3.2B deal to deploy AI-powered counter-UAS systems across Indo-Pacific Command installations.",
+      "url": "https://wsj.com/articles/anduril-pentagon-counter-drone-3b-contract",
+      "publishedAt": "2026-05-25T11:00:00Z",
+      "trustScore": 0.97,
+      "category": "Defense",
+      "relatedEntities": [
+        "Anduril",
+        "Palantir",
+        "USA"
+      ]
+    },
+    {
+      "id": "ev-005",
+      "source": "ArXiv",
+      "title": "Scaling Laws for AI Agent Systems: A Comprehensive Study",
+      "snippet": "Researchers demonstrate that AI agent capabilities follow predictable scaling laws distinct from language model scaling. Agent performance scales with tool diversity, memory depth, and planning horizon.",
+      "url": "https://arxiv.org/abs/2605.14892",
+      "publishedAt": "2026-05-24T08:00:00Z",
+      "trustScore": 0.88,
+      "category": "Research",
+      "relatedEntities": [
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind"
+      ]
+    },
+    {
+      "id": "ev-006",
+      "source": "MIT Technology Review",
+      "title": "Figure 02 Humanoid Robot Begins BMW Factory Deployment",
+      "snippet": "Figure AI deploys its first batch of 50 humanoid robots at BMW's Spartanburg plant, performing assembly tasks alongside human workers with 94% task completion rate.",
+      "url": "https://technologyreview.com/figure-ai-bmw-humanoid-deployment",
+      "publishedAt": "2026-05-23T13:45:00Z",
+      "trustScore": 0.93,
+      "category": "Robotics",
+      "relatedEntities": [
+        "Figure AI",
+        "Tesla",
+        "NVIDIA"
+      ]
+    },
+    {
+      "id": "ev-007",
+      "source": "Financial Times",
+      "title": "Anthropic in Talks for $5B Government AI Contract",
+      "snippet": "Anthropic is in advanced negotiations with US intelligence agencies for a $5B multi-year contract to deploy Claude in classified environments, sources say.",
+      "url": "https://ft.com/content/anthropic-government-ai-contract-negotiations",
+      "publishedAt": "2026-05-22T10:30:00Z",
+      "trustScore": 0.89,
+      "category": "Defense",
+      "relatedEntities": [
+        "Anthropic",
+        "Palantir",
+        "Scale AI",
+        "USA"
+      ]
+    },
+    {
+      "id": "ev-008",
+      "source": "Nature",
+      "title": "Quantum Error Correction Breakthrough Enables Practical Computing",
+      "snippet": "Google Quantum AI achieves below-threshold error rates on a 1,000+ qubit processor, marking the first demonstration of fault-tolerant quantum computing at practical scale.",
+      "url": "https://nature.com/articles/quantum-error-correction-google-2026",
+      "publishedAt": "2026-05-21T17:00:00Z",
+      "trustScore": 0.98,
+      "category": "Research",
+      "relatedEntities": [
+        "Google DeepMind",
+        "IBM"
+      ]
+    },
+    {
+      "id": "ev-009",
+      "source": "The Information",
+      "title": "OpenAI Revenue Hits $13B Run Rate, Plans IPO for 2027",
+      "snippet": "OpenAI's annualized revenue reaches $13B, up from $5B a year ago. The company has begun preliminary IPO preparations targeting a 2027 public listing at $300B+ valuation.",
+      "url": "https://theinformation.com/articles/openai-revenue-13b-ipo-plans",
+      "publishedAt": "2026-05-20T14:15:00Z",
+      "trustScore": 0.87,
+      "category": "Market Intelligence",
+      "relatedEntities": [
+        "OpenAI",
+        "Microsoft"
+      ]
+    },
+    {
+      "id": "ev-010",
+      "source": "Wired",
+      "title": "Groq Launches Cloud Inference Platform, Undercuts GPU Pricing 90%",
+      "snippet": "Groq's public cloud inference service goes live, offering Llama 3 and Mixtral inference at 10% the cost of GPU-based alternatives with sub-100ms latency.",
+      "url": "https://wired.com/story/groq-cloud-inference-launch-pricing",
+      "publishedAt": "2026-05-19T12:00:00Z",
+      "trustScore": 0.9,
+      "category": "Product Launch",
+      "relatedEntities": [
+        "Groq",
+        "NVIDIA",
+        "Together AI"
+      ]
+    },
+    {
+      "id": "ev-011",
+      "source": "CNBC",
+      "title": "Microsoft Azure AI Revenue Surges 78%, Exceeds $60B Annual Run Rate",
+      "snippet": "Microsoft reports Azure AI services revenue growing 78% year-over-year, with Copilot enterprise adoption reaching 1.2 million paid seats across Fortune 500 companies.",
+      "url": "https://cnbc.com/microsoft-azure-ai-revenue-surge-copilot",
+      "publishedAt": "2026-05-18T16:30:00Z",
+      "trustScore": 0.94,
+      "category": "Earnings",
+      "relatedEntities": [
+        "Microsoft",
+        "OpenAI",
+        "Amazon AWS"
+      ]
+    },
+    {
+      "id": "ev-012",
+      "source": "SpaceNews",
+      "title": "SpaceX Starship Completes First Orbital Refueling Mission",
+      "snippet": "SpaceX successfully demonstrates propellant transfer between two Starship vehicles in orbit, a critical milestone for NASA's Artemis lunar landing program and Mars architecture.",
+      "url": "https://spacenews.com/spacex-starship-orbital-refueling-success",
+      "publishedAt": "2026-05-17T20:00:00Z",
+      "trustScore": 0.95,
+      "category": "Space",
+      "relatedEntities": [
+        "SpaceX",
+        "USA"
+      ]
+    },
+    {
+      "id": "ev-013",
+      "source": "Nikkei Asia",
+      "title": "Japan Allocates $15B for AI Semiconductor Sovereignty",
+      "snippet": "Japan announces a ¥2.3T package to establish domestic AI chip manufacturing, including partnerships with TSMC, Rapidus, and Sakana AI for next-generation computing.",
+      "url": "https://asia.nikkei.com/japan-ai-semiconductor-sovereignty-15b",
+      "publishedAt": "2026-05-16T06:00:00Z",
+      "trustScore": 0.91,
+      "category": "Regulatory",
+      "relatedEntities": [
+        "Sakana AI",
+        "NVIDIA",
+        "Japan"
+      ]
+    },
+    {
+      "id": "ev-014",
+      "source": "Defense One",
+      "title": "AI-Powered Drone Swarms Successfully Tested in NATO Exercise",
+      "snippet": "NATO's largest-ever autonomous systems exercise features 500+ AI-coordinated drones from Anduril and Shield AI performing complex multi-domain operations without human piloting.",
+      "url": "https://defenseone.com/nato-ai-drone-swarm-exercise-2026",
+      "publishedAt": "2026-05-15T09:00:00Z",
+      "trustScore": 0.9,
+      "category": "Defense",
+      "relatedEntities": [
+        "Anduril",
+        "Palantir",
+        "USA",
+        "UK"
+      ]
+    },
+    {
+      "id": "ev-015",
+      "source": "Sequoia Capital Blog",
+      "title": "AI Agent Startups: The $70B Opportunity",
+      "snippet": "Sequoia analysis reveals AI agent startups raised $12B in H1 2026, with enterprise deployment growing 340% year-over-year. Autonomous engineering and customer ops agents leading adoption.",
+      "url": "https://sequoiacap.com/perspective/ai-agents-70b-opportunity",
+      "publishedAt": "2026-05-14T11:30:00Z",
+      "trustScore": 0.86,
+      "category": "Market Intelligence",
+      "relatedEntities": [
+        "OpenAI",
+        "Anthropic",
+        "Replit",
+        "Magic AI"
+      ]
+    },
+    {
+      "id": "ev-016",
+      "source": "Forbes",
+      "title": "CrowdStrike Charlotte AI Resolves 78% of Incidents Autonomously",
+      "snippet": "CrowdStrike reports its Charlotte AI module now resolves 78% of security incidents without human analyst intervention, reducing mean response time from 4 hours to 12 seconds.",
+      "url": "https://forbes.com/crowdstrike-charlotte-ai-autonomous-security",
+      "publishedAt": "2026-05-13T15:00:00Z",
+      "trustScore": 0.88,
+      "category": "Product Launch",
+      "relatedEntities": [
+        "CrowdStrike",
+        "Palantir"
+      ]
+    },
+    {
+      "id": "ev-017",
+      "source": "VentureBeat",
+      "title": "Databricks Acquires AI Startup for $1.2B, Expands Model Training",
+      "snippet": "Databricks acquires frontier AI training startup to bolster its open-source model capabilities, as enterprise demand for private model training on the lakehouse platform surges.",
+      "url": "https://venturebeat.com/databricks-acquisition-ai-training-startup",
+      "publishedAt": "2026-05-12T10:45:00Z",
+      "trustScore": 0.87,
+      "category": "M&A",
+      "relatedEntities": [
+        "Databricks",
+        "Together AI"
+      ]
+    },
+    {
+      "id": "ev-018",
+      "source": "The Verge",
+      "title": "Replit Agent Builds Full-Stack App from Single Prompt",
+      "snippet": "Replit demonstrates its AI Agent building and deploying a complete e-commerce application from a natural language description in under 4 minutes, including database and payment integration.",
+      "url": "https://theverge.com/replit-agent-full-stack-app-demo",
+      "publishedAt": "2026-05-11T13:20:00Z",
+      "trustScore": 0.85,
+      "category": "Product Launch",
+      "relatedEntities": [
+        "Replit",
+        "Poolside",
+        "Magic AI"
+      ]
+    },
+    {
+      "id": "ev-019",
+      "source": "Ars Technica",
+      "title": "Tesla Optimus Gen-3 Achieves Human-Level Dexterity Benchmark",
+      "snippet": "Tesla's Optimus Gen-3 humanoid robot scores 92% on the YCB object manipulation benchmark, approaching human-level performance on fine motor tasks for the first time.",
+      "url": "https://arstechnica.com/tesla-optimus-gen3-dexterity-benchmark",
+      "publishedAt": "2026-05-10T17:30:00Z",
+      "trustScore": 0.86,
+      "category": "Robotics",
+      "relatedEntities": [
+        "Tesla",
+        "Figure AI",
+        "NVIDIA"
+      ]
+    },
+    {
+      "id": "ev-020",
+      "source": "South China Morning Post",
+      "title": "China Unveils $40B National AI Compute Plan",
+      "snippet": "China announces a 10-year, $40B initiative to build sovereign AI computing infrastructure, including 50 new data centers and domestic GPU alternatives to bypass US export restrictions.",
+      "url": "https://scmp.com/china-national-ai-compute-plan-40b",
+      "publishedAt": "2026-05-09T04:00:00Z",
+      "trustScore": 0.83,
+      "category": "Geopolitical",
+      "relatedEntities": [
+        "NVIDIA",
+        "China",
+        "USA"
+      ]
+    },
+    {
+      "id": "ev-021",
+      "source": "Gartner",
+      "title": "AI-Native Security Platforms to Capture 60% of Enterprise Budgets",
+      "snippet": "Gartner predicts AI-native cybersecurity platforms will capture 60% of enterprise security spending by 2028, displacing legacy SIEM and SOAR solutions that cannot match AI-powered threat response.",
+      "url": "https://gartner.com/en/documents/ai-native-security-predictions-2028",
+      "publishedAt": "2026-05-08T09:00:00Z",
+      "trustScore": 0.91,
+      "category": "Market Intelligence",
+      "relatedEntities": [
+        "CrowdStrike",
+        "Palantir",
+        "Microsoft"
+      ]
+    },
+    {
+      "id": "ev-022",
+      "source": "Science",
+      "title": "Novel HTS Superconductor Reduces Fusion Magnet Costs 40%",
+      "snippet": "MIT researchers develop a new high-temperature superconductor manufacturing process that reduces fusion magnet costs by 40%, directly benefiting Commonwealth Fusion Systems' SPARC reactor timeline.",
+      "url": "https://science.org/content/article/hts-superconductor-fusion-magnet-breakthrough",
+      "publishedAt": "2026-05-07T12:00:00Z",
+      "trustScore": 0.97,
+      "category": "Research",
+      "relatedEntities": [
+        "Commonwealth Fusion Systems",
+        "Helion Energy"
+      ]
+    },
+    {
+      "id": "ev-023",
+      "source": "Rest of World",
+      "title": "India's AI Startup Ecosystem Triples in 18 Months",
+      "snippet": "India's AI startup ecosystem has grown from 1,200 to 3,600 companies in 18 months, fueled by government incentives, abundant engineering talent, and global demand for AI services.",
+      "url": "https://restofworld.org/india-ai-startup-ecosystem-growth",
+      "publishedAt": "2026-05-06T08:30:00Z",
+      "trustScore": 0.82,
+      "category": "Market Intelligence",
+      "relatedEntities": [
+        "India",
+        "Cohere"
+      ]
+    },
+    {
+      "id": "ev-024",
+      "source": "Politico EU",
+      "title": "France and Germany Pledge €8B for Sovereign AI Compute",
+      "snippet": "In a historic joint initiative, France and Germany commit €8B to building European sovereign AI computing clusters, with first deployments targeted at Mistral AI and Aleph Alpha workloads.",
+      "url": "https://politico.eu/france-germany-sovereign-ai-compute-8b",
+      "publishedAt": "2026-05-05T14:00:00Z",
+      "trustScore": 0.9,
+      "category": "Regulatory",
+      "relatedEntities": [
+        "Mistral AI",
+        "Aleph Alpha",
+        "France",
+        "Germany"
+      ]
+    },
+    {
+      "id": "ev-025",
+      "source": "Nature Biotechnology",
+      "title": "AlphaFold 3 Enables First Fully AI-Designed Therapeutic Antibody",
+      "snippet": "A therapeutic antibody designed entirely by AlphaFold 3 predictions enters Phase I clinical trials — the first drug candidate where no human scientist designed the molecular structure.",
+      "url": "https://nature.com/nbt/alphafold3-therapeutic-antibody-trial",
+      "publishedAt": "2026-05-04T16:30:00Z",
+      "trustScore": 0.96,
+      "category": "Research",
+      "relatedEntities": [
+        "Google DeepMind",
+        "Recursion"
+      ]
+    }
+  ],
+  "trends": [
+    {
+      "id": "trend-001",
+      "name": "AI Agent Autonomy Surge",
+      "direction": "rising",
+      "velocity": "+120%",
+      "period": "30d",
+      "description": "Autonomous AI agents are transitioning from demos to production deployments. Enterprise adoption of multi-step AI agents for engineering, operations, and customer service is accelerating faster than any prior software category.",
+      "category": "Artificial Intelligence",
+      "trendData": [
+        12,
+        18,
+        26,
+        35,
+        44,
+        53,
+        62,
+        71,
+        80,
+        88,
+        95,
+        100
+      ],
+      "relatedEntities": [
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind",
+        "Replit",
+        "Microsoft"
+      ],
+      "signals": [
+        "340% YoY enterprise deployment growth",
+        "$12B raised by agent startups in H1 2026",
+        "Agent frameworks open-sourced by all major labs",
+        "Fortune 500 agent pilot programs tripled"
+      ]
+    },
+    {
+      "id": "trend-002",
+      "name": "Custom Silicon Arms Race",
+      "direction": "rising",
+      "velocity": "+85%",
+      "period": "30d",
+      "description": "Every major cloud provider and AI lab is designing custom silicon to reduce NVIDIA dependency. Groq LPU, Google TPU, Amazon Trainium, and Microsoft Maia chips are reshaping the AI compute landscape.",
+      "category": "Hardware",
+      "trendData": [
+        20,
+        26,
+        32,
+        38,
+        44,
+        52,
+        60,
+        68,
+        74,
+        82,
+        90,
+        98
+      ],
+      "relatedEntities": [
+        "Groq",
+        "Cerebras",
+        "NVIDIA",
+        "Amazon AWS",
+        "Google DeepMind",
+        "Microsoft"
+      ],
+      "signals": [
+        "5 new AI chip startups funded monthly",
+        "AWS Trainium2 benchmark results competitive with H100",
+        "NVIDIA market share declining from 95% to 82%",
+        "Groq cloud launched with 90% cost reduction"
+      ]
+    },
+    {
+      "id": "trend-003",
+      "name": "Humanoid Robot Commercialization",
+      "direction": "rising",
+      "velocity": "+95%",
+      "period": "30d",
+      "description": "General-purpose humanoid robots are moving from R&D to factory floors. Foundation models for robotics enable rapid skill transfer, making commercial deployment viable for the first time.",
+      "category": "Robotics",
+      "trendData": [
+        8,
+        14,
+        22,
+        30,
+        40,
+        50,
+        58,
+        66,
+        75,
+        84,
+        92,
+        100
+      ],
+      "relatedEntities": [
+        "Figure AI",
+        "Tesla",
+        "NVIDIA",
+        "Boston Dynamics"
+      ],
+      "signals": [
+        "BMW deploys 50 Figure 02 robots in factory",
+        "Tesla Optimus achieves human-level dexterity",
+        "$154B projected market by 2030",
+        "Amazon testing humanoids in fulfillment centers"
+      ]
+    },
+    {
+      "id": "trend-004",
+      "name": "AI Sovereignty Movement",
+      "direction": "rising",
+      "velocity": "+65%",
+      "period": "30d",
+      "description": "Nations are mandating domestic AI capabilities to reduce dependency on US technology giants. EU, Japan, India, and UAE are investing billions in sovereign AI compute and homegrown models.",
+      "category": "Geopolitical",
+      "trendData": [
+        15,
+        20,
+        26,
+        32,
+        38,
+        44,
+        50,
+        58,
+        66,
+        74,
+        82,
+        90
+      ],
+      "relatedEntities": [
+        "Mistral AI",
+        "Aleph Alpha",
+        "Sakana AI",
+        "France",
+        "Germany",
+        "Japan",
+        "UAE"
+      ],
+      "signals": [
+        "EU Digital Sovereignty Act drafted",
+        "Japan allocates $15B for AI chips",
+        "UAE launches Falcon 3 LLM initiative",
+        "India AI startup ecosystem triples"
+      ]
+    },
+    {
+      "id": "trend-005",
+      "name": "Defense AI Procurement Boom",
+      "direction": "rising",
+      "velocity": "+78%",
+      "period": "30d",
+      "description": "Military spending on AI-powered autonomous systems and intelligence platforms is reaching unprecedented levels. NATO and Five Eyes nations are rapidly modernizing with AI-first defense strategies.",
+      "category": "Defense",
+      "trendData": [
+        22,
+        28,
+        34,
+        40,
+        48,
+        56,
+        62,
+        70,
+        78,
+        84,
+        92,
+        100
+      ],
+      "relatedEntities": [
+        "Anduril",
+        "Palantir",
+        "Scale AI",
+        "CrowdStrike",
+        "USA",
+        "UK"
+      ],
+      "signals": [
+        "NATO AI defense budget up 340% YoY",
+        "Pentagon Replicator orders 10K autonomous drones",
+        "Palantir government win rate hits 87%",
+        "Classified AI contract values exceed $20B"
+      ]
+    },
+    {
+      "id": "trend-006",
+      "name": "Open Source AI Renaissance",
+      "direction": "rising",
+      "velocity": "+55%",
+      "period": "30d",
+      "description": "Open-source AI models are closing the gap with proprietary systems. Meta's LLaMA, Mistral's models, and community fine-tunes are enabling a distributed AI ecosystem that challenges closed-model dominance.",
+      "category": "Artificial Intelligence",
+      "trendData": [
+        28,
+        32,
+        38,
+        44,
+        50,
+        56,
+        62,
+        68,
+        74,
+        80,
+        86,
+        92
+      ],
+      "relatedEntities": [
+        "Meta AI",
+        "Mistral AI",
+        "Together AI",
+        "Databricks",
+        "Cohere"
+      ],
+      "signals": [
+        "LLaMA 4 matches GPT-4 on key benchmarks",
+        "Open model downloads exceed 500M monthly",
+        "Enterprise open-source AI adoption at 45%",
+        "EU favoring open-source for sovereignty"
+      ]
+    },
+    {
+      "id": "trend-007",
+      "name": "AI-Native Cybersecurity",
+      "direction": "rising",
+      "velocity": "+45%",
+      "period": "30d",
+      "description": "AI-powered cyberattacks are overwhelming legacy security tools, driving rapid adoption of AI-native security platforms that can autonomously detect, investigate, and remediate threats in real-time.",
+      "category": "Cybersecurity",
+      "trendData": [
+        35,
+        39,
+        43,
+        48,
+        53,
+        58,
+        63,
+        68,
+        73,
+        78,
+        84,
+        90
+      ],
+      "relatedEntities": [
+        "CrowdStrike",
+        "Palantir",
+        "Microsoft",
+        "Google DeepMind"
+      ],
+      "signals": [
+        "AI phishing attacks up 1400% YoY",
+        "Autonomous incident resolution at 78%",
+        "Mean response time drops from hours to seconds",
+        "AI security market projected at $55B by 2028"
+      ]
+    },
+    {
+      "id": "trend-008",
+      "name": "Fusion Energy Acceleration",
+      "direction": "rising",
+      "velocity": "+45%",
+      "period": "30d",
+      "description": "Private fusion energy companies are hitting milestones ahead of schedule. New superconductor materials and AI-optimized plasma control are compressing the timeline to commercial fusion by several years.",
+      "category": "Energy",
+      "trendData": [
+        10,
+        14,
+        18,
+        22,
+        28,
+        34,
+        40,
+        46,
+        54,
+        62,
+        70,
+        80
+      ],
+      "relatedEntities": [
+        "Commonwealth Fusion Systems",
+        "Helion Energy",
+        "Microsoft",
+        "OpenAI"
+      ],
+      "signals": [
+        "CFS SPARC achieves record plasma temps",
+        "Helion signs 1.5 GW in power purchase agreements",
+        "New HTS materials cut magnet costs 40%",
+        "Fusion startup funding exceeds $8B cumulative"
+      ]
+    },
+    {
+      "id": "trend-009",
+      "name": "AI Developer Tools Explosion",
+      "direction": "rising",
+      "velocity": "+72%",
+      "period": "30d",
+      "description": "AI coding assistants and autonomous software engineering agents are transforming development productivity. Code generation accuracy exceeds 90% for common patterns, with full-app generation from prompts becoming reality.",
+      "category": "Developer Tools",
+      "trendData": [
+        18,
+        24,
+        32,
+        40,
+        48,
+        56,
+        62,
+        70,
+        78,
+        84,
+        92,
+        98
+      ],
+      "relatedEntities": [
+        "Replit",
+        "Poolside",
+        "Magic AI",
+        "Microsoft",
+        "Anthropic"
+      ],
+      "signals": [
+        "AI writes 35% of all new code at Fortune 500",
+        "Replit Agent builds full apps from prompts",
+        "Magic AI achieves 100M token context",
+        "Developer productivity gains of 5-10x reported"
+      ]
+    },
+    {
+      "id": "trend-010",
+      "name": "Edge AI Proliferation",
+      "direction": "rising",
+      "velocity": "+35%",
+      "period": "30d",
+      "description": "On-device AI inference is becoming standard across smartphones, vehicles, and IoT devices. Apple Intelligence, Qualcomm AI Engine, and MediaTek NPUs are bringing powerful AI to the edge.",
+      "category": "Hardware",
+      "trendData": [
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        68,
+        72,
+        76,
+        80,
+        84
+      ],
+      "relatedEntities": [
+        "Apple",
+        "NVIDIA",
+        "Google DeepMind",
+        "Tesla"
+      ],
+      "signals": [
+        "Apple Intelligence on 1.5B devices",
+        "On-device LLMs exceed 7B parameters",
+        "Edge AI chip market growing 42% CAGR",
+        "Privacy regulations driving on-device processing"
+      ]
+    },
+    {
+      "id": "trend-011",
+      "name": "Video Generation Quality Leap",
+      "direction": "rising",
+      "velocity": "+68%",
+      "period": "30d",
+      "description": "AI video generation models are approaching cinematic quality with temporal consistency and physics understanding. Hollywood studios are integrating these tools into production pipelines for VFX and pre-visualization.",
+      "category": "Creative AI",
+      "trendData": [
+        14,
+        20,
+        28,
+        36,
+        44,
+        52,
+        60,
+        66,
+        74,
+        82,
+        90,
+        96
+      ],
+      "relatedEntities": [
+        "Runway",
+        "Midjourney",
+        "OpenAI",
+        "Meta AI",
+        "Google DeepMind"
+      ],
+      "signals": [
+        "Runway Gen-3 passes Turing test for short clips",
+        "Major studios adopt AI pre-visualization",
+        "Video generation cost drops 95% in 12 months",
+        "First AI-generated Super Bowl ad airs"
+      ]
+    },
+    {
+      "id": "trend-012",
+      "name": "Synthetic Biology Convergence",
+      "direction": "rising",
+      "velocity": "+32%",
+      "period": "30d",
+      "description": "AI and synthetic biology are converging to design novel proteins, organisms, and materials. AlphaFold 3 and generative biology models are accelerating drug discovery and creating new manufacturing paradigms.",
+      "category": "Biotechnology",
+      "trendData": [
+        22,
+        26,
+        30,
+        34,
+        38,
+        44,
+        50,
+        56,
+        62,
+        68,
+        74,
+        82
+      ],
+      "relatedEntities": [
+        "Google DeepMind",
+        "Recursion",
+        "Ginkgo Bioworks"
+      ],
+      "signals": [
+        "First fully AI-designed antibody in clinical trials",
+        "AI enzyme design achieves 95% plastic degradation",
+        "Synbio market reaches $28B",
+        "Bio-manufacturing scales to industrial production"
+      ]
+    }
+  ],
+  "sampleReports": [
+    {
+      "id": "report-001",
+      "title": "AI Infrastructure Arms Race: GPU Alternatives & Custom Silicon",
+      "topic": "AI Hardware Competition",
+      "reportType": "full_report",
+      "depth": "comprehensive",
+      "status": "completed",
+      "generatedAt": "2026-05-28T10:30:00Z",
+      "processingTimeMs": 14200,
+      "executiveSummary": "The AI inference hardware market is undergoing a fundamental disruption as custom silicon startups demonstrate 10-100x cost/performance improvements over NVIDIA GPUs. NVIDIA retains dominance in training but faces mounting competition in inference, which represents 60% of total AI compute spend. We assess high probability that the inference market will fragment significantly within 18 months.",
+      "keyFindings": [
+        "Groq LPU achieves 10x lower cost-per-token vs. H100 for inference workloads",
+        "AWS, Microsoft, and Google are all testing non-NVIDIA chips for inference internally",
+        "NVIDIA's inference market share declined from 95% to 82% in 12 months",
+        "Custom silicon startups raised $4.2B in 2025, up 280% year-over-year",
+        "Cerebras Wafer Scale Engine shows 5x training efficiency for models under 70B parameters",
+        "Total addressable market for AI inference hardware projected at $85B by 2028"
+      ],
+      "content": "## Market Overview\n\nThe AI compute infrastructure market has entered a period of unprecedented disruption. While NVIDIA has dominated AI hardware for the past decade with its GPU-based architecture, a new generation of purpose-built AI chips is challenging this hegemony — particularly in the critical inference segment.\n\nThe inference market, which accounts for approximately 60% of total AI compute spending, is fundamentally different from training. Inference workloads are latency-sensitive, cost-conscious, and increasingly standardized around transformer architectures. These characteristics create an opening for specialized hardware that can outperform general-purpose GPUs on specific workloads.\n\n## Key Disruptors\n\n**Groq** has emerged as the most visible challenger with its Language Processing Unit (LPU) architecture. Independent benchmarks confirm Groq's claims of 10x lower cost-per-token compared to NVIDIA H100 for inference workloads. The deterministic scheduling approach eliminates the memory bandwidth bottleneck that constrains GPU inference performance.\n\n**Cerebras** takes a radically different approach with its Wafer Scale Engine — the world's largest chip at 46,225 mm². For training workloads under 70B parameters, Cerebras demonstrates 5x efficiency improvements by eliminating inter-chip communication overhead.\n\n**Etched**, a newer entrant, has designed an ASIC specifically optimized for transformer inference, claiming 10x performance over H100 at a fraction of the power consumption.\n\n## Hyperscaler Response\n\nAll three major cloud providers are actively hedging against NVIDIA dependency:\n\n- **Amazon AWS** has accelerated Trainium2 development and is testing Groq chips for select inference workloads\n- **Microsoft** is deploying its custom Maia AI accelerator in Azure data centers and evaluating Cerebras for research workloads\n- **Google** continues to expand TPU capacity, with TPU v6 closing the performance gap with H100 for training\n\n## NVIDIA's Strategic Position\n\nNVIDIA retains critical advantages in training infrastructure, developer ecosystem (CUDA), and full-stack integration (networking, software, hardware). The Blackwell Ultra architecture maintains training leadership, and NVIDIA's inference optimizations (TensorRT-LLM) continue to improve GPU inference economics.\n\nHowever, the company faces structural headwinds as inference grows faster than training and specialized architectures prove superior for standardized workloads. We project NVIDIA's inference market share will decline to 65-70% by 2028.\n\n## Investment Implications\n\nThe AI hardware landscape is bifurcating: NVIDIA dominates training, but inference is fragmenting. Investors should consider:\n\n1. Custom silicon startups (Groq, Cerebras, Etched) as potential high-growth positions\n2. NVIDIA's moat is narrowing in inference but remains deep in training\n3. Cloud providers with strong custom silicon programs (Google, Amazon) gain strategic advantage\n4. The total AI compute market is large enough for multiple winners\n\n## Risk Factors\n\nKey risks to this thesis include: NVIDIA's aggressive inference optimization roadmap, potential consolidation among custom silicon startups, and the possibility that next-generation architectures (beyond transformers) may favor GPU flexibility over specialized hardware.\n\n## Conclusion\n\nThe AI infrastructure arms race is entering its most dynamic phase. While NVIDIA remains the dominant force, the emergence of viable alternatives in inference computing represents a structural shift that will reshape the competitive landscape over the next 18-36 months. Organizations should begin diversifying their AI compute strategies to capture cost and performance advantages from specialized hardware."
+    },
+    {
+      "id": "report-002",
+      "title": "Humanoid Robotics: From Lab to Factory Floor",
+      "topic": "Robotics Commercialization",
+      "reportType": "market_analysis",
+      "depth": "comprehensive",
+      "status": "completed",
+      "generatedAt": "2026-05-27T15:45:00Z",
+      "processingTimeMs": 18400,
+      "executiveSummary": "The humanoid robotics industry has reached a critical inflection point with multiple companies simultaneously achieving commercial deployment milestones. Figure AI's BMW factory deployment, Tesla Optimus Gen-3 achieving human-level dexterity, and foundation models enabling rapid skill transfer collectively signal the beginning of a $154B market by 2030. First-mover advantage in manufacturing partnerships will determine market leaders.",
+      "keyFindings": [
+        "Figure AI deploys 50 humanoid robots at BMW Spartanburg with 94% task completion rate",
+        "Tesla Optimus Gen-3 scores 92% on YCB dexterity benchmark, approaching human-level",
+        "Foundation models for robotics enable zero-shot task generalization across environments",
+        "Global humanoid robot market projected at $154B by 2030 (from $3B in 2025)",
+        "Amazon, FedEx, and DHL all running humanoid robot pilot programs in warehouses",
+        "Robot unit economics reaching viability: $30K-50K per unit vs. $45K annual labor cost"
+      ],
+      "content": "## The Inflection Point\n\nAfter decades of incremental progress, humanoid robotics has reached its ChatGPT moment. The convergence of three technological breakthroughs — advanced actuators, foundation models for robotics, and efficient power systems — has made general-purpose humanoid robots commercially viable for the first time.\n\n## Current State of Deployment\n\n**Figure AI** leads commercial deployment with 50 humanoid robots operating alongside human workers at BMW's Spartanburg, South Carolina plant. The robots perform repetitive assembly tasks with a 94% task completion rate, and Figure reports that the units are operating at approximately 40% of human worker speed — a figure the company expects to double within 12 months.\n\n**Tesla's Optimus** Gen-3 prototype has achieved a 92% score on the Yale-Columbia-Berkeley (YCB) object manipulation benchmark, approaching human-level performance on fine motor tasks. Tesla plans initial factory deployment at its Austin Gigafactory in Q4 2026.\n\n**1X Technologies** (formerly Halodi Robotics) has deployed its EVE android in security and concierge roles across 30 commercial properties in Norway, demonstrating the viability of service-oriented humanoid applications.\n\n## Foundation Models as the Catalyst\n\nThe single most important development enabling humanoid robot commercialization is the emergence of foundation models for robotics. These large-scale vision-language-action models, trained on diverse datasets of robot interactions, enable:\n\n- **Zero-shot task generalization**: Robots can attempt tasks they've never been specifically trained for\n- **Natural language instruction**: Workers can direct robots using conversational commands\n- **Rapid skill transfer**: Skills learned in one environment transfer to others with minimal adaptation\n\nNVIDIA's Project GR00T and Google DeepMind's RT-X are the leading foundation model frameworks, with OpenAI's investment in Figure AI providing additional vision-language capabilities.\n\n## Market Opportunity\n\nThe addressable market for humanoid robots spans multiple sectors:\n\n| Sector | Market Size (2030) | Key Use Cases |\n|--------|-------------------|---------------|\n| Manufacturing | $62B | Assembly, quality inspection, material handling |\n| Warehousing | $38B | Pick-and-pack, inventory management, loading |\n| Healthcare | $24B | Patient mobility, supply delivery, sanitation |\n| Retail/Hospitality | $18B | Customer service, stocking, cleaning |\n| Construction | $12B | Site preparation, material transport, inspection |\n\n## Competitive Landscape\n\nThe humanoid robotics market is consolidating around five major players, each with distinct strategic positioning. Figure AI leads on commercial deployment velocity, Tesla on manufacturing scale and cost reduction, and Boston Dynamics on dynamic mobility and robustness.\n\n## Investment Implications\n\nWe identify humanoid robotics as one of the highest-conviction investment themes for the next decade. The market dynamics mirror early automotive industry patterns — high initial capital requirements, rapid technology improvement, and massive total addressable market.\n\nEarly indicators of market winners include: manufacturing partnership volume, foundation model capability, and unit cost trajectory. Figure AI, Tesla, and 1X Technologies currently lead on these metrics."
+    },
+    {
+      "id": "report-003",
+      "title": "European AI Sovereignty: Strategic Implications",
+      "topic": "Geopolitical AI Strategy",
+      "reportType": "executive_summary",
+      "depth": "standard",
+      "status": "completed",
+      "generatedAt": "2026-05-26T09:00:00Z",
+      "processingTimeMs": 8600,
+      "executiveSummary": "The EU Digital Sovereignty Act and coordinated Franco-German AI investment represent a structural shift in global AI competition. European AI champions — Mistral AI, Aleph Alpha — are positioned to capture a $25-40B captive government and enterprise market. US AI companies face increasing regulatory barriers to European government deployments.",
+      "keyFindings": [
+        "EU Digital Sovereignty Act mandates EU-hosted AI for all government operations by 2028",
+        "France and Germany jointly pledge €8B for sovereign AI compute infrastructure",
+        "Mistral AI and Aleph Alpha positioned as primary beneficiaries of EU procurement",
+        "US AI companies face GDPR, AI Act, and sovereignty regulations creating triple barrier",
+        "European AI market projected at $25-40B by 2029 with sovereignty premium pricing",
+        "UK post-Brexit pursuing independent AI strategy with £4B investment package"
+      ],
+      "content": "## Strategic Overview\n\nEurope is making its most consequential bet on technological sovereignty since Airbus. The proposed EU Digital Sovereignty Act, combined with €8B+ in Franco-German AI investment, signals a fundamental restructuring of how AI is procured and deployed across the continent.\n\n## Regulatory Framework\n\nThe Digital Sovereignty Act builds on the existing AI Act framework to mandate that all EU government agencies — from defense to healthcare to municipal services — must use AI systems trained and hosted within EU borders by 2028. This creates a massive captive market for European AI providers while erecting significant barriers for US competitors.\n\n## Beneficiaries\n\n**Mistral AI** (Paris) is the clear frontrunner, with its open-weight models already deployed across multiple French government agencies. The company's lean architecture and European data compliance give it a structural advantage.\n\n**Aleph Alpha** (Heidelberg) focuses on sovereign AI for defense and critical infrastructure, with existing contracts across German intelligence services. The company emphasizes data sovereignty and auditability as core differentiators.\n\n## Impact on US Companies\n\nOpenAI, Anthropic, and Google face a challenging European landscape. While they can continue to serve European enterprises, government and critical infrastructure contracts — the highest-margin segments — will increasingly flow to European champions. Microsoft's Azure sovereign cloud offerings may provide a partial workaround, but the trend is clear.\n\n## UK Strategy\n\nPost-Brexit Britain is pursuing an independent AI strategy, investing £4B in compute infrastructure and positioning London as a global AI research hub. The UK's approach is more open than the EU's, welcoming US AI companies while building domestic capabilities through DeepMind and domestic startups.\n\n## Implications\n\nThe AI sovereignty movement represents a permanent fragmentation of the global AI market. Companies and investors should prepare for a multipolar AI landscape with distinct regulatory regimes, procurement preferences, and competitive dynamics across US, EU, UK, China, and emerging markets."
+    },
+    {
+      "id": "report-004",
+      "title": "AI Agent Economy: Competitive Analysis",
+      "topic": "AI Agents Market",
+      "reportType": "competitive_analysis",
+      "depth": "comprehensive",
+      "status": "completed",
+      "generatedAt": "2026-05-25T14:20:00Z",
+      "processingTimeMs": 22100,
+      "executiveSummary": "The AI agent market has emerged as the fastest-growing enterprise software category in history, with $12B raised in H1 2026 alone. Three platform approaches are competing: integrated (OpenAI/Microsoft), modular (Anthropic/LangChain), and vertical (domain-specific startups). We assess that platform dynamics will consolidate the market around 3-4 major ecosystems within 24 months.",
+      "keyFindings": [
+        "AI agent startups raised $12B in H1 2026 — fastest-growing enterprise category",
+        "Enterprise AI agent adoption jumped from 8% to 35% in 12 months",
+        "Three platform architectures competing: integrated, modular, and vertical",
+        "Average enterprise deploys 4.2 distinct agent systems across departments",
+        "AI agents achieving 5-10x productivity gains in software engineering and customer ops",
+        "Platform lock-in dynamics forming — tool/memory ecosystems creating switching costs"
+      ],
+      "content": "## Market Dynamics\n\nThe AI agent market has transitioned from experimental to essential in record time. Enterprise adoption of autonomous AI agents — systems that can plan, reason, use tools, and complete multi-step tasks — has grown from 8% to 35% of Fortune 500 companies in just 12 months.\n\n## Competitive Framework\n\nThree distinct platform architectures are competing for market dominance:\n\n### 1. Integrated Platforms (OpenAI + Microsoft)\nOpenAI's agent platform, deeply integrated with Microsoft 365 and Azure, offers the most seamless enterprise experience. Copilot Studio enables organizations to build custom agents that operate across the entire Microsoft ecosystem.\n\n**Strengths**: Distribution through Microsoft's enterprise relationships, unified platform, strong model capabilities.\n**Weaknesses**: Vendor lock-in concerns, pricing premium, limited customization depth.\n\n### 2. Modular Platforms (Anthropic + Ecosystem)\nAnthropic's Claude-based agent framework emphasizes composability, safety, and transparency. The MCP (Model Context Protocol) ecosystem enables integration with thousands of tools and data sources.\n\n**Strengths**: Safety guarantees, tool flexibility, strong developer community, transparent reasoning.\n**Weaknesses**: Requires more integration effort, smaller enterprise sales team, younger ecosystem.\n\n### 3. Vertical Platforms (Domain-Specific)\nSpecialized agent platforms targeting specific domains — coding (Replit, Poolside), customer service (Sierra), legal (Harvey), healthcare (Hippocratic AI) — offer deeper domain expertise.\n\n**Strengths**: Superior domain performance, faster time-to-value, industry-specific compliance.\n**Weaknesses**: Limited scope, fragmentation risk, potential acquisition targets.\n\n## Deployment Patterns\n\nEnterprise agent deployment follows a consistent pattern:\n1. **Pilot** (Month 1-3): Single department, supervised agent with human approval gates\n2. **Expansion** (Month 4-8): Multi-department deployment, reduced supervision\n3. **Autonomy** (Month 9-12): Full autonomous operation with exception-based human oversight\n4. **Integration** (Month 12+): Multi-agent orchestration across business processes\n\n## Productivity Impact\n\nIndependent studies confirm significant productivity gains from agent deployment:\n- **Software Engineering**: 5-10x faster feature development with AI coding agents\n- **Customer Operations**: 78% of tier-1 support resolved autonomously\n- **Data Analysis**: Complex analyses completed in minutes vs. days\n- **Content Creation**: Marketing content production increased 8x\n\n## Market Forecast\n\nWe project the enterprise AI agent market will reach $45-70B by 2028, growing at 180% CAGR from 2025. Platform dynamics suggest consolidation around 3-4 major ecosystems, with vertical specialists persisting in regulated industries.\n\n## Strategic Recommendations\n\nOrganizations should: (1) Begin agent pilot programs immediately to build internal expertise, (2) Evaluate platform lock-in implications before committing to an ecosystem, (3) Prioritize agent deployments in high-value, repetitive workflows, and (4) Establish AI agent governance frameworks before scaling."
+    },
+    {
+      "id": "report-005",
+      "title": "Defense Tech Renaissance: Autonomous Systems & AI",
+      "topic": "Defense Technology",
+      "reportType": "full_report",
+      "depth": "comprehensive",
+      "status": "processing",
+      "generatedAt": "2026-05-29T08:00:00Z",
+      "processingTimeMs": null,
+      "executiveSummary": "NATO and Five Eyes nations are executing the largest military modernization since the Cold War, centered on autonomous systems and AI. Defense AI procurement has grown 340% year-over-year, with Anduril, Palantir, and Shield AI emerging as the primary beneficiaries. We assess this represents a sustained multi-decade spending cycle.",
+      "keyFindings": [
+        "NATO AI defense procurement budget increased 340% year-over-year to $18B",
+        "Pentagon Replicator initiative orders 10,000 autonomous drones",
+        "Anduril wins $3.2B counter-UAS contract — largest autonomous defense deal ever",
+        "Palantir AIP being mandated across multiple DoD programs",
+        "Traditional defense primes (Lockheed, Raytheon) losing share to tech-native companies",
+        "Five Eyes nations coordinate on common autonomous systems interoperability standards"
+      ],
+      "content": "## The New Defense Paradigm\n\nThe global defense landscape is undergoing its most significant transformation since the advent of precision-guided munitions. Recent conflicts have demonstrated that autonomous systems — drones, AI-powered surveillance, and algorithmic command and control — are not future concepts but present necessities.\n\n## Spending Trajectory\n\nNATO AI defense spending has reached $18B annually, growing 340% year-over-year. The US accounts for approximately 60% of this spending, with the UK, France, and Australia as the next largest contributors.\n\nThe Pentagon's Replicator initiative — designed to field autonomous systems at scale and speed — has placed orders for 10,000+ AI-powered drones from Anduril and Shield AI. This initiative represents a fundamental shift in DoD procurement philosophy: speed and software over traditional hardware programs.\n\n## Key Players\n\n**Anduril Industries** has established itself as the dominant new-generation defense technology company. The $3.2B counter-UAS contract for Indo-Pacific Command is the largest autonomous defense deal in history. Anduril's Lattice OS provides the software backbone for autonomous multi-domain operations.\n\n**Palantir Technologies** has seen its government contract win rate climb to 87%, with AIP (Artificial Intelligence Platform) being mandated as the standard AI platform across multiple DoD programs. Palantir's ability to deploy LLMs in classified environments gives it a unique competitive advantage.\n\n**Scale AI** provides the critical data infrastructure for defense AI, supplying training data, evaluation, and RLHF services for classified AI systems. Its partnership with Anduril and Palantir creates a powerful defense AI value chain.\n\n## Disruption of Traditional Primes\n\nTraditional defense contractors (Lockheed Martin, Raytheon, Northrop Grumman) are facing disruption from technology-native companies. The software-defined nature of modern defense systems favors companies with deep AI expertise over those with traditional hardware manufacturing capabilities.\n\n## Geopolitical Context\n\nThe defense AI surge is driven by several factors: the demonstrated effectiveness of drones in recent conflicts, growing tensions in the Indo-Pacific, and the recognition that AI superiority will determine military outcomes. China's parallel $40B national AI compute plan adds urgency to Western spending.\n\n## Outlook\n\nWe assess this as a sustained multi-decade spending cycle, similar to the Cold War defense buildup. Companies positioned at the intersection of AI, autonomy, and defense will benefit from predictable, growing government spending for the foreseeable future."
+    }
+  ],
+  "graphNodes": [
+    {
+      "id": "n-openai",
+      "name": "OpenAI",
+      "type": "company",
+      "properties": {
+        "valuation": 300000000000,
+        "employees": 3400,
+        "momentum": 0.97,
+        "stage": "late"
+      },
+      "size": 48
+    },
+    {
+      "id": "n-nvidia",
+      "name": "NVIDIA",
+      "type": "company",
+      "properties": {
+        "valuation": 3400000000000,
+        "employees": 32000,
+        "momentum": 0.96,
+        "stage": "public"
+      },
+      "size": 50
+    },
+    {
+      "id": "n-deepmind",
+      "name": "Google DeepMind",
+      "type": "company",
+      "properties": {
+        "employees": 4200,
+        "momentum": 0.93,
+        "stage": "public"
+      },
+      "size": 44
+    },
+    {
+      "id": "n-anthropic",
+      "name": "Anthropic",
+      "type": "company",
+      "properties": {
+        "valuation": 175000000000,
+        "employees": 1800,
+        "momentum": 0.95,
+        "stage": "late"
+      },
+      "size": 46
+    },
+    {
+      "id": "n-microsoft",
+      "name": "Microsoft",
+      "type": "company",
+      "properties": {
+        "valuation": 3100000000000,
+        "employees": 228000,
+        "momentum": 0.88,
+        "stage": "public"
+      },
+      "size": 50
+    },
+    {
+      "id": "n-tesla",
+      "name": "Tesla",
+      "type": "company",
+      "properties": {
+        "valuation": 1200000000000,
+        "employees": 140000,
+        "momentum": 0.84,
+        "stage": "public"
+      },
+      "size": 42
+    },
+    {
+      "id": "n-spacex",
+      "name": "SpaceX",
+      "type": "company",
+      "properties": {
+        "valuation": 350000000000,
+        "employees": 14000,
+        "momentum": 0.91,
+        "stage": "late"
+      },
+      "size": 44
+    },
+    {
+      "id": "n-meta",
+      "name": "Meta AI",
+      "type": "company",
+      "properties": {
+        "employees": 5500,
+        "momentum": 0.87,
+        "stage": "public"
+      },
+      "size": 42
+    },
+    {
+      "id": "n-apple",
+      "name": "Apple",
+      "type": "company",
+      "properties": {
+        "valuation": 3600000000000,
+        "employees": 164000,
+        "momentum": 0.82,
+        "stage": "public"
+      },
+      "size": 44
+    },
+    {
+      "id": "n-aws",
+      "name": "Amazon AWS",
+      "type": "company",
+      "properties": {
+        "revenue": 110000000000,
+        "employees": 85000,
+        "momentum": 0.86,
+        "stage": "public"
+      },
+      "size": 44
+    },
+    {
+      "id": "n-palantir",
+      "name": "Palantir",
+      "type": "company",
+      "properties": {
+        "valuation": 250000000000,
+        "employees": 4200,
+        "momentum": 0.89,
+        "stage": "public"
+      },
+      "size": 38
+    },
+    {
+      "id": "n-crowdstrike",
+      "name": "CrowdStrike",
+      "type": "company",
+      "properties": {
+        "valuation": 95000000000,
+        "employees": 9200,
+        "momentum": 0.81,
+        "stage": "public"
+      },
+      "size": 34
+    },
+    {
+      "id": "n-databricks",
+      "name": "Databricks",
+      "type": "company",
+      "properties": {
+        "valuation": 62000000000,
+        "employees": 7800,
+        "momentum": 0.85,
+        "stage": "late"
+      },
+      "size": 36
+    },
+    {
+      "id": "n-scaleai",
+      "name": "Scale AI",
+      "type": "company",
+      "properties": {
+        "valuation": 14000000000,
+        "employees": 1200,
+        "momentum": 0.83,
+        "stage": "late"
+      },
+      "size": 30
+    },
+    {
+      "id": "n-anduril",
+      "name": "Anduril",
+      "type": "company",
+      "properties": {
+        "valuation": 28000000000,
+        "employees": 3800,
+        "momentum": 0.9,
+        "stage": "late"
+      },
+      "size": 36
+    },
+    {
+      "id": "n-mistral",
+      "name": "Mistral AI",
+      "type": "company",
+      "properties": {
+        "valuation": 6200000000,
+        "employees": 85,
+        "momentum": 0.88,
+        "stage": "growth"
+      },
+      "size": 32
+    },
+    {
+      "id": "n-cohere",
+      "name": "Cohere",
+      "type": "company",
+      "properties": {
+        "valuation": 5500000000,
+        "employees": 550,
+        "momentum": 0.78,
+        "stage": "growth"
+      },
+      "size": 28
+    },
+    {
+      "id": "n-inflection",
+      "name": "Inflection AI",
+      "type": "company",
+      "properties": {
+        "valuation": 4000000000,
+        "employees": 200,
+        "momentum": 0.52,
+        "stage": "growth"
+      },
+      "size": 22
+    },
+    {
+      "id": "n-groq",
+      "name": "Groq",
+      "type": "startup",
+      "properties": {
+        "valuation": 2800000000,
+        "sector": "AI Infrastructure",
+        "momentum": 0.91
+      },
+      "size": 30
+    },
+    {
+      "id": "n-cerebras",
+      "name": "Cerebras",
+      "type": "startup",
+      "properties": {
+        "valuation": 4200000000,
+        "sector": "AI Infrastructure",
+        "momentum": 0.84
+      },
+      "size": 28
+    },
+    {
+      "id": "n-together",
+      "name": "Together AI",
+      "type": "startup",
+      "properties": {
+        "valuation": 3300000000,
+        "sector": "AI Infrastructure",
+        "momentum": 0.87
+      },
+      "size": 26
+    },
+    {
+      "id": "n-runway",
+      "name": "Runway",
+      "type": "startup",
+      "properties": {
+        "valuation": 4000000000,
+        "sector": "Creative AI",
+        "momentum": 0.86
+      },
+      "size": 28
+    },
+    {
+      "id": "n-midjourney",
+      "name": "Midjourney",
+      "type": "startup",
+      "properties": {
+        "valuation": 10000000000,
+        "sector": "Creative AI",
+        "momentum": 0.82
+      },
+      "size": 30
+    },
+    {
+      "id": "n-perplexity",
+      "name": "Perplexity",
+      "type": "startup",
+      "properties": {
+        "valuation": 9000000000,
+        "sector": "AI Applications",
+        "momentum": 0.93
+      },
+      "size": 32
+    },
+    {
+      "id": "n-characterai",
+      "name": "Character.AI",
+      "type": "startup",
+      "properties": {
+        "valuation": 5000000000,
+        "sector": "Consumer AI",
+        "momentum": 0.74
+      },
+      "size": 24
+    },
+    {
+      "id": "n-figureai",
+      "name": "Figure AI",
+      "type": "startup",
+      "properties": {
+        "valuation": 2600000000,
+        "sector": "Robotics",
+        "momentum": 0.94
+      },
+      "size": 32
+    },
+    {
+      "id": "n-wayve",
+      "name": "Wayve",
+      "type": "startup",
+      "properties": {
+        "valuation": 4500000000,
+        "sector": "Autonomous Vehicles",
+        "momentum": 0.85
+      },
+      "size": 26
+    },
+    {
+      "id": "n-alephalpha",
+      "name": "Aleph Alpha",
+      "type": "startup",
+      "properties": {
+        "valuation": 2200000000,
+        "sector": "Enterprise AI",
+        "momentum": 0.72
+      },
+      "size": 22
+    },
+    {
+      "id": "n-sakana",
+      "name": "Sakana AI",
+      "type": "startup",
+      "properties": {
+        "valuation": 1500000000,
+        "sector": "AI Research",
+        "momentum": 0.8
+      },
+      "size": 22
+    },
+    {
+      "id": "n-poolside",
+      "name": "Poolside",
+      "type": "startup",
+      "properties": {
+        "valuation": 3000000000,
+        "sector": "Developer Tools",
+        "momentum": 0.88
+      },
+      "size": 26
+    },
+    {
+      "id": "n-magicai",
+      "name": "Magic AI",
+      "type": "startup",
+      "properties": {
+        "valuation": 2500000000,
+        "sector": "AI Research",
+        "momentum": 0.83
+      },
+      "size": 24
+    },
+    {
+      "id": "n-replit",
+      "name": "Replit",
+      "type": "startup",
+      "properties": {
+        "valuation": 2000000000,
+        "sector": "Developer Tools",
+        "momentum": 0.81
+      },
+      "size": 24
+    },
+    {
+      "id": "n-genai",
+      "name": "Generative AI",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.78,
+        "adoption": 67.5
+      },
+      "size": 40
+    },
+    {
+      "id": "n-quantum",
+      "name": "Quantum Computing",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.35,
+        "adoption": 4.2
+      },
+      "size": 28
+    },
+    {
+      "id": "n-fusion",
+      "name": "Nuclear Fusion",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.22,
+        "adoption": 0.1
+      },
+      "size": 24
+    },
+    {
+      "id": "n-bci",
+      "name": "Brain-Computer Interface",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.28,
+        "adoption": 0.3
+      },
+      "size": 22
+    },
+    {
+      "id": "n-av",
+      "name": "Autonomous Vehicles",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.62,
+        "adoption": 8.5
+      },
+      "size": 32
+    },
+    {
+      "id": "n-robotics",
+      "name": "Robotics",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.52,
+        "adoption": 14.2
+      },
+      "size": 34
+    },
+    {
+      "id": "n-edgeai",
+      "name": "Edge AI",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.65,
+        "adoption": 32.1
+      },
+      "size": 30
+    },
+    {
+      "id": "n-xr",
+      "name": "AR/VR Spatial Computing",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.48,
+        "adoption": 12.8
+      },
+      "size": 26
+    },
+    {
+      "id": "n-agents",
+      "name": "AI Agents",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.45,
+        "adoption": 18.4
+      },
+      "size": 36
+    },
+    {
+      "id": "n-synbio",
+      "name": "Synthetic Biology",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.42,
+        "adoption": 6.8
+      },
+      "size": 24
+    },
+    {
+      "id": "n-neuromorphic",
+      "name": "Neuromorphic Computing",
+      "type": "technology",
+      "properties": {
+        "maturity": 0.2,
+        "adoption": 1.2
+      },
+      "size": 18
+    },
+    {
+      "id": "n-usa",
+      "name": "USA",
+      "type": "country",
+      "properties": {
+        "aiSpending": 120000000000,
+        "aiCompanies": 14000,
+        "policy": "Open innovation + defense"
+      },
+      "size": 44
+    },
+    {
+      "id": "n-china",
+      "name": "China",
+      "type": "country",
+      "properties": {
+        "aiSpending": 55000000000,
+        "aiCompanies": 6500,
+        "policy": "State-directed AI development"
+      },
+      "size": 40
+    },
+    {
+      "id": "n-uk",
+      "name": "UK",
+      "type": "country",
+      "properties": {
+        "aiSpending": 12000000000,
+        "aiCompanies": 3200,
+        "policy": "Research hub + light regulation"
+      },
+      "size": 32
+    },
+    {
+      "id": "n-germany",
+      "name": "Germany",
+      "type": "country",
+      "properties": {
+        "aiSpending": 8000000000,
+        "aiCompanies": 1800,
+        "policy": "Industrial AI + sovereignty"
+      },
+      "size": 28
+    },
+    {
+      "id": "n-japan",
+      "name": "Japan",
+      "type": "country",
+      "properties": {
+        "aiSpending": 15000000000,
+        "aiCompanies": 1200,
+        "policy": "AI semiconductor sovereignty"
+      },
+      "size": 30
+    },
+    {
+      "id": "n-india",
+      "name": "India",
+      "type": "country",
+      "properties": {
+        "aiSpending": 4000000000,
+        "aiCompanies": 3600,
+        "policy": "AI talent + services hub"
+      },
+      "size": 28
+    },
+    {
+      "id": "n-france",
+      "name": "France",
+      "type": "country",
+      "properties": {
+        "aiSpending": 7000000000,
+        "aiCompanies": 1400,
+        "policy": "Sovereign AI champion"
+      },
+      "size": 28
+    },
+    {
+      "id": "n-israel",
+      "name": "Israel",
+      "type": "country",
+      "properties": {
+        "aiSpending": 3000000000,
+        "aiCompanies": 2100,
+        "policy": "Defense AI innovation"
+      },
+      "size": 24
+    },
+    {
+      "id": "n-uae",
+      "name": "UAE",
+      "type": "country",
+      "properties": {
+        "aiSpending": 5000000000,
+        "aiCompanies": 600,
+        "policy": "AI-first national strategy"
+      },
+      "size": 22
+    },
+    {
+      "id": "n-southkorea",
+      "name": "South Korea",
+      "type": "country",
+      "properties": {
+        "aiSpending": 6000000000,
+        "aiCompanies": 900,
+        "policy": "Semiconductor + AI convergence"
+      },
+      "size": 26
+    },
+    {
+      "id": "n-canada",
+      "name": "Canada",
+      "type": "country",
+      "properties": {
+        "aiSpending": 3500000000,
+        "aiCompanies": 1500,
+        "policy": "AI research + responsible AI"
+      },
+      "size": 24
+    },
+    {
+      "id": "n-singapore",
+      "name": "Singapore",
+      "type": "country",
+      "properties": {
+        "aiSpending": 2000000000,
+        "aiCompanies": 800,
+        "policy": "Smart nation + AI governance"
+      },
+      "size": 20
+    },
+    {
+      "id": "n-ev-blackwell",
+      "name": "NVIDIA Blackwell Ultra Sellout",
+      "type": "event",
+      "properties": {
+        "date": "2026-05-28",
+        "impact": "high",
+        "category": "Product"
+      },
+      "size": 18
+    },
+    {
+      "id": "n-ev-eusovereignty",
+      "name": "EU Digital Sovereignty Act",
+      "type": "event",
+      "properties": {
+        "date": "2026-05-27",
+        "impact": "critical",
+        "category": "Regulation"
+      },
+      "size": 22
+    },
+    {
+      "id": "n-ev-figuredeploy",
+      "name": "Figure AI BMW Deployment",
+      "type": "event",
+      "properties": {
+        "date": "2026-05-23",
+        "impact": "high",
+        "category": "Deployment"
+      },
+      "size": 18
+    },
+    {
+      "id": "n-ev-andurilcontract",
+      "name": "Anduril $3.2B Pentagon Contract",
+      "type": "event",
+      "properties": {
+        "date": "2026-05-25",
+        "impact": "critical",
+        "category": "Defense"
+      },
+      "size": 20
+    },
+    {
+      "id": "n-ev-quantumerror",
+      "name": "Quantum Error Correction Breakthrough",
+      "type": "event",
+      "properties": {
+        "date": "2026-05-21",
+        "impact": "high",
+        "category": "Research"
+      },
+      "size": 18
+    },
+    {
+      "id": "n-ev-fusionmilestone",
+      "name": "CFS SPARC Plasma Record",
+      "type": "event",
+      "properties": {
+        "date": "2026-05-21",
+        "impact": "high",
+        "category": "Energy"
+      },
+      "size": 16
+    },
+    {
+      "id": "n-ev-starshiprefuel",
+      "name": "Starship Orbital Refueling",
+      "type": "event",
+      "properties": {
+        "date": "2026-05-17",
+        "impact": "critical",
+        "category": "Space"
+      },
+      "size": 18
+    },
+    {
+      "id": "n-ev-chinaai",
+      "name": "China $40B AI Compute Plan",
+      "type": "event",
+      "properties": {
+        "date": "2026-05-09",
+        "impact": "critical",
+        "category": "Geopolitical"
+      },
+      "size": 20
+    }
+  ],
+  "graphEdges": [
+    {
+      "source": "n-openai",
+      "target": "n-microsoft",
+      "type": "PARTNERS",
+      "weight": 10
+    },
+    {
+      "source": "n-anthropic",
+      "target": "n-aws",
+      "type": "PARTNERS",
+      "weight": 9
+    },
+    {
+      "source": "n-anthropic",
+      "target": "n-deepmind",
+      "type": "COMPETES",
+      "weight": 8
+    },
+    {
+      "source": "n-openai",
+      "target": "n-figureai",
+      "type": "PARTNERS",
+      "weight": 7
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-openai",
+      "type": "PARTNERS",
+      "weight": 8
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-anthropic",
+      "type": "PARTNERS",
+      "weight": 6
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-deepmind",
+      "type": "PARTNERS",
+      "weight": 7
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-together",
+      "type": "PARTNERS",
+      "weight": 5
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-wayve",
+      "type": "PARTNERS",
+      "weight": 5
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-sakana",
+      "type": "PARTNERS",
+      "weight": 4
+    },
+    {
+      "source": "n-microsoft",
+      "target": "n-wayve",
+      "type": "PARTNERS",
+      "weight": 6
+    },
+    {
+      "source": "n-deepmind",
+      "target": "n-apple",
+      "type": "COMPETES",
+      "weight": 5
+    },
+    {
+      "source": "n-palantir",
+      "target": "n-anduril",
+      "type": "PARTNERS",
+      "weight": 7
+    },
+    {
+      "source": "n-palantir",
+      "target": "n-scaleai",
+      "type": "PARTNERS",
+      "weight": 6
+    },
+    {
+      "source": "n-anduril",
+      "target": "n-scaleai",
+      "type": "PARTNERS",
+      "weight": 5
+    },
+    {
+      "source": "n-databricks",
+      "target": "n-together",
+      "type": "PARTNERS",
+      "weight": 5
+    },
+    {
+      "source": "n-mistral",
+      "target": "n-alephalpha",
+      "type": "COMPETES",
+      "weight": 4
+    },
+    {
+      "source": "n-openai",
+      "target": "n-anthropic",
+      "type": "COMPETES",
+      "weight": 10
+    },
+    {
+      "source": "n-openai",
+      "target": "n-deepmind",
+      "type": "COMPETES",
+      "weight": 9
+    },
+    {
+      "source": "n-openai",
+      "target": "n-meta",
+      "type": "COMPETES",
+      "weight": 7
+    },
+    {
+      "source": "n-openai",
+      "target": "n-mistral",
+      "type": "COMPETES",
+      "weight": 6
+    },
+    {
+      "source": "n-groq",
+      "target": "n-nvidia",
+      "type": "COMPETES",
+      "weight": 8
+    },
+    {
+      "source": "n-cerebras",
+      "target": "n-nvidia",
+      "type": "COMPETES",
+      "weight": 7
+    },
+    {
+      "source": "n-groq",
+      "target": "n-cerebras",
+      "type": "COMPETES",
+      "weight": 6
+    },
+    {
+      "source": "n-perplexity",
+      "target": "n-deepmind",
+      "type": "COMPETES",
+      "weight": 5
+    },
+    {
+      "source": "n-figureai",
+      "target": "n-tesla",
+      "type": "COMPETES",
+      "weight": 8
+    },
+    {
+      "source": "n-runway",
+      "target": "n-midjourney",
+      "type": "COMPETES",
+      "weight": 7
+    },
+    {
+      "source": "n-microsoft",
+      "target": "n-aws",
+      "type": "COMPETES",
+      "weight": 9
+    },
+    {
+      "source": "n-microsoft",
+      "target": "n-deepmind",
+      "type": "COMPETES",
+      "weight": 7
+    },
+    {
+      "source": "n-crowdstrike",
+      "target": "n-palantir",
+      "type": "COMPETES",
+      "weight": 4
+    },
+    {
+      "source": "n-poolside",
+      "target": "n-magicai",
+      "type": "COMPETES",
+      "weight": 6
+    },
+    {
+      "source": "n-poolside",
+      "target": "n-replit",
+      "type": "COMPETES",
+      "weight": 5
+    },
+    {
+      "source": "n-cohere",
+      "target": "n-mistral",
+      "type": "COMPETES",
+      "weight": 5
+    },
+    {
+      "source": "n-together",
+      "target": "n-groq",
+      "type": "COMPETES",
+      "weight": 4
+    },
+    {
+      "source": "n-aws",
+      "target": "n-databricks",
+      "type": "COMPETES",
+      "weight": 5
+    },
+    {
+      "source": "n-microsoft",
+      "target": "n-openai",
+      "type": "FUNDS",
+      "weight": 10
+    },
+    {
+      "source": "n-aws",
+      "target": "n-anthropic",
+      "type": "FUNDS",
+      "weight": 9
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-perplexity",
+      "type": "FUNDS",
+      "weight": 5
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-figureai",
+      "type": "FUNDS",
+      "weight": 6
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-runway",
+      "type": "FUNDS",
+      "weight": 4
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-magicai",
+      "type": "FUNDS",
+      "weight": 4
+    },
+    {
+      "source": "n-microsoft",
+      "target": "n-figureai",
+      "type": "FUNDS",
+      "weight": 6
+    },
+    {
+      "source": "n-microsoft",
+      "target": "n-mistral",
+      "type": "FUNDS",
+      "weight": 5
+    },
+    {
+      "source": "n-deepmind",
+      "target": "n-characterai",
+      "type": "FUNDS",
+      "weight": 3
+    },
+    {
+      "source": "n-openai",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 10
+    },
+    {
+      "source": "n-openai",
+      "target": "n-agents",
+      "type": "DEVELOPS",
+      "weight": 9
+    },
+    {
+      "source": "n-anthropic",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 9
+    },
+    {
+      "source": "n-anthropic",
+      "target": "n-agents",
+      "type": "DEVELOPS",
+      "weight": 8
+    },
+    {
+      "source": "n-deepmind",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 9
+    },
+    {
+      "source": "n-deepmind",
+      "target": "n-quantum",
+      "type": "DEVELOPS",
+      "weight": 6
+    },
+    {
+      "source": "n-deepmind",
+      "target": "n-synbio",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-meta",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 8
+    },
+    {
+      "source": "n-meta",
+      "target": "n-xr",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-apple",
+      "target": "n-edgeai",
+      "type": "DEVELOPS",
+      "weight": 8
+    },
+    {
+      "source": "n-apple",
+      "target": "n-xr",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-tesla",
+      "target": "n-av",
+      "type": "DEVELOPS",
+      "weight": 9
+    },
+    {
+      "source": "n-tesla",
+      "target": "n-robotics",
+      "type": "DEVELOPS",
+      "weight": 8
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-edgeai",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-robotics",
+      "type": "DEVELOPS",
+      "weight": 6
+    },
+    {
+      "source": "n-figureai",
+      "target": "n-robotics",
+      "type": "DEVELOPS",
+      "weight": 10
+    },
+    {
+      "source": "n-wayve",
+      "target": "n-av",
+      "type": "DEVELOPS",
+      "weight": 9
+    },
+    {
+      "source": "n-runway",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-midjourney",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-groq",
+      "target": "n-edgeai",
+      "type": "DEVELOPS",
+      "weight": 5
+    },
+    {
+      "source": "n-cerebras",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 5
+    },
+    {
+      "source": "n-mistral",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 8
+    },
+    {
+      "source": "n-cohere",
+      "target": "n-genai",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-replit",
+      "target": "n-agents",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-poolside",
+      "target": "n-agents",
+      "type": "DEVELOPS",
+      "weight": 6
+    },
+    {
+      "source": "n-magicai",
+      "target": "n-agents",
+      "type": "DEVELOPS",
+      "weight": 6
+    },
+    {
+      "source": "n-anduril",
+      "target": "n-robotics",
+      "type": "DEVELOPS",
+      "weight": 7
+    },
+    {
+      "source": "n-crowdstrike",
+      "target": "n-agents",
+      "type": "DEVELOPS",
+      "weight": 5
+    },
+    {
+      "source": "n-perplexity",
+      "target": "n-genai",
+      "type": "USES",
+      "weight": 9
+    },
+    {
+      "source": "n-characterai",
+      "target": "n-genai",
+      "type": "USES",
+      "weight": 8
+    },
+    {
+      "source": "n-palantir",
+      "target": "n-genai",
+      "type": "USES",
+      "weight": 7
+    },
+    {
+      "source": "n-palantir",
+      "target": "n-agents",
+      "type": "USES",
+      "weight": 6
+    },
+    {
+      "source": "n-scaleai",
+      "target": "n-genai",
+      "type": "USES",
+      "weight": 8
+    },
+    {
+      "source": "n-databricks",
+      "target": "n-genai",
+      "type": "USES",
+      "weight": 7
+    },
+    {
+      "source": "n-together",
+      "target": "n-genai",
+      "type": "USES",
+      "weight": 8
+    },
+    {
+      "source": "n-sakana",
+      "target": "n-genai",
+      "type": "USES",
+      "weight": 6
+    },
+    {
+      "source": "n-alephalpha",
+      "target": "n-genai",
+      "type": "USES",
+      "weight": 7
+    },
+    {
+      "source": "n-openai",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-anthropic",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-microsoft",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-tesla",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-spacex",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-meta",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-apple",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-aws",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-palantir",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-crowdstrike",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-anduril",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-scaleai",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-databricks",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-groq",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-cerebras",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-together",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-perplexity",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-figureai",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-poolside",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-magicai",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-replit",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-runway",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-midjourney",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-characterai",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-inflection",
+      "target": "n-usa",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-deepmind",
+      "target": "n-uk",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-wayve",
+      "target": "n-uk",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-mistral",
+      "target": "n-france",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-alephalpha",
+      "target": "n-germany",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-sakana",
+      "target": "n-japan",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-cohere",
+      "target": "n-canada",
+      "type": "LOCATED_IN",
+      "weight": 5
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-ev-blackwell",
+      "type": "AFFECTED_BY",
+      "weight": 9
+    },
+    {
+      "source": "n-groq",
+      "target": "n-ev-blackwell",
+      "type": "AFFECTED_BY",
+      "weight": 6
+    },
+    {
+      "source": "n-cerebras",
+      "target": "n-ev-blackwell",
+      "type": "AFFECTED_BY",
+      "weight": 5
+    },
+    {
+      "source": "n-mistral",
+      "target": "n-ev-eusovereignty",
+      "type": "AFFECTED_BY",
+      "weight": 9
+    },
+    {
+      "source": "n-alephalpha",
+      "target": "n-ev-eusovereignty",
+      "type": "AFFECTED_BY",
+      "weight": 9
+    },
+    {
+      "source": "n-figureai",
+      "target": "n-ev-figuredeploy",
+      "type": "AFFECTED_BY",
+      "weight": 10
+    },
+    {
+      "source": "n-tesla",
+      "target": "n-ev-figuredeploy",
+      "type": "AFFECTED_BY",
+      "weight": 6
+    },
+    {
+      "source": "n-anduril",
+      "target": "n-ev-andurilcontract",
+      "type": "AFFECTED_BY",
+      "weight": 10
+    },
+    {
+      "source": "n-palantir",
+      "target": "n-ev-andurilcontract",
+      "type": "AFFECTED_BY",
+      "weight": 5
+    },
+    {
+      "source": "n-spacex",
+      "target": "n-ev-starshiprefuel",
+      "type": "AFFECTED_BY",
+      "weight": 10
+    },
+    {
+      "source": "n-nvidia",
+      "target": "n-ev-chinaai",
+      "type": "AFFECTED_BY",
+      "weight": 7
+    },
+    {
+      "source": "n-quantum",
+      "target": "n-ev-quantumerror",
+      "type": "AFFECTED_BY",
+      "weight": 9
+    },
+    {
+      "source": "n-deepmind",
+      "target": "n-ev-quantumerror",
+      "type": "AFFECTED_BY",
+      "weight": 6
+    },
+    {
+      "source": "n-fusion",
+      "target": "n-ev-fusionmilestone",
+      "type": "AFFECTED_BY",
+      "weight": 10
+    }
+  ]
+}

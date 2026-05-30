@@ -1,0 +1,149 @@
+// ─── GOD'S EYE X — Trends Mock Data ────────────────────────────────
+// 12 macro trends shaping the global intelligence landscape
+
+export const trends = [
+  {
+    id: 'trend-001',
+    name: 'AI Agent Autonomy Surge',
+    direction: 'rising',
+    velocity: '+120%',
+    period: '30d',
+    description: 'Autonomous AI agents are transitioning from demos to production deployments. Enterprise adoption of multi-step AI agents for engineering, operations, and customer service is accelerating faster than any prior software category.',
+    category: 'Artificial Intelligence',
+    trendData: [12, 18, 26, 35, 44, 53, 62, 71, 80, 88, 95, 100],
+    relatedEntities: ['OpenAI', 'Anthropic', 'Google DeepMind', 'Replit', 'Microsoft'],
+    signals: ['340% YoY enterprise deployment growth', '$12B raised by agent startups in H1 2026', 'Agent frameworks open-sourced by all major labs', 'Fortune 500 agent pilot programs tripled']
+  },
+  {
+    id: 'trend-002',
+    name: 'Custom Silicon Arms Race',
+    direction: 'rising',
+    velocity: '+85%',
+    period: '30d',
+    description: 'Every major cloud provider and AI lab is designing custom silicon to reduce NVIDIA dependency. Groq LPU, Google TPU, Amazon Trainium, and Microsoft Maia chips are reshaping the AI compute landscape.',
+    category: 'Hardware',
+    trendData: [20, 26, 32, 38, 44, 52, 60, 68, 74, 82, 90, 98],
+    relatedEntities: ['Groq', 'Cerebras', 'NVIDIA', 'Amazon AWS', 'Google DeepMind', 'Microsoft'],
+    signals: ['5 new AI chip startups funded monthly', 'AWS Trainium2 benchmark results competitive with H100', 'NVIDIA market share declining from 95% to 82%', 'Groq cloud launched with 90% cost reduction']
+  },
+  {
+    id: 'trend-003',
+    name: 'Humanoid Robot Commercialization',
+    direction: 'rising',
+    velocity: '+95%',
+    period: '30d',
+    description: 'General-purpose humanoid robots are moving from R&D to factory floors. Foundation models for robotics enable rapid skill transfer, making commercial deployment viable for the first time.',
+    category: 'Robotics',
+    trendData: [8, 14, 22, 30, 40, 50, 58, 66, 75, 84, 92, 100],
+    relatedEntities: ['Figure AI', 'Tesla', 'NVIDIA', 'Boston Dynamics'],
+    signals: ['BMW deploys 50 Figure 02 robots in factory', 'Tesla Optimus achieves human-level dexterity', '$154B projected market by 2030', 'Amazon testing humanoids in fulfillment centers']
+  },
+  {
+    id: 'trend-004',
+    name: 'AI Sovereignty Movement',
+    direction: 'rising',
+    velocity: '+65%',
+    period: '30d',
+    description: 'Nations are mandating domestic AI capabilities to reduce dependency on US technology giants. EU, Japan, India, and UAE are investing billions in sovereign AI compute and homegrown models.',
+    category: 'Geopolitical',
+    trendData: [15, 20, 26, 32, 38, 44, 50, 58, 66, 74, 82, 90],
+    relatedEntities: ['Mistral AI', 'Aleph Alpha', 'Sakana AI', 'France', 'Germany', 'Japan', 'UAE'],
+    signals: ['EU Digital Sovereignty Act drafted', 'Japan allocates $15B for AI chips', 'UAE launches Falcon 3 LLM initiative', 'India AI startup ecosystem triples']
+  },
+  {
+    id: 'trend-005',
+    name: 'Defense AI Procurement Boom',
+    direction: 'rising',
+    velocity: '+78%',
+    period: '30d',
+    description: 'Military spending on AI-powered autonomous systems and intelligence platforms is reaching unprecedented levels. NATO and Five Eyes nations are rapidly modernizing with AI-first defense strategies.',
+    category: 'Defense',
+    trendData: [22, 28, 34, 40, 48, 56, 62, 70, 78, 84, 92, 100],
+    relatedEntities: ['Anduril', 'Palantir', 'Scale AI', 'CrowdStrike', 'USA', 'UK'],
+    signals: ['NATO AI defense budget up 340% YoY', 'Pentagon Replicator orders 10K autonomous drones', 'Palantir government win rate hits 87%', 'Classified AI contract values exceed $20B']
+  },
+  {
+    id: 'trend-006',
+    name: 'Open Source AI Renaissance',
+    direction: 'rising',
+    velocity: '+55%',
+    period: '30d',
+    description: 'Open-source AI models are closing the gap with proprietary systems. Meta\'s LLaMA, Mistral\'s models, and community fine-tunes are enabling a distributed AI ecosystem that challenges closed-model dominance.',
+    category: 'Artificial Intelligence',
+    trendData: [28, 32, 38, 44, 50, 56, 62, 68, 74, 80, 86, 92],
+    relatedEntities: ['Meta AI', 'Mistral AI', 'Together AI', 'Databricks', 'Cohere'],
+    signals: ['LLaMA 4 matches GPT-4 on key benchmarks', 'Open model downloads exceed 500M monthly', 'Enterprise open-source AI adoption at 45%', 'EU favoring open-source for sovereignty']
+  },
+  {
+    id: 'trend-007',
+    name: 'AI-Native Cybersecurity',
+    direction: 'rising',
+    velocity: '+45%',
+    period: '30d',
+    description: 'AI-powered cyberattacks are overwhelming legacy security tools, driving rapid adoption of AI-native security platforms that can autonomously detect, investigate, and remediate threats in real-time.',
+    category: 'Cybersecurity',
+    trendData: [35, 39, 43, 48, 53, 58, 63, 68, 73, 78, 84, 90],
+    relatedEntities: ['CrowdStrike', 'Palantir', 'Microsoft', 'Google DeepMind'],
+    signals: ['AI phishing attacks up 1400% YoY', 'Autonomous incident resolution at 78%', 'Mean response time drops from hours to seconds', 'AI security market projected at $55B by 2028']
+  },
+  {
+    id: 'trend-008',
+    name: 'Fusion Energy Acceleration',
+    direction: 'rising',
+    velocity: '+45%',
+    period: '30d',
+    description: 'Private fusion energy companies are hitting milestones ahead of schedule. New superconductor materials and AI-optimized plasma control are compressing the timeline to commercial fusion by several years.',
+    category: 'Energy',
+    trendData: [10, 14, 18, 22, 28, 34, 40, 46, 54, 62, 70, 80],
+    relatedEntities: ['Commonwealth Fusion Systems', 'Helion Energy', 'Microsoft', 'OpenAI'],
+    signals: ['CFS SPARC achieves record plasma temps', 'Helion signs 1.5 GW in power purchase agreements', 'New HTS materials cut magnet costs 40%', 'Fusion startup funding exceeds $8B cumulative']
+  },
+  {
+    id: 'trend-009',
+    name: 'AI Developer Tools Explosion',
+    direction: 'rising',
+    velocity: '+72%',
+    period: '30d',
+    description: 'AI coding assistants and autonomous software engineering agents are transforming development productivity. Code generation accuracy exceeds 90% for common patterns, with full-app generation from prompts becoming reality.',
+    category: 'Developer Tools',
+    trendData: [18, 24, 32, 40, 48, 56, 62, 70, 78, 84, 92, 98],
+    relatedEntities: ['Replit', 'Poolside', 'Magic AI', 'Microsoft', 'Anthropic'],
+    signals: ['AI writes 35% of all new code at Fortune 500', 'Replit Agent builds full apps from prompts', 'Magic AI achieves 100M token context', 'Developer productivity gains of 5-10x reported']
+  },
+  {
+    id: 'trend-010',
+    name: 'Edge AI Proliferation',
+    direction: 'rising',
+    velocity: '+35%',
+    period: '30d',
+    description: 'On-device AI inference is becoming standard across smartphones, vehicles, and IoT devices. Apple Intelligence, Qualcomm AI Engine, and MediaTek NPUs are bringing powerful AI to the edge.',
+    category: 'Hardware',
+    trendData: [40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84],
+    relatedEntities: ['Apple', 'NVIDIA', 'Google DeepMind', 'Tesla'],
+    signals: ['Apple Intelligence on 1.5B devices', 'On-device LLMs exceed 7B parameters', 'Edge AI chip market growing 42% CAGR', 'Privacy regulations driving on-device processing']
+  },
+  {
+    id: 'trend-011',
+    name: 'Video Generation Quality Leap',
+    direction: 'rising',
+    velocity: '+68%',
+    period: '30d',
+    description: 'AI video generation models are approaching cinematic quality with temporal consistency and physics understanding. Hollywood studios are integrating these tools into production pipelines for VFX and pre-visualization.',
+    category: 'Creative AI',
+    trendData: [14, 20, 28, 36, 44, 52, 60, 66, 74, 82, 90, 96],
+    relatedEntities: ['Runway', 'Midjourney', 'OpenAI', 'Meta AI', 'Google DeepMind'],
+    signals: ['Runway Gen-3 passes Turing test for short clips', 'Major studios adopt AI pre-visualization', 'Video generation cost drops 95% in 12 months', 'First AI-generated Super Bowl ad airs']
+  },
+  {
+    id: 'trend-012',
+    name: 'Synthetic Biology Convergence',
+    direction: 'rising',
+    velocity: '+32%',
+    period: '30d',
+    description: 'AI and synthetic biology are converging to design novel proteins, organisms, and materials. AlphaFold 3 and generative biology models are accelerating drug discovery and creating new manufacturing paradigms.',
+    category: 'Biotechnology',
+    trendData: [22, 26, 30, 34, 38, 44, 50, 56, 62, 68, 74, 82],
+    relatedEntities: ['Google DeepMind', 'Recursion', 'Ginkgo Bioworks'],
+    signals: ['First fully AI-designed antibody in clinical trials', 'AI enzyme design achieves 95% plastic degradation', 'Synbio market reaches $28B', 'Bio-manufacturing scales to industrial production']
+  }
+];
