@@ -10,25 +10,8 @@ class KnowledgeGraphAgent:
     def run(self, entities):
         print("[KnowledgeGraphAgent] Updating Neo4j Knowledge Graph and PostgreSQL...")
         
-        # 1. Update PostgreSQL
-        db = SessionLocal()
-        try:
-            for e in entities:
-                existing = db.query(Entity).filter(Entity.name == e['name']).first()
-                if not existing:
-                    db_entity = Entity(
-                        id=str(uuid.uuid4()),
-                        name=e['name'],
-                        type=e['type'],
-                        momentum=e.get('confidence', 0.85)
-                    )
-                    db.add(db_entity)
-            db.commit()
-        except Exception as exc:
-            print(f"Postgres Error: {exc}")
-            db.rollback()
-        finally:
-            db.close()
+        # 1. PostgreSQL DB updating is now strictly handled by the realtime /search pipeline.
+        # Background loops are explicitly blocked from injecting garbage entities.
             
         # 2. Update Neo4j Graph
         try:

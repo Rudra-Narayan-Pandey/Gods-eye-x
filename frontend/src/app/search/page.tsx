@@ -12,10 +12,13 @@ export default function SearchPage() {
   const [pipelineData, setPipelineData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [confidenceThreshold, setConfidenceThreshold] = useState(50);
 
   const handleSearch = async (query: string) => {
     setLoading(true);
     setHasSearched(true);
+    setSearchQuery(query);
     try {
       const res = await fetch(`http://localhost:8000/api/search?q=${encodeURIComponent(query)}`);
       if (res.ok) {
@@ -51,7 +54,7 @@ export default function SearchPage() {
 
         <main className="flex gap-lg flex-col lg:flex-row">
           <aside className="w-full lg:w-1/4">
-            <FiltersPanel />
+            <FiltersPanel onConfidenceChange={setConfidenceThreshold} />
           </aside>
           
           <section className="w-full lg:w-3/4 flex flex-col gap-lg">
@@ -74,8 +77,9 @@ export default function SearchPage() {
               {/* Display the detailed Entity Dashboard powered by the Ultimate Pipeline */}
               {!loading && pipelineData && (
                 <EntityDashboard 
-                  entity={entities.length > 0 ? entities[0] : { name: query || "Unknown", type: "Dynamic Concept", momentum: 0.85 }} 
+                  entity={entities.length > 0 ? entities[0] : { name: searchQuery || "Unknown", type: "Dynamic Concept", momentum: 0.85 }} 
                   intelligence={pipelineData} 
+                  confidenceThreshold={confidenceThreshold}
                 />
               )}
               

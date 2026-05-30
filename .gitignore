@@ -15,3 +15,6 @@ frontend/.vercel/
 node_modules/
 dist/
 build/
+__pycache__/
+*.db
+tmp.json

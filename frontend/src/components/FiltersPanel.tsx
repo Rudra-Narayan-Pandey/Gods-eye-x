@@ -1,4 +1,8 @@
-export default function FiltersPanel() {
+import { useState } from "react";
+
+export default function FiltersPanel({ onConfidenceChange }: { onConfidenceChange?: (val: number) => void }) {
+  const [conf, setConf] = useState(50);
+  
   return (
     <div className="glass p-6 flex flex-col gap-md sticky top-24">
       <h3 className="font-display text-lg font-bold border-b border-glass-border pb-2">Filters</h3>
@@ -17,8 +21,20 @@ export default function FiltersPanel() {
       </div>
 
       <div className="flex flex-col gap-sm mt-4">
-        <h4 className="text-sm text-secondary uppercase font-semibold">Confidence</h4>
-        <input type="range" min="0" max="100" defaultValue="50" className="w-full accent-cyan-500" />
+        <div className="flex justify-between items-center">
+          <h4 className="text-sm text-secondary uppercase font-semibold">Confidence Threshold</h4>
+          <span className="text-accent font-mono text-xs">{conf}%</span>
+        </div>
+        <input 
+          type="range" 
+          min="0" max="100" 
+          value={conf} 
+          onChange={(e) => {
+            setConf(parseInt(e.target.value));
+            if(onConfidenceChange) onConfidenceChange(parseInt(e.target.value));
+          }}
+          className="w-full accent-cyan-500 cursor-pointer" 
+        />
       </div>
     </div>
   );

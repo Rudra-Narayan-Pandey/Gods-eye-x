@@ -1,4 +1,4 @@
-import g4f
+from backend.holocron.anakin_llm import anakin_chatgpt
 
 class VerificationAgent:
     """Agent 3: Cross-references entities against multiple sources and calculates consensus via LLM."""
@@ -16,10 +16,7 @@ class VerificationAgent:
             Return exactly a single float between 0.0 and 1.0 representing your confidence score in this entity's validity.
             """
             try:
-                response = g4f.ChatCompletion.create(
-                    model=g4f.models.gpt_4o_mini,
-                    messages=[{"role": "user", "content": prompt}],
-                )
+                response = anakin_chatgpt(prompt)
                 
                 # Extract the float from the response
                 import re

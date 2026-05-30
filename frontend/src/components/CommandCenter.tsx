@@ -12,7 +12,7 @@ export default function CommandCenter({ pipelineData }: { pipelineData: any }) {
 
   if (!pipelineData) return null;
 
-  const { trace, scores, intelligence_summary } = pipelineData;
+  const { trace, detailed_intel, ultimate_summary } = pipelineData;
 
   return (
     <div className="flex flex-col gap-md w-full animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -67,7 +67,40 @@ export default function CommandCenter({ pipelineData }: { pipelineData: any }) {
               <Cpu className="w-4 h-4" /> Final Intelligence Synthesis
             </h3>
             <div className="whitespace-pre-line text-sm text-white/90 leading-relaxed font-light">
-              {intelligence_summary}
+              {ultimate_summary ? (
+                <div className="flex flex-col gap-3">
+                  <p><strong className="text-accent uppercase tracking-widest text-xs">WHAT IS HAPPENING:</strong><br/>{ultimate_summary.what_is_happening}</p>
+                  <p><strong className="text-accent uppercase tracking-widest text-xs">WHY IT IS HAPPENING:</strong><br/>{ultimate_summary.why_it_is_happening}</p>
+                  <p><strong className="text-accent uppercase tracking-widest text-xs">WHAT NEXT:</strong><br/>{ultimate_summary.what_next}</p>
+                  
+                  {ultimate_summary.horizon_20_year && (
+                    <div className="mt-4 border-t border-accent/30 pt-4">
+                      <h4 className="text-accent font-mono font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
+                        <Radar className="w-3 h-3 animate-spin-slow" /> 20-Year Predictive Horizon Matrix
+                      </h4>
+                      <div className="flex flex-col gap-3 relative border-l border-accent/20 pl-4 ml-2">
+                        <div className="relative">
+                          <div className="absolute w-2 h-2 bg-accent rounded-full -left-[21px] top-1.5 shadow-[0_0_8px_#00ff00]"></div>
+                          <span className="text-xs font-bold text-accent bg-accent/10 px-1">2030 (PHASE 1):</span>
+                          <p className="text-xs text-white/70 mt-1 leading-relaxed">{ultimate_summary.horizon_20_year["2030_prediction"]}</p>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute w-2 h-2 bg-purple-500 rounded-full -left-[21px] top-1.5 shadow-[0_0_8px_#a855f7]"></div>
+                          <span className="text-xs font-bold text-purple-400 bg-purple-500/10 px-1">2040 (PHASE 2):</span>
+                          <p className="text-xs text-white/70 mt-1 leading-relaxed">{ultimate_summary.horizon_20_year["2040_prediction"]}</p>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute w-2 h-2 bg-rose-500 rounded-full -left-[21px] top-1.5 shadow-[0_0_8px_#f43f5e] animate-pulse"></div>
+                          <span className="text-xs font-bold text-rose-400 bg-rose-500/10 px-1">2046 (SINGULARITY):</span>
+                          <p className="text-xs text-white/70 mt-1 leading-relaxed">{ultimate_summary.horizon_20_year["2046_prediction"]}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                "Processing intelligence..."
+              )}
             </div>
           </div>
 
@@ -77,15 +110,18 @@ export default function CommandCenter({ pipelineData }: { pipelineData: any }) {
               <Database className="w-4 h-4" /> Domain Engines Status
             </h3>
             <div className="grid grid-cols-2 gap-4">
-              {scores && Object.entries(scores).slice(0, 6).map(([domain, sysScores]: [string, any]) => {
-                const avgScore = Object.values(sysScores).reduce((a: any, b: any) => a + b, 0) as number / Object.keys(sysScores).length;
+              {detailed_intel?.domain_scores && Object.entries(detailed_intel.domain_scores).map(([domain, score]: [string, any]) => {
+                const color = score > 90 ? "#00ff00" : (score > 80 ? "#ffff00" : "#ff0000");
                 return (
-                  <div key={domain} className="flex flex-col gap-1 p-2 rounded bg-white/5">
-                    <span className="text-xs text-white/70 truncate">{domain}</span>
-                    <div className="w-full bg-black/50 h-2 rounded-full overflow-hidden">
+                  <div key={domain} className="flex flex-col gap-1 p-2 rounded bg-white/5 border border-white/10 shadow-[0_0_5px_rgba(255,255,255,0.05)]">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-white/90 truncate font-bold uppercase tracking-widest">{domain.replace(/_/g, ' ')}</span>
+                      <span className="text-xs font-mono" style={{ color }}>{score}%</span>
+                    </div>
+                    <div className="w-full bg-black h-2 rounded-full overflow-hidden mt-1 border border-white/20">
                       <div 
-                        className="h-full bg-gradient-to-r from-accent to-purple-500"
-                        style={{ width: `${avgScore}%` }}
+                        className="h-full shadow-[0_0_10px_currentColor] transition-all duration-1000"
+                        style={{ width: `${score}%`, backgroundColor: color, color: color }}
                       ></div>
                     </div>
                   </div>

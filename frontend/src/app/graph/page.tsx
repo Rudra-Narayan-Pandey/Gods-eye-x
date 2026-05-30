@@ -13,6 +13,7 @@ export default function GraphPage() {
   const [loading, setLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
+  const [selectedNode, setSelectedNode] = useState<any>(null);
   
   // Need a ref for the graph instance to control camera
   const fgRef = useRef<any>();
@@ -123,10 +124,22 @@ export default function GraphPage() {
               nodeColor={(node: any) => node.group === 1 ? "#00ff00" : node.group === 2 ? "#ff003c" : "#03a062"}
               nodeOpacity={0.9}
               linkColor={() => "rgba(0, 255, 0, 0.3)"}
-              linkWidth={1}
               linkResolution={6}
               backgroundColor="#000000"
               enableNodeDrag={false}
+              onNodeClick={(node: any) => {
+                setSelectedNode(node);
+                if (fgRef.current) {
+                  // Aim at node from outside it
+                  const distance = 100;
+                  const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+                  fgRef.current.cameraPosition(
+                    { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio },
+                    node,
+                    2000
+                  );
+                }
+              }}
               nodeThreeObject={(node: any) => {
                 const color = node.group === 1 ? "#00ff00" : node.group === 2 ? "#ff003c" : "#03a062";
                 const sprite = generateSprite(node.name, color);
@@ -151,9 +164,9 @@ export default function GraphPage() {
         {/* Cinematic Vignette Overlay */}
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/80 z-30"></div>
 
-        <div className="absolute top-24 right-4 w-96 max-w-[calc(100vw-2rem)] z-40 pointer-events-none">
+        <div className="absolute top-24 right-4 w-[450px] max-w-[calc(100vw-2rem)] z-40 pointer-events-none">
           <div className="pointer-events-auto">
-            <IntelligencePanel />
+            <IntelligencePanel selectedNode={selectedNode} />
           </div>
         </div>
       </main>
