@@ -1,77 +1,74 @@
 # 👁️ GOD'S EYE X
 
-**A Real-Time Global Intelligence Operating System.**
+**Project Singularity** - An autonomous, generative AI intelligence engine that doesn't just search the web—it analyzes reality. Built on the Anakin API and a distributed cluster of ChatGPT verification agents.
 
-Built for the [Anakin Hackathon](https://anakin.io/).
+## 🚀 The Vision
 
----
+In a world drowning in disconnected data, **God's Eye X** serves as a centralized intelligence nexus. It ingests massive amounts of global news, financial data, and technological signals, and passes them through a pipeline of autonomous AI agents to build a living, breathing **3D Knowledge Graph** of reality.
 
-## ⚡ What is God's Eye X?
-God's Eye X is not a search engine. It is not a dashboard. It is an **autonomous intelligence infrastructure platform** that continuously watches the world, verifies information, reasons over data, and produces actionable intelligence. 
+We don't just extract entities. We calculate **Reality Drift**, detect hidden **Risks**, and predict future **Opportunities** using consensus-based LLM verification.
 
-The system operates across **295 distinct subsystems** to answer the most critical questions:
-- *What is happening?*
-- *Why is it happening?*
-- *What will likely happen next?*
-- *What are the hidden asymmetric opportunities?*
-- *What are the silent risks?*
-- *Which public narratives contradict the raw reality?*
+## 🧠 Architecture Overview
 
----
+God's Eye X is built on a highly scalable, enterprise-grade architecture:
 
-## 🚀 How it Works (Architecture)
+*   **Frontend:** Next.js 14, React, Tailwind CSS, WebGL (ForceGraph3D)
+*   **Backend:** Python, FastAPI, SQLAlchemy
+*   **AI Engine:** **Anakin API** (ChatGPT integration), G4F Fallback Cluster
+*   **Primary Database:** PostgreSQL (Persistent relational storage)
+*   **Graph Database:** Neo4j (Entity relationship mapping)
+*   **Vector Memory:** Qdrant (Semantic similarity and anomaly detection)
 
-### 1. Data Ingestion (Anakin Wire Engine)
-God's Eye X utilizes a simulated **Anakin Wire** action layer to scrape the live internet without authentication headaches or selectors. When a user queries a concept, the system hits the Wikipedia Deep Index API to fetch the absolute latest, verifiable intelligence.
+### The Holocron Pipeline
+When a search is initiated, the system triggers the **Holocron DAG** (Directed Acyclic Graph):
+1.  **Ingestion:** Scrapes real-time signals via Anakin Wire API (or Google News fallback).
+2.  **Extraction Agent:** Uses generative AI to identify critical entities (Companies, Technologies, Policies, Geopolitics).
+3.  **Verification Agent:** Spawns multiple AI verification threads to generate a Consensus Score for each entity, computationally stripping away hallucinations.
+4.  **Intelligence Engines:** 
+    *   *Reality Drift Engine:* Compares the mainstream narrative to actual market vectors.
+    *   *Risk & Opportunity Engines:* Uses LLMs to detect supply chain vulnerabilities and emerging market monopolies.
+5.  **Graph Synthesis:** Persists all intelligence into Neo4j and visualizes it in a live 3D WebGL interface.
 
-### 2. The Ultimate 295-Subsystem Pipeline
-The raw signals are fed into our proprietary `UltimatePipelineEngine`. This engine runs deterministic NLP to calculate metrics across hundreds of domains:
-- **Startup Intelligence:** Mentions, Funding Anomalies, Hiring Velocity, Hypergrowth Detection.
-- **Technology Intelligence:** Emerging Tech, Patents, Adoption Velocity.
-- **Policy & Risk Intelligence:** Regulatory Risks, Supply Chain Vulnerabilities, Threat Scores.
-- **Reality Drift Engine:** One of our most advanced features. The engine mathematically compares the "Public Narrative" against the "Observed Reality" to identify dangerous narrative contradictions.
+## 🛠️ Installation & Setup
 
-### 3. Knowledge Graph Engine (Neo4j)
-Verified entities are extracted and pushed into a **Neo4j** graph database. The system models relationships like `RELATED_TO` and `FUNDS` to understand the massive web of global influence. 
+### Prerequisites
+*   Node.js v18+
+*   Python 3.10+
+*   PostgreSQL
+*   Neo4j Desktop (or AuraDB)
+*   Qdrant (Docker)
 
-### 4. The Neon Green Cyber Terminal
-All of this data is rendered in a breathtaking, hardware-accelerated **3D Force Graph** built with `three.js` and a fully custom, zero-radius Neon Green Cyber Terminal interface. The UI is designed to look like a high-end defense intelligence terminal.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Rudra-Narayan-Pandey/Gods-eye-x.git
+cd Gods-eye-x
+```
 
----
+### 2. Backend Setup (FastAPI)
+```bash
+cd backend
+python -m venv venv
+source venv/Scripts/activate  # (Windows)
+pip install -r requirements.txt
+```
+*Note: Ensure your PostgreSQL, Neo4j, and Qdrant instances are running, and update your `.env` file with the corresponding credentials.*
 
-## 💻 Tech Stack
-- **Frontend:** Next.js 14, Tailwind CSS, Three.js, React-Force-Graph-3D
-- **Backend:** FastAPI, Python, SQLAlchemy
-- **Data Layers:** Postgres (Relational), Neo4j (Graph), Anakin Wire (Ingestion)
+**Run the Backend:**
+```bash
+uvicorn backend.main:app --reload
+```
+The backend API documentation will be available at `http://localhost:8000/docs`.
 
----
+### 3. Frontend Setup (Next.js)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The application will now be live at `http://localhost:3000`.
 
-## 🛠️ How to Run Locally
+## 🛡️ Fallback Resilience (Bulletproof Architecture)
+God's Eye X is designed to never crash. If the primary Anakin API hits rate limits or goes offline, the system instantly and seamlessly fails over to a secondary heuristic and NLP extraction cluster to ensure the intelligence pipeline and UI remain completely functional during live deployments.
 
-1. **Start the Databases**
-   Make sure Docker Desktop is running, then execute:
-   ```bash
-   docker-compose up -d
-   ```
-
-2. **Start the Intelligence Pipeline (Backend)**
-   ```bash
-   .\venv\Scripts\activate
-   uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
-   ```
-
-3. **Boot the Cyber Terminal (Frontend)**
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-
-4. **Access the Terminal**
-   Open `http://localhost:3000` in your browser. Navigate to the `/search` tab and enter any entity (e.g., "OpenAI", "Nvidia", "London") to watch the system dynamically scrape, process, and render the intelligence in real-time. Navigate to `/graph` to fly through the 3D intelligence network.
-
----
-
-## 🏅 Hackathon Submission Details
-- **Project Name:** God's Eye X
-- **Primary API Used:** Anakin Wire / Holocron (Simulated API via Ingestion Engine)
+## 🏆 Hackathon Submission
+This project was built with a relentless focus on pushing the limits of generative AI, real-time data pipelines, and cinematic UX/UI design. It represents the future of autonomous research.
