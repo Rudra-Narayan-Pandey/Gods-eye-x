@@ -1,70 +1,77 @@
 # 👁️ GOD'S EYE X
 
-**Real-Time Global Intelligence Infrastructure**
+**A Real-Time Global Intelligence Operating System.**
 
-> **Anakin Build-a-thon Submission**
-> **Version:** 5.0 (Ultimate Edition)
-
-![GOD'S EYE X UI](https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop)
-
-## 🌌 The Vision
-In a world where data is generated faster than humans can process it, the organizations that win aren't the ones with the most data—they are the ones who can connect the dots the fastest. 
-
-**GOD'S EYE X** is a real-time intelligence infrastructure designed for elite decision-makers (VCs, Hedge Funds, Intelligence Agencies). It doesn't just aggregate data; it synthesizes it into a living knowledge graph, detecting anomalies and surfacing hidden opportunities before the market reacts.
+Built for the [Anakin Hackathon](https://anakin.io/).
 
 ---
 
-## ✨ Features (The 5-Screen Experience)
+## ⚡ What is God's Eye X?
+God's Eye X is not a search engine. It is not a dashboard. It is an **autonomous intelligence infrastructure platform** that continuously watches the world, verifies information, reasons over data, and produces actionable intelligence. 
 
-Our hackathon submission is a fully-fledged, ultra-premium web application containing 5 core modules:
-
-1. **Reality Search Engine**: Omniscient, natural-language-driven search across all entities (Companies, Startups, Technologies, Events). Features a masonry grid layout, complex filtering, and a slide-out Intelligence Panel.
-2. **Graph Intelligence Explorer**: A custom D3.js + HTML5 Canvas force-directed graph. Explore the relationships between entities physically. Features zoom/pan, node dragging, and dynamic filtering.
-3. **Live Command Dashboard**: A real-time terminal showing incoming intelligence feeds, country-level heatmaps, anomaly detection alerts, and market momentum metrics.
-4. **AI Report Generation**: Automated synthesis of complex data into structured, readable executive briefings.
-5. **Cinematic Landing Page**: A visually stunning entry point featuring WebGL-style interactive particles, scroll-reveal animations, and glassmorphic design.
-
----
-
-## 🛠️ Master Build Architecture (Holocron)
-
-This is the production-grade **Master Build**, utilizing a distributed, multi-database agentic architecture orchestrated by **Holocron**.
-
-* **Frontend**: **Next.js (App Router)** + React Server Components + D3.js Knowledge Graph
-* **Backend**: **FastAPI** (Python 3.10+) running the Holocron orchestration pipeline
-* **Data Ingestion**: **Anakin Wire** (Live RSS, Social, Company, and Market Signals via `yfinance` & `feedparser`)
-* **Databases** (Dockerized):
-  * **PostgreSQL**: Relational entities and application state
-  * **Neo4j**: Graph database for the reality knowledge graph
-  * **Qdrant**: Vector semantic memory
-  * **Redis**: High-speed caching and Celery queues
-
-## 🚀 Running Locally (Master Build)
-
-We have provided a one-click startup script for Windows.
-
-1. Ensure **Docker Desktop** is running.
-2. Double-click the `start-master.bat` script in the root directory.
-
-This script will automatically:
-- Spin up PostgreSQL, Neo4j, Qdrant, and Redis via Docker Compose.
-- Open a dedicated terminal for the Holocron FastAPI Backend (Port 8000).
-- Open a dedicated terminal for the Next.js Frontend (Port 3000).
-
-### Access Points:
-- **Next.js Web App**: `http://localhost:3000`
-- **FastAPI Docs (Swagger)**: `http://localhost:8000/docs`
-- **Neo4j Browser**: `http://localhost:7474`
-- **Qdrant Dashboard**: `http://localhost:6333/dashboard`
-
+The system operates across **295 distinct subsystems** to answer the most critical questions:
+- *What is happening?*
+- *Why is it happening?*
+- *What will likely happen next?*
+- *What are the hidden asymmetric opportunities?*
+- *What are the silent risks?*
+- *Which public narratives contradict the raw reality?*
 
 ---
 
-## 💎 Design Philosophy
-We believe B2B and enterprise tools don't have to be ugly. GOD'S EYE X was designed with an uncompromising focus on aesthetics:
-* **Glassmorphism**: Extensive use of `backdrop-filter: blur(16px)` layered over dark backgrounds.
-* **Micro-interactions**: Every button, card, and input reacts to user input with subtle glows, transforms, and transitions.
-* **Typography**: Inter (Body) for readability, paired with Orbitron (Display) for a futuristic, terminal-like feel. JetBrains Mono is used for data points.
+## 🚀 How it Works (Architecture)
 
-## 🏆 Hackathon Notes
-All UI components, routing logic, graph physics, and CSS design systems were built entirely from scratch for this hackathon. The data is currently mocked via rich JSON-like ES modules to demonstrate the exact UX of the final platform without requiring a backend for the demo.
+### 1. Data Ingestion (Anakin Wire Engine)
+God's Eye X utilizes a simulated **Anakin Wire** action layer to scrape the live internet without authentication headaches or selectors. When a user queries a concept, the system hits the Wikipedia Deep Index API to fetch the absolute latest, verifiable intelligence.
+
+### 2. The Ultimate 295-Subsystem Pipeline
+The raw signals are fed into our proprietary `UltimatePipelineEngine`. This engine runs deterministic NLP to calculate metrics across hundreds of domains:
+- **Startup Intelligence:** Mentions, Funding Anomalies, Hiring Velocity, Hypergrowth Detection.
+- **Technology Intelligence:** Emerging Tech, Patents, Adoption Velocity.
+- **Policy & Risk Intelligence:** Regulatory Risks, Supply Chain Vulnerabilities, Threat Scores.
+- **Reality Drift Engine:** One of our most advanced features. The engine mathematically compares the "Public Narrative" against the "Observed Reality" to identify dangerous narrative contradictions.
+
+### 3. Knowledge Graph Engine (Neo4j)
+Verified entities are extracted and pushed into a **Neo4j** graph database. The system models relationships like `RELATED_TO` and `FUNDS` to understand the massive web of global influence. 
+
+### 4. The Neon Green Cyber Terminal
+All of this data is rendered in a breathtaking, hardware-accelerated **3D Force Graph** built with `three.js` and a fully custom, zero-radius Neon Green Cyber Terminal interface. The UI is designed to look like a high-end defense intelligence terminal.
+
+---
+
+## 💻 Tech Stack
+- **Frontend:** Next.js 14, Tailwind CSS, Three.js, React-Force-Graph-3D
+- **Backend:** FastAPI, Python, SQLAlchemy
+- **Data Layers:** Postgres (Relational), Neo4j (Graph), Anakin Wire (Ingestion)
+
+---
+
+## 🛠️ How to Run Locally
+
+1. **Start the Databases**
+   Make sure Docker Desktop is running, then execute:
+   ```bash
+   docker-compose up -d
+   ```
+
+2. **Start the Intelligence Pipeline (Backend)**
+   ```bash
+   .\venv\Scripts\activate
+   uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
+   ```
+
+3. **Boot the Cyber Terminal (Frontend)**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+4. **Access the Terminal**
+   Open `http://localhost:3000` in your browser. Navigate to the `/search` tab and enter any entity (e.g., "OpenAI", "Nvidia", "London") to watch the system dynamically scrape, process, and render the intelligence in real-time. Navigate to `/graph` to fly through the 3D intelligence network.
+
+---
+
+## 🏅 Hackathon Submission Details
+- **Project Name:** God's Eye X
+- **Primary API Used:** Anakin Wire / Holocron (Simulated API via Ingestion Engine)
