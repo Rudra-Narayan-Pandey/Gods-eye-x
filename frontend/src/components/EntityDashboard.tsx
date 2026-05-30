@@ -79,7 +79,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
                 </div>
               ))}
               {(!startup?.funding_events || startup.funding_events.filter((f:any) => (f.confidence * 100) >= confidenceThreshold).length === 0) && (
-                <div className="text-white/30">> NO FUNDING SIGNALS MEET CONFIDENCE THRESHOLD.</div>
+                <div className="text-white/30">&gt; NO FUNDING SIGNALS MEET CONFIDENCE THRESHOLD.</div>
               )}
             </div>
             
@@ -116,7 +116,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
                   <span className="text-purple-400 font-bold">{t.tech}</span> 
                   <span className="text-white/50 text-xs">Adoption Velocity: {t.adoption_velocity}</span>
                 </div>
-              )) || <div className="text-white/30">> NO EMERGING TECH SIGNALS.</div>}
+              )) || <div className="text-white/30">&gt; NO EMERGING TECH SIGNALS.</div>}
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
                   </div>
                   <span className="text-white/90 leading-relaxed">{r.risk}</span>
                 </div>
-              )) || <div className="text-white/30 font-mono">> SYSTEM NOMINAL. NO RISKS DETECTED.</div>}
+              )) || <div className="text-white/30 font-mono">&gt; SYSTEM NOMINAL. NO RISKS DETECTED.</div>}
             </div>
 
             <div className="flex flex-col gap-4 border-l border-white/10 pl-6">
@@ -170,10 +170,10 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
                       <span className="line-through text-white/50">{f.claim}</span>
                       <span className="text-white/90 bg-black/50 p-2 mt-1 border-l-2 border-[#ff0000]"><strong>DEBUNKED:</strong> {f.debunk}</span>
                     </div>
-                  )) || <div className="text-white/30">> NO FAKE NEWS DETECTED.</div>
+                  )) || <div className="text-white/30">&gt; NO FAKE NEWS DETECTED.</div>
                 ) : (
                   <div className="text-[#ffff00]/50 p-4 border border-dashed border-[#ffff00]/20 text-center animate-pulse">
-                    > FAKE NEWS FILTER ACTIVE. SYNTHETIC NARRATIVES MUTED.
+                    &gt; FAKE NEWS FILTER ACTIVE. SYNTHETIC NARRATIVES MUTED.
                   </div>
                 )}
               </div>
@@ -186,7 +186,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
                     <span className="text-white/90 leading-relaxed">{t.fact}</span>
                     <span className="text-[#00ff00]/60 text-[10px] mt-1 uppercase">SOURCE: {t.source}</span>
                   </div>
-                )) || <div className="text-white/30">> AWAITING VERIFICATION MATRICES.</div>}
+                )) || <div className="text-white/30">&gt; AWAITING VERIFICATION MATRICES.</div>}
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
                   <strong>{g.potential}</strong>
                 </span>
               </div>
-            )) || <div className="text-white/30">> NO GAPS COMPUTED.</div>}
+            )) || <div className="text-white/30">&gt; NO GAPS COMPUTED.</div>}
           </div>
 
           <div className="flex flex-col gap-4 text-sm font-mono text-justify">
@@ -232,7 +232,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
             ))}
             {(!opp?.hidden_opportunities || opp.hidden_opportunities.filter((h:any) => (h.score * 100) >= confidenceThreshold).length === 0) && (
               <div className="text-white/30 p-4 border border-dashed border-white/20 text-center">
-                > NO HIDDEN SIGNALS MEET CONFIDENCE THRESHOLD.
+                &gt; NO HIDDEN SIGNALS MEET CONFIDENCE THRESHOLD.
               </div>
             )}
           </div>
@@ -334,7 +334,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
 
         {pmData.length === 0 ? (
           <div className="text-white/50 p-4 font-mono text-center border border-dashed border-white/20">
-            > AWAITING LIVE POLYMARKET DATA FEEDS FOR THIS ENTITY...
+            &gt; AWAITING LIVE POLYMARKET DATA FEEDS FOR THIS ENTITY...
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
