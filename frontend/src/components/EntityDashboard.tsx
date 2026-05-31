@@ -3,6 +3,27 @@ import { useState } from "react";
 export default function EntityDashboard({ entity, intelligence, confidenceThreshold = 50 }: { entity: any, intelligence?: any, confidenceThreshold?: number }) {
   const [activeTab, setActiveTab] = useState("overview");
   const [showFakeNews, setShowFakeNews] = useState(true);
+  const [reportLoading, setReportLoading] = useState(false);
+  const [reportData, setReportData] = useState<any>(null);
+
+  const fetchPremiumDossier = async () => {
+    if (reportData || reportLoading) return;
+    setReportLoading(true);
+    try {
+      const res = await fetch(`https://gods-eye-x.onrender.com/api/reports/generate?topic=${encodeURIComponent(entity.name)}&report_type=Executive%20Summary`, {
+        method: "POST"
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setReportData(data);
+      } else {
+        setReportData({ title: "Error", content: "Failed to connect to Anakin API." });
+      }
+    } catch (err) {
+      setReportData({ title: "Error", content: "Failed to connect to Anakin API." });
+    }
+    setReportLoading(false);
+  };
 
   const renderOverview = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -243,78 +264,37 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
 
   const renderDeepDive = () => {
     const term = entity.name;
+    
+    // Auto-fetch the report when the tab is opened if we haven't already
+    if (!reportData && !reportLoading) {
+      fetchPremiumDossier();
+    }
+    
     return (
       <div className="glass p-6 flex flex-col gap-6 border border-[#00ff00]/50 shadow-[0_0_30px_rgba(0,255,0,0.1)] relative overflow-hidden bg-black/80">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#00ff00]/5 rounded-full blur-3xl pointer-events-none"></div>
         <h4 className="text-[#00ff00] text-lg font-mono font-bold uppercase tracking-[0.3em] border-b border-[#00ff00]/20 pb-2 flex items-center gap-3">
           <span className="w-2 h-2 bg-[#00ff00] animate-pulse"></span>
-          PREMIUM DOSSIER: LEVEL 9 CLEARANCE
+          PREMIUM DOSSIER: LEVEL 9 CLEARANCE (ANAKIN LLM)
         </h4>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-sm font-mono text-white/80 leading-relaxed">
-          <div className="flex flex-col gap-4">
-            <div>
-              <h5 className="text-[#00ff00]/70 font-bold mb-1 tracking-widest text-xs">I. GEOPOLITICAL VULNERABILITY MATRIX</h5>
-              <p className="text-justify bg-[#00ff00]/5 p-3 border-l-2 border-[#00ff00]/30">
-                Advanced scraping of secure subnetworks indicates that {term} is currently undergoing a massive structural reorganization. 
-                Our 295 subsystems detected highly encrypted capital flight moving towards offshore dark pools. 
-                The geopolitical vulnerability index for this entity has spiked by 440% in the last 72 hours, correlating directly with 
-                undisclosed sovereign wealth fund liquidations. If current momentum vectors hold, {term} will face a Class-4 regulatory 
-                crackdown in exactly 14 business days. Asymmetric risk is extremely high.
-              </p>
-            </div>
-            
-            <div>
-              <h5 className="text-[#00ff00]/70 font-bold mb-1 tracking-widest text-xs">II. COVERT TECHNOLOGICAL ACQUISITIONS</h5>
-              <p className="text-justify bg-[#00ff00]/5 p-3 border-l-2 border-[#00ff00]/30">
-                Cross-referencing global patent registries with untracked shell company activity reveals that {term} is quietly cornering 
-                the supply chain for next-generation Quantum Cryptographic hardware. Through a network of 14 proxy organizations based in 
-                non-extradition jurisdictions, {term} has secured exclusive rights to 82% of the necessary rare-earth materials required 
-                for this technology stack. The mainstream market remains completely blind to this monopolistic expansion.
-              </p>
-            </div>
+        {reportLoading ? (
+          <div className="text-[#00ff00] animate-pulse py-12 text-center font-mono flex flex-col items-center gap-4">
+            <span className="text-4xl block w-12 h-12 border-4 border-[#00ff00] border-t-transparent rounded-full animate-spin"></span>
+            [ ANAKIN AI ]: INITIATING DEEP WEB EXTRACTION AND DOSSIER GENERATION. THIS MAY TAKE 30 SECONDS...
           </div>
-          
-          <div className="flex flex-col gap-4">
-            <div>
-              <h5 className="text-[#00ff00]/70 font-bold mb-1 tracking-widest text-xs">III. SYNTHETIC NARRATIVE MANIPULATION</h5>
-              <p className="text-justify bg-[#00ff00]/5 p-3 border-l-2 border-[#00ff00]/30">
-                Our Reality Drift engines have intercepted a coordinated botnet deploying 1.4 million synthetic sentiment vectors designed 
-                to artificially depress the public momentum of {term}. This orchestrated misinformation campaign is being funded by legacy 
-                competitors attempting to execute a hostile takeover. However, on-chain analytics prove that the underlying utility of 
-                {term} is growing exponentially, presenting a massive arbitrage opportunity for entities with access to this God's Eye intelligence.
-              </p>
-            </div>
-            
-            <div className="border border-accent/20 p-4 bg-accent/5">
-              <h5 className="text-accent font-bold mb-3 tracking-widest text-xs flex justify-between">
-                <span>IV. PREDICTIVE OUTCOME PROBABILITY</span>
-                <span className="text-[10px] animate-pulse">LIVE CALCULATING...</span>
-              </h5>
-              <div className="flex flex-col gap-2 text-xs font-mono">
-                {(() => {
-                  const scores = intelligence?.detailed_intel?.domain_scores || {};
-                  const dominance = scores.Opportunity_Discovery ? Math.min(99.9, scores.Opportunity_Discovery + 12) : 94.2;
-                  const regRisk = scores.Policy_And_Risk ? (scores.Policy_And_Risk / 3) : 12.8;
-                  const hypergrowth = scores.Startup_Intelligence ? Math.min(99.9, scores.Startup_Intelligence + 15) : 99.9;
-                  
-                  return (
-                    <>
-                      <div className="flex justify-between items-center"><span className="text-white/60">Total Sector Dominance (2030)</span><span className="text-[#00ff00]">{dominance.toFixed(1)}%</span></div>
-                      <div className="w-full bg-black h-1 rounded-full"><div className="h-full bg-[#00ff00] shadow-[0_0_5px_#00ff00]" style={{ width: `${dominance}%` }}></div></div>
-                      
-                      <div className="flex justify-between items-center mt-2"><span className="text-white/60">Regulatory Annihilation Risk</span><span className="text-[#ff0000]">{regRisk.toFixed(1)}%</span></div>
-                      <div className="w-full bg-black h-1 rounded-full"><div className="h-full bg-[#ff0000] shadow-[0_0_5px_#ff0000]" style={{ width: `${regRisk}%` }}></div></div>
-                      
-                      <div className="flex justify-between items-center mt-2"><span className="text-white/60">Unprecedented Hypergrowth</span><span className="text-accent">{hypergrowth.toFixed(1)}%</span></div>
-                      <div className="w-full bg-black h-1 rounded-full"><div className="h-full bg-accent shadow-[0_0_5px_currentColor]" style={{ width: `${hypergrowth}%` }}></div></div>
-                    </>
-                  );
-                })()}
-              </div>
-            </div>
+        ) : reportData ? (
+          <div className="text-sm font-mono text-white/80 leading-relaxed whitespace-pre-wrap">
+            <h5 className="text-[#00ff00]/70 font-bold mb-4 tracking-widest text-lg">{reportData.title}</h5>
+            <p className="text-justify bg-[#00ff00]/5 p-4 border-l-2 border-[#00ff00]/30 shadow-inner min-h-[300px]">
+              {reportData.content}
+            </p>
           </div>
-        </div>
+        ) : (
+          <div className="text-[#ff0000] py-8 text-center font-mono">
+            CONNECTION TO ANAKIN API FAILED.
+          </div>
+        )}
       </div>
     );
   };
