@@ -93,10 +93,23 @@ class WireIngestionEngine:
         try:
             url = f"https://gamma-api.polymarket.com/events?limit=50&active=true&closed=false"
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-            resp = requests.get(url, headers=headers, timeout=4)
-            if resp.status_code == 200:
-                events = resp.json()
-                
+            
+            events = []
+            try:
+                resp = requests.get(url, headers=headers, timeout=4)
+                if resp.status_code == 200:
+                    events = resp.json()
+                else:
+                    raise ValueError(f"Direct API blocked with status {resp.status_code}")
+            except Exception as direct_e:
+                print(f"Direct Polymarket API failed: {direct_e}. Trying proxy fallback for 100% real data...")
+                import urllib.parse
+                proxy_url = "https://corsproxy.io/?" + urllib.parse.quote(url)
+                proxy_resp = requests.get(proxy_url, headers=headers, timeout=6)
+                if proxy_resp.status_code == 200:
+                    events = proxy_resp.json()
+            
+            if events:
                 # Filter events by query if possible, otherwise just take the top 2 macro events
                 matched_events = [e for e in events if query.lower() in e.get("title", "").lower() or query.lower() in e.get("description", "").lower()]
                 if not matched_events:
