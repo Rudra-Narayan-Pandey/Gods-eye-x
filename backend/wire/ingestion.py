@@ -18,6 +18,13 @@ ANAKIN_API_KEY = os.getenv("ANAKIN_API_KEY", "")
 logger = get_logger("backend.wire.ingestion")
 logger.info("Anakin Wire: API key configured at module load", extra={"configured": bool(ANAKIN_API_KEY)})
 
+# Attempt to import the Anakin circuit helper (best-effort; avoid hard failure if module import order differs)
+try:
+    from backend.holocron.anakin_llm import is_circuit_open
+except Exception:
+    def is_circuit_open():
+        return False
+
 ALAKIN_SOURCE_CATALOG = {
     "news": ["AP News", "Al Jazeera", "BBC News", "CNBC", "Google News", "Reuters", "TechCrunch", "The Guardian"],
     "finance": ["BIS", "BLS", "BSE India", "CBOE", "CFTC", "CoinGecko", "ECB", "EIA", "FRED", "NSE India", "SEC EDGAR", "US Treasury", "Yahoo Finance"],
@@ -153,6 +160,10 @@ class WireIngestionEngine:
     def _run_anakin_action(self, action_id, params):
         if not ANAKIN_API_KEY:
             logger.info("Skipping Anakin action because API key is not configured", extra={"event": "anakin_skip_no_key", "action_id": action_id})
+            return []
+
+        if is_circuit_open():
+            logger.warning("Anakin circuit is open; skipping action to avoid cascading failures", extra={"event": "anakin_circuit_open", "action_id": action_id})
             return []
 
         anakin_url = "https://api.anakin.io/v1/holocron/task"

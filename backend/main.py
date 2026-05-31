@@ -10,6 +10,15 @@ from .database import SessionLocal, engine
 from .holocron.orchestrator import holocron_engine
 from .wire.ingestion import ALAKIN_SOURCE_CATALOG
 
+
+try:
+    from backend.holocron.anakin_llm import anakin_health_check, get_circuit_state
+except Exception:
+    def anakin_health_check():
+        return {"configured": False, "status": "unknown"}
+    def get_circuit_state():
+        return {"is_open": False}
+
 try:
     models.Base.metadata.create_all(bind=engine)
 except Exception as e:
@@ -94,6 +103,18 @@ def diagnostic_agents():
             "DomainIntelligenceEngines": "Online",
         },
     }
+
+
+
+@app.get("/api/diagnostics/anakin")
+def diagnostic_anakin():
+    """Sanitized diagnostic for Anakin connectivity and circuit breaker state."""
+    try:
+        health = anakin_health_check()
+        circuit = get_circuit_state()
+        return {"anakin": health, "circuit": circuit}
+    except Exception as e:
+        return {"anakin": {"status": "error", "message": "diagnostic_failed"}}
 
 
 SEARCH_TASKS = {}
