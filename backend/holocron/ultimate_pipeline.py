@@ -57,6 +57,7 @@ class UltimatePipelineEngine:
         def get_real_synthesis(idx, fallback=""):
             # Return real, unframed Wikipedia sentences for intelligence synthesis
             if len(wiki_sentences) > idx:
+                return wiki_sentences[idx]
             # Fallback to real, unframed news headlines if Wikipedia fails
             return get_real_signal(idx, fallback)
             
