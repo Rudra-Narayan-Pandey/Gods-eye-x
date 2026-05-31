@@ -31,7 +31,7 @@ class UltimatePipelineEngine:
             try:
                 url = f"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=3&exlimit=1&titles={search_query}&explaintext=1&format=json"
                 headers = {"User-Agent": "GodsEyeX/1.0"}
-                res = requests.get(url, headers=headers).json()
+                res = requests.get(url, headers=headers, timeout=5).json()
                 pages = res.get("query", {}).get("pages", {})
                 for page_id in pages:
                     extract = pages[page_id].get("extract", "")

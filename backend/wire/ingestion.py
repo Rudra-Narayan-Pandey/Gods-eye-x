@@ -188,7 +188,8 @@ class WireIngestionEngine:
         print(f"Anakin Wire: Engaging Secondary Ingestion Node for '{query}'...")
         url = f"https://news.google.com/rss/search?q={query}"
         try:
-            feed = feedparser.parse(url)
+            res = requests.get(url, timeout=5)
+            feed = feedparser.parse(res.content)
             for entry in feed.entries[:10]: # Top 10 latest articles
                 signals.append({
                     "type": "news",
@@ -206,7 +207,7 @@ class WireIngestionEngine:
             print(f"Anakin Wire: Google News returned 0 signals for '{query}'. Engaging Wikipedia fallback...")
             try:
                 wiki_url = f"https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro=True&explaintext=True&titles={query}"
-                resp = requests.get(wiki_url)
+                resp = requests.get(wiki_url, timeout=5)
                 if resp.status_code == 200:
                     data = resp.json()
                     pages = data.get("query", {}).get("pages", {})
