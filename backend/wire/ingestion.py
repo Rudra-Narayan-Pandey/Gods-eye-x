@@ -247,6 +247,9 @@ class WireIngestionEngine:
             try:
                 logger.debug("Polling Anakin job", extra={"event": "anakin_poll_attempt", "action_id": action_id, "attempt": i + 1})
                 poll_res = requests.get(poll_url, headers={"X-API-Key": ANAKIN_API_KEY}, timeout=10)
+                if poll_res.status_code == 429:
+                    logger.error("Anakin Action rate limited. Failing instantly to fallback.", extra={"event": "anakin_action_rate_limited", "action_id": action_id})
+                    raise RuntimeError("Anakin API Rate Limit Exceeded.")
                 if poll_res.status_code != 200:
                     logger.warning("Poll returned non-200 status", extra={"event": "anakin_poll_status", "action_id": action_id, "status": poll_res.status_code, "attempt": i + 1})
                     continue
