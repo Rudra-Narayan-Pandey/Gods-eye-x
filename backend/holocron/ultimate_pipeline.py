@@ -229,6 +229,7 @@ Generate a strictly valid JSON object (no markdown, no backticks) with the follo
             }
         else:
             detailed_intel = anakin_generated_data
+            detailed_intel["polymarket_data"] = [s for s in signals if s.get("type") == "polymarket"]
             summary = anakin_generated_data.get("ultimate_summary", {})
             summary["opportunities"] = [o.get('desc', o.get('gap', '')) for o in detailed_intel.get('opportunity_discovery', {}).get('hidden_opportunities', [])]
             summary["risks"] = [r.get('risk', '') for r in detailed_intel.get('policy_and_risk', {}).get('policy_risks', [])]
