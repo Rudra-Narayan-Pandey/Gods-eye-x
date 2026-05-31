@@ -100,9 +100,9 @@ Generate a strictly valid JSON object (no markdown, no backticks) with the follo
         "why_it_is_happening": "Factual analysis of the catalysts",
         "what_next": "Factual prediction of the immediate trajectory",
         "horizon_20_year": {{
-            "2030_prediction": "Highly analytical projection based on current momentum",
-            "2040_prediction": "Highly analytical projection of structural changes",
-            "2046_prediction": "Highly analytical end-state projection"
+            "2030_prediction": "Write a highly detailed, 3-4 sentence intellectual geopolitical paragraph forecasting the state of this entity in 2030. Write it like an elite IAS officer or geopolitical think-tank.",
+            "2040_prediction": "Write a highly detailed, 3-4 sentence intellectual geopolitical paragraph forecasting the structural shifts by 2040. Write it like an elite IAS officer or geopolitical think-tank.",
+            "2046_prediction": "Write a highly detailed, 3-4 sentence intellectual geopolitical paragraph forecasting the ultimate singularity end-state by 2046. Write it like an elite IAS officer or geopolitical think-tank."
         }}
     }}
 }}"""
