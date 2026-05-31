@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function EntityDashboard({ entity, intelligence, confidenceThreshold = 50 }: { entity: any, intelligence?: any, confidenceThreshold?: number }) {
   const [activeTab, setActiveTab] = useState("overview");
