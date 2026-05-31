@@ -195,7 +195,10 @@ def anakin_chatgpt(prompt: str, max_retries: int = 60) -> str:
 
                 if poll_res.status_code == 429:
                     rate_limit_hits += 1
-                    wait_time = min(30, 5 * (2 ** min(rate_limit_hits, 4)))
+                    if rate_limit_hits > 3:
+                        logger.error("Rate limit retry max exceeded", extra={"event": "poll_rate_limited_max"})
+                        raise Exception("Anakin API Rate Limit Exceeded.")
+                    wait_time = 2 + (rate_limit_hits * 2)
                     logger.warning("Rate limited on poll", extra={"event": "poll_rate_limited", "attempt": poll_attempts, "wait_time": wait_time})
                     _record_failure()
                     time.sleep(wait_time)
