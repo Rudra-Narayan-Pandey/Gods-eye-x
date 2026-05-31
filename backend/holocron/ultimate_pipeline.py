@@ -100,10 +100,10 @@ Generate a strictly valid JSON object (no markdown, no backticks) with the follo
         "why_it_is_happening": "Factual analysis of the catalysts",
         "what_next": "Factual prediction of the immediate trajectory",
         "horizon_20_year": {{
-            "2026": "Highly detailed, intellectual 2-sentence IAS-style geopolitical paragraph for the year 2026.",
-            "2027": "Highly detailed, intellectual 2-sentence IAS-style geopolitical paragraph for the year 2027.",
-            "...": "CONTINUE GENERATING EVERY SINGLE YEAR INDIVIDUALLY UNTIL 2046...",
-            "2046": "Highly detailed, intellectual 2-sentence IAS-style geopolitical paragraph for the year 2046."
+            "2026": "A concise, highly intellectual 1-sentence IAS-style geopolitical prediction for 2026.",
+            "2027": "A concise, highly intellectual 1-sentence IAS-style geopolitical prediction for 2027.",
+            "...": "CONTINUE GENERATING EVERY SINGLE YEAR INDIVIDUALLY UNTIL 2046... Keep each year extremely concise (1 sentence maximum) to ensure rapid API generation, but keep the geopolitical vocabulary incredibly premium.",
+            "2046": "A concise, highly intellectual 1-sentence IAS-style geopolitical prediction for 2046."
         }}
     }}
 }}"""
