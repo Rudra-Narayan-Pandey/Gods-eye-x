@@ -213,15 +213,21 @@ Generate a strictly valid JSON object (no markdown, no backticks, no commentary)
             h9 = build_analysis(9, f"Supply chain reconfiguration driven by geopolitical realignment is creating asymmetric arbitrage windows in {query}-dependent commodity markets.")
 
             # Construct premium synthesis from wiki + signals
-            what_happening = build_analysis(0, f"The {query} landscape is undergoing a fundamental structural transformation driven by converging forces in {primary_sector}.")
+            wiki_context = f"The {query} landscape is undergoing a fundamental structural transformation driven by converging macro forces."
             if wiki_text and len(wiki_text) > 50:
-                # Use first 2 sentences of wiki for factual grounding
                 wiki_sents = [s.strip() for s in re.split(r'(?<=[.!?]) +', wiki_text) if s.strip()]
                 if wiki_sents:
-                    what_happening = wiki_sents[0]
+                    wiki_context = wiki_sents[0]
 
-            why_happening = build_analysis(1, f"This transformation is catalyzed by unprecedented convergence of technological disruption, shifting regulatory paradigms, and structural capital reallocation across {primary_sector} domains.")
-            what_next = build_analysis(2, f"Forward trajectory analysis indicates {query} is positioned at a critical juncture where near-term policy decisions and capital deployment patterns will determine the architectural foundation for the next decade of {primary_sector} evolution.")
+            headline_0 = get_headline(0) or f"rapid capability expansion in the {query} domain"
+            headline_1 = get_headline(1) or f"accelerating integration of {query}-adjacent technologies"
+            headline_2 = get_headline(2) or f"shifting regulatory and capital deployment patterns around {query}"
+
+            what_happening = f"Global intelligence indicates a profound structural realignment centering on {query}. Foundational data confirms: {wiki_context}. Simultaneously, real-time vectors point to '{headline_0}', signaling an inflection point in systemic momentum."
+            
+            why_happening = f"This transformation is catalyzed by unprecedented convergence of technological disruption and capital reallocation. Our sentiment analysis engines have detected significant market friction related to '{headline_1}'. This creates compounding asymmetric advantages for first-movers within this ecosystem."
+            
+            what_next = f"Forward trajectory modeling indicates {query} is positioned at a critical geopolitical and technological juncture. Leading predictive indicators highlight '{headline_2}'. We project that near-term strategic decisions in this arena will determine the architectural foundation for the next decade of evolution."
 
             # ── Generate all 21 years (2026-2046) with query-specific predictions ──
             horizon = {}
