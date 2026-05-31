@@ -129,11 +129,9 @@ def anakin_chatgpt(prompt: str, max_retries: int = 60) -> str:
 
                 if response.status_code == 429:
                     category, msg = categorize_exception(Exception("HTTP 429"))
-                    wait_time = min(30, 5 * (2 ** dispatch_attempts))
-                    logger.warning("Rate limited on dispatch", extra={"event": "dispatch_rate_limited", "category": category, "attempt": dispatch_attempts, "wait_time": wait_time})
+                    logger.warning("Dispatch rate limited. Failing instantly to fallback.", extra={"event": "dispatch_rate_limited", "category": category})
                     _record_failure()
-                    time.sleep(wait_time)
-                    continue
+                    return None
 
                 # Other non-success HTTP statuses
                 category, sanitized = categorize_exception(Exception(f"HTTP {response.status_code}"))
@@ -197,7 +195,7 @@ def anakin_chatgpt(prompt: str, max_retries: int = 60) -> str:
                     rate_limit_hits += 1
                     if rate_limit_hits > 3:
                         logger.error("Rate limit retry max exceeded", extra={"event": "poll_rate_limited_max"})
-                        raise Exception("Anakin API Rate Limit Exceeded.")
+                        return None
                     wait_time = 2 + (rate_limit_hits * 2)
                     logger.warning("Rate limited on poll", extra={"event": "poll_rate_limited", "attempt": poll_attempts, "wait_time": wait_time})
                     _record_failure()

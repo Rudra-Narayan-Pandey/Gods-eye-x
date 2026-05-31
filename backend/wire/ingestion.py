@@ -8,6 +8,7 @@ import os
 import urllib.request
 import xml.etree.ElementTree as ET
 import json
+import time
 from urllib.parse import quote_plus
 from dotenv import load_dotenv
 from backend.logging import get_logger, categorize_exception
@@ -199,10 +200,8 @@ class WireIngestionEngine:
 
                 if response.status_code == 429:
                     category, msg = categorize_exception(Exception("HTTP 429"))
-                    wait_time = min(30, 2 ** dispatch_attempts)
-                    logger.warning("Dispatch rate limited", extra={"event": "anakin_dispatch_rate_limited", "action_id": action_id, "attempt": dispatch_attempts, "wait_time": wait_time, "category": category})
-                    time.sleep(wait_time)
-                    continue
+                    logger.warning("Dispatch rate limited. Failing instantly to fallback.", extra={"event": "anakin_dispatch_rate_limited", "action_id": action_id, "category": category})
+                    return []
 
                 logger.error("Anakin dispatch returned error status", extra={"event": "anakin_dispatch_error", "action_id": action_id, "status": response.status_code, "preview": response.text[:300]})
                 raise RuntimeError(f"Anakin action {action_id} returned {response.status_code}: {response.text[:300]}")
@@ -249,7 +248,7 @@ class WireIngestionEngine:
                 poll_res = requests.get(poll_url, headers={"X-API-Key": ANAKIN_API_KEY}, timeout=10)
                 if poll_res.status_code == 429:
                     logger.error("Anakin Action rate limited. Failing instantly to fallback.", extra={"event": "anakin_action_rate_limited", "action_id": action_id})
-                    raise RuntimeError("Anakin API Rate Limit Exceeded.")
+                    return []
                 if poll_res.status_code != 200:
                     logger.warning("Poll returned non-200 status", extra={"event": "anakin_poll_status", "action_id": action_id, "status": poll_res.status_code, "attempt": i + 1})
                     continue
