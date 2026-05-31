@@ -76,24 +76,22 @@ export default function CommandCenter({ pipelineData }: { pipelineData: any }) {
                   {ultimate_summary.horizon_20_year && (
                     <div className="mt-4 border-t border-accent/30 pt-4">
                       <h4 className="text-accent font-mono font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
-                        <Radar className="w-3 h-3 animate-spin-slow" /> 20-Year Predictive Horizon Matrix
+                        <Radar className="w-3 h-3 animate-spin-slow" /> Year-By-Year Predictive Horizon Matrix
                       </h4>
-                      <div className="flex flex-col gap-3 relative border-l border-accent/20 pl-4 ml-2">
-                        <div className="relative">
-                          <div className="absolute w-2 h-2 bg-accent rounded-full -left-[21px] top-1.5 shadow-[0_0_8px_#00ff00]"></div>
-                          <span className="text-xs font-bold text-accent bg-accent/10 px-1">2030 (PHASE 1):</span>
-                          <p className="text-xs text-white/70 mt-1 leading-relaxed">{ultimate_summary.horizon_20_year["2030_prediction"]}</p>
-                        </div>
-                        <div className="relative">
-                          <div className="absolute w-2 h-2 bg-purple-500 rounded-full -left-[21px] top-1.5 shadow-[0_0_8px_#a855f7]"></div>
-                          <span className="text-xs font-bold text-purple-400 bg-purple-500/10 px-1">2040 (PHASE 2):</span>
-                          <p className="text-xs text-white/70 mt-1 leading-relaxed">{ultimate_summary.horizon_20_year["2040_prediction"]}</p>
-                        </div>
-                        <div className="relative">
-                          <div className="absolute w-2 h-2 bg-rose-500 rounded-full -left-[21px] top-1.5 shadow-[0_0_8px_#f43f5e] animate-pulse"></div>
-                          <span className="text-xs font-bold text-rose-400 bg-rose-500/10 px-1">2046 (SINGULARITY):</span>
-                          <p className="text-xs text-white/70 mt-1 leading-relaxed">{ultimate_summary.horizon_20_year["2046_prediction"]}</p>
-                        </div>
+                      <div className="flex flex-col gap-4 relative border-l border-accent/20 pl-4 ml-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                        {Object.entries(ultimate_summary.horizon_20_year).filter(([k]) => k !== "...").map(([year, prediction], idx) => {
+                          // Alternate colors to make it look incredibly cool
+                          const colors = ["bg-accent shadow-[0_0_8px_#00ff00]", "bg-purple-500 shadow-[0_0_8px_#a855f7]", "bg-blue-500 shadow-[0_0_8px_#3b82f6]", "bg-rose-500 shadow-[0_0_8px_#f43f5e]"];
+                          const textColors = ["text-accent bg-accent/10", "text-purple-400 bg-purple-500/10", "text-blue-400 bg-blue-500/10", "text-rose-400 bg-rose-500/10"];
+                          const colorIdx = idx % colors.length;
+                          return (
+                            <div key={year} className="relative">
+                              <div className={`absolute w-2 h-2 rounded-full -left-[21px] top-1.5 ${colors[colorIdx]} ${year === '2046' ? 'animate-pulse' : ''}`}></div>
+                              <span className={`text-xs font-bold px-1 ${textColors[colorIdx]}`}>{year} PROJECTION:</span>
+                              <p className="text-xs text-white/80 mt-1 leading-relaxed text-justify">{prediction as string}</p>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
