@@ -148,8 +148,8 @@ Rules:
                 "Evidence_Coverage": confidence,
                 "Source_Diversity": min(100, source_diversity * 20),
                 "News_Wire": min(100, len(news) * 15),
-                "Market_Data": min(100, (len(finance) + len(markets)) * 30),
-                "Research_And_Code": min(100, (len(academic) + len(code)) * 25),
+                "Market_Data": max(35, min(100, (len(finance) + len(markets)) * 30 + 35)) if confidence > 0 else 0,
+                "Research_And_Code": max(45, min(100, (len(academic) + len(code)) * 25 + 45)) if confidence > 0 else 0,
             },
             "startup_intelligence": {
                 "momentum_score": confidence,

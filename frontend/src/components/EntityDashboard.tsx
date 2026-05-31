@@ -298,7 +298,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#00ff00]/5 rounded-full blur-3xl pointer-events-none"></div>
         <h4 className="text-[#00ff00] text-lg font-mono font-bold uppercase tracking-[0.3em] border-b border-[#00ff00]/20 pb-2 flex items-center gap-3">
           <span className="w-2 h-2 bg-[#00ff00] animate-pulse"></span>
-            PREMIUM DOSSIER: LIVE ALAKIN / ANAKIN EVIDENCE
+            PREMIUM DOSSIER: LIVE ANAKIN EVIDENCE
         </h4>
         
         {reportLoading ? (
