@@ -143,7 +143,11 @@ def run_search_task(task_id: str, q: str):
 
         from backend.holocron.ultimate_pipeline import UltimatePipelineEngine
         dyn_engine = UltimatePipelineEngine()
-        pipeline_results = dyn_engine.run_full_pipeline(search_term, [])
+        # Fetch REAL live signals from wire engine instead of passing empty []
+        from backend.wire.ingestion import wire_engine as dyn_wire
+        live_signals = dyn_wire.fetch_dynamic_query(search_term)
+        print(f"[God's Eye X] Fetched {len(live_signals)} live signals for '{search_term}'")
+        pipeline_results = dyn_engine.run_full_pipeline(search_term, live_signals)
 
         SEARCH_TASKS[task_id] = {
             "status": "completed",
