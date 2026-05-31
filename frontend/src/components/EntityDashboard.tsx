@@ -340,12 +340,14 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
         return;
       }
       
-      // If backend failed due to Cloudflare, try client-side residential IP bypass
+      // Use a free public CORS proxy to bypass browser restrictions on the Gamma API
       setIsClientFetchingPm(true);
       try {
-        const res = await fetch('https://gamma-api.polymarket.com/events?limit=50&active=true&closed=false');
+        const targetUrl = encodeURIComponent('https://gamma-api.polymarket.com/events?limit=50&active=true&closed=false');
+        const res = await fetch(`https://api.allorigins.win/get?url=${targetUrl}`);
         if (res.ok) {
-          const events = await res.json();
+          const proxyData = await res.json();
+          const events = JSON.parse(proxyData.contents);
           const query = entity.name.toLowerCase();
           let matched = events.filter((e: any) => 
             (e.title || '').toLowerCase().includes(query) || 
