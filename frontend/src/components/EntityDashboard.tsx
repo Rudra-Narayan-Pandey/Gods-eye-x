@@ -361,7 +361,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
       setIsClientFetchingPm(false);
     };
     
-    if (activeTab === "POLYMARKET_WIRE") {
+    if (activeTab === "polymarket") {
       fetchClientPolymarket();
     }
   }, [activeTab, entity.name, intelligence]);
