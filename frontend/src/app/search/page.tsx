@@ -20,7 +20,7 @@ export default function SearchPage() {
     setHasSearched(true);
     setSearchQuery(query);
     try {
-      const res = await fetch(`https://gods-eye-x.onrender.com/api/search?q=${encodeURIComponent(query)}`, { cache: 'no-store' });
+      const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`, { cache: 'no-store' });
       if (res.ok) {
         const data = await res.json();
         setEntities(data.entities || []);

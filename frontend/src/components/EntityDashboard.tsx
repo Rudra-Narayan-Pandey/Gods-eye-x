@@ -10,7 +10,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
     if (reportData || reportLoading) return;
     setReportLoading(true);
     try {
-      const res = await fetch(`https://gods-eye-x.onrender.com/api/reports/generate?topic=${encodeURIComponent(entity.name)}&report_type=Executive%20Summary`, {
+      const res = await fetch(`/api/reports/generate?topic=${encodeURIComponent(entity.name)}&report_type=Executive%20Summary`, {
         method: "POST"
       });
       if (res.ok) {
