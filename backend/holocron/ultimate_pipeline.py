@@ -45,11 +45,14 @@ class UltimatePipelineEngine:
         import re
         wiki_sentences = [s.strip() for s in re.split(r'(?<=[.!?]) +', wiki_text) if s.strip()] if wiki_text else []
 
-        def get_real_signal(idx, fallback=""):
+        def get_real_signal(idx, prefix="", fallback=""):
             if signals and len(signals) > idx:
                 headline = signals[idx].get('title', '').split(' - ')[0].strip()
-                return headline
-            return fallback
+                return prefix + headline
+            # Handle case where it's called with only 2 arguments
+            if prefix and not fallback and not prefix.endswith(" ") and not prefix.startswith("["):
+                return prefix
+            return prefix + fallback
 
         def get_real_synthesis(idx, fallback=""):
             # Return real, unframed Wikipedia sentences for intelligence synthesis

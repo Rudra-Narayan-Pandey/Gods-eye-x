@@ -26,7 +26,7 @@ def anakin_chatgpt(prompt: str, max_retries=15) -> str:
     
     # 1. Dispatch Task
     response = requests.post(url, json=payload, headers=headers, timeout=5)
-    if response.status_code != 200:
+    if response.status_code not in [200, 202]:
         raise Exception(f"Anakin API Error: {response.text}")
         
     data = response.json()
