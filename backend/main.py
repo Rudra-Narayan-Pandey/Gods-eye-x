@@ -319,10 +319,15 @@ async def generate_report(topic: str, report_type: str, max_evidence: int = 25, 
             prompt += "\n- Prefer primary sources (official filings, government sites, research papers) when available. Label derivative/aggregated sources clearly."
         try:
             response = anakin_chatgpt(prompt)
+            # Handle case where anakin_chatgpt returns a dictionary on error
+            if isinstance(response, dict):
+                print(f"[Reports] Anakin returned dict error: {response}")
+                response = ""
         except Exception as exc:
             print(f"[Reports] Anakin dossier generation failed, using evidence fallback: {exc}")
             response = ""
-        if not response or not response.strip():
+            
+        if not response or not isinstance(response, str) or not response.strip():
             response = _build_evidence_dossier(topic, report_type, evidence)
         return {
             "title": f"{topic} Report",

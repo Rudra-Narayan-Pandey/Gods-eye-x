@@ -183,7 +183,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
             <div className="flex flex-col gap-4">
               <h5 className="text-white/50 text-[10px] uppercase tracking-widest border-b border-white/10 pb-1">Identified Regulatory Hazards</h5>
-              {risk?.policy_risks?.map((r:any, i:number) => (
+              {risk?.policy_risks && risk.policy_risks.length > 0 ? risk.policy_risks.map((r:any, i:number) => (
                 <div key={i} className="bg-accent-alert/5 p-4 border-l-4 border-accent-alert flex flex-col gap-2 text-sm font-mono text-justify">
                   <div className="flex justify-between items-center">
                     <span className="text-accent-alert font-bold">WARNING VECTOR {i+1}</span>
@@ -191,7 +191,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
                   </div>
                   <span className="text-white/90 leading-relaxed">{r.risk}</span>
                 </div>
-              )) || <div className="text-white/30 font-mono">&gt; SYSTEM NOMINAL. NO RISKS DETECTED.</div>}
+              )) : <div className="text-white/30 font-mono">&gt; SYSTEM NOMINAL. NO RISKS DETECTED.</div>}
             </div>
 
             <div className="flex flex-col gap-4 border-l border-white/10 pl-6">
@@ -343,8 +343,13 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
         </h4>
 
         {pmData.length === 0 ? (
-          <div className="text-white/50 p-4 font-mono text-center border border-dashed border-white/20">
-            &gt; NO LIVE POLYMARKET MARKETS RETURNED FOR THIS ENTITY.
+          <div className="flex flex-col gap-4">
+            <div className="text-[#a855f7]/80 p-8 font-mono text-center border border-[#a855f7]/30 bg-[#a855f7]/5 shadow-[inset_0_0_20px_rgba(168,85,247,0.1)] flex flex-col items-center justify-center min-h-[150px] relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#a855f7] to-transparent opacity-50 animate-pulse"></div>
+              <span className="text-2xl mb-3 block animate-pulse">⟡</span>
+              <span className="tracking-[0.2em] font-bold text-sm text-[#a855f7]">&gt; NO ACTIVE MARKETS DETECTED</span>
+              <span className="text-[10px] text-white/40 mt-3 max-w-md uppercase leading-relaxed">The Global Prediction Network was scanned. No live liquidity pools or betting markets match this exact entity signature at this time. System remains nominal.</span>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
