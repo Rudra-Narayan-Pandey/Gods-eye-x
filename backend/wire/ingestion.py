@@ -9,8 +9,14 @@ import urllib.request
 import xml.etree.ElementTree as ET
 import json
 from urllib.parse import quote_plus
+from dotenv import load_dotenv
+from backend.logging import get_logger, categorize_exception
 
+# Load environment variables from .env (so ANAKIN_API_KEY is available when running the server)
+load_dotenv()
 ANAKIN_API_KEY = os.getenv("ANAKIN_API_KEY", "")
+logger = get_logger("backend.wire.ingestion")
+logger.info("Anakin Wire: API key configured at module load", extra={"configured": bool(ANAKIN_API_KEY)})
 
 ALAKIN_SOURCE_CATALOG = {
     "news": ["AP News", "Al Jazeera", "BBC News", "CNBC", "Google News", "Reuters", "TechCrunch", "The Guardian"],
@@ -146,30 +152,98 @@ class WireIngestionEngine:
 
     def _run_anakin_action(self, action_id, params):
         if not ANAKIN_API_KEY:
+            logger.info("Skipping Anakin action because API key is not configured", extra={"event": "anakin_skip_no_key", "action_id": action_id})
             return []
 
         anakin_url = "https://api.anakin.io/v1/holocron/task"
         headers = {"X-API-Key": ANAKIN_API_KEY, "Content-Type": "application/json"}
-        response = requests.post(anakin_url, json={"action_id": action_id, "params": params}, headers=headers, timeout=10)
-        if response.status_code not in [200, 202]:
-            raise RuntimeError(f"Anakin action {action_id} returned {response.status_code}: {response.text[:300]}")
 
-        data = response.json()
+        # Dispatch with retry/backoff telemetry
+        dispatch_attempts = 0
+        max_dispatch_attempts = 3
+        response = None
+        while dispatch_attempts < max_dispatch_attempts:
+            dispatch_attempts += 1
+            try:
+                logger.info("Dispatching Anakin action", extra={"event": "anakin_dispatch", "action_id": action_id, "attempt": dispatch_attempts})
+                response = requests.post(anakin_url, json={"action_id": action_id, "params": params}, headers=headers, timeout=10)
+
+                if response.status_code in [200, 202]:
+                    logger.info("Anakin action dispatch accepted", extra={"event": "anakin_dispatch_success", "action_id": action_id, "status": response.status_code, "attempt": dispatch_attempts})
+                    break
+
+                if response.status_code == 429:
+                    category, msg = categorize_exception(Exception("HTTP 429"))
+                    wait_time = min(30, 2 ** dispatch_attempts)
+                    logger.warning("Dispatch rate limited", extra={"event": "anakin_dispatch_rate_limited", "action_id": action_id, "attempt": dispatch_attempts, "wait_time": wait_time, "category": category})
+                    time.sleep(wait_time)
+                    continue
+
+                logger.error("Anakin dispatch returned error status", extra={"event": "anakin_dispatch_error", "action_id": action_id, "status": response.status_code, "preview": response.text[:300]})
+                raise RuntimeError(f"Anakin action {action_id} returned {response.status_code}: {response.text[:300]}")
+
+            except requests.exceptions.Timeout as e:
+                category, msg = categorize_exception(e)
+                logger.warning("Dispatch timeout", extra={"event": "anakin_dispatch_timeout", "action_id": action_id, "attempt": dispatch_attempts, "category": category, "error": msg})
+                time.sleep(2)
+                continue
+            except requests.exceptions.RequestException as e:
+                category, msg = categorize_exception(e)
+                logger.error("Network error dispatching Anakin action", extra={"event": "anakin_dispatch_network_error", "action_id": action_id, "attempt": dispatch_attempts, "category": category, "error": msg})
+                time.sleep(2)
+                continue
+            except Exception as e:
+                category, msg = categorize_exception(e)
+                logger.exception("Unexpected exception during Anakin dispatch", extra={"event": "anakin_dispatch_exception", "action_id": action_id, "attempt": dispatch_attempts, "category": category, "error": msg})
+                raise
+        else:
+            logger.error("Max dispatch attempts exceeded for Anakin action", extra={"event": "anakin_dispatch_failed", "action_id": action_id, "attempts": dispatch_attempts})
+            raise RuntimeError(f"Anakin action {action_id} dispatch failed after {dispatch_attempts} attempts")
+
+        # Parse dispatch response
+        try:
+            data = response.json()
+        except Exception as e:
+            category, msg = categorize_exception(e)
+            logger.error("Failed to parse Anakin dispatch JSON", extra={"event": "anakin_dispatch_parse_error", "action_id": action_id, "category": category, "error": msg, "response_preview": response.text[:400]})
+            raise
+
         if "job_id" not in data:
+            logger.info("Anakin returned inline results (no job_id)", extra={"event": "anakin_inline_results", "action_id": action_id})
             return self._parse_anakin_results(data)
 
         poll_url = "https://api.anakin.io" + data["poll_url"]
-        import time
-        for _ in range(12):
-            time.sleep(1)
-            poll_res = requests.get(poll_url, headers={"X-API-Key": ANAKIN_API_KEY}, timeout=10)
-            if poll_res.status_code != 200:
-                continue
-            poll_data = poll_res.json()
-            if poll_data.get("status") == "completed":
-                return self._parse_anakin_results(poll_data)
-            if poll_data.get("status") == "error":
-                raise RuntimeError(f"Anakin action {action_id} failed: {poll_data}")
+        logger.info("Polling Anakin job", extra={"event": "anakin_poll_start", "action_id": action_id, "poll_url": poll_url})
+
+        # Polling loop with telemetry
+        for i in range(12):
+            wait_time = min(1 + i * 0.5, 10)
+            time.sleep(wait_time)
+            try:
+                logger.debug("Polling Anakin job", extra={"event": "anakin_poll_attempt", "action_id": action_id, "attempt": i + 1})
+                poll_res = requests.get(poll_url, headers={"X-API-Key": ANAKIN_API_KEY}, timeout=10)
+                if poll_res.status_code != 200:
+                    logger.warning("Poll returned non-200 status", extra={"event": "anakin_poll_status", "action_id": action_id, "status": poll_res.status_code, "attempt": i + 1})
+                    continue
+                poll_data = poll_res.json()
+                status = poll_data.get("status")
+                if status == "completed":
+                    logger.info("Anakin action completed", extra={"event": "anakin_action_completed", "action_id": action_id, "attempts": i + 1})
+                    return self._parse_anakin_results(poll_data)
+                if status == "error":
+                    logger.error("Anakin action returned error status", extra={"event": "anakin_action_error", "action_id": action_id, "attempt": i + 1, "error": str(poll_data)})
+                    raise RuntimeError(f"Anakin action {action_id} failed: {poll_data}")
+            except requests.exceptions.Timeout as e:
+                category, msg = categorize_exception(e)
+                logger.warning("Poll timeout", extra={"event": "anakin_poll_timeout", "action_id": action_id, "attempt": i + 1, "category": category, "error": msg})
+            except requests.exceptions.RequestException as e:
+                category, msg = categorize_exception(e)
+                logger.error("Network error while polling Anakin job", extra={"event": "anakin_poll_network_error", "action_id": action_id, "attempt": i + 1, "category": category, "error": msg})
+            except Exception as e:
+                category, msg = categorize_exception(e)
+                logger.exception("Unexpected exception while polling Anakin job", extra={"event": "anakin_poll_exception", "action_id": action_id, "attempt": i + 1, "category": category, "error": msg})
+
+        logger.error("Anakin action polling timed out", extra={"event": "anakin_poll_timed_out", "action_id": action_id})
         raise TimeoutError(f"Anakin action {action_id} polling timed out")
 
     def fetch_dynamic_query(self, query: str):
@@ -226,7 +300,7 @@ class WireIngestionEngine:
                                 "title": page_data.get("title", query),
                                 "content": page_data["extract"],
                                 "timestamp": datetime.datetime.now().isoformat(),
-                "url": f"https://en.wikipedia.org/wiki/{quote_plus(query)}"
+                                "url": f"https://en.wikipedia.org/wiki/{quote_plus(query)}"
                             })
             except Exception as e:
                 print(f"Wire Error fetching Wikipedia for {query}: {e}")

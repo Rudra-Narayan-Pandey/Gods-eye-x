@@ -10,19 +10,42 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
     if (reportData || reportLoading) return;
     setReportLoading(true);
     try {
-      const res = await fetch(`/api/reports/generate?topic=${encodeURIComponent(entity.name)}&report_type=Executive%20Summary`, {
-        method: "POST"
-      });
+      const res = await fetch(
+        `/api/reports/generate?topic=${encodeURIComponent(entity.name)}&report_type=Executive%20Summary`,
+        { method: "POST", headers: { Accept: "application/json" } }
+      );
+
+      // Try to parse JSON body even on non-2xx responses
+      let data: any = null;
+      const ct = res.headers.get("content-type") || "";
+      if (ct.includes("application/json")) {
+        data = await res.json();
+      } else {
+        const text = await res.text();
+        try {
+          data = JSON.parse(text);
+        } catch (_) {
+          data = { title: "Report", content: text };
+        }
+      }
+
       if (res.ok) {
-        const data = await res.json();
         setReportData(data);
       } else {
-        setReportData({ title: "Error", content: "Failed to connect to Anakin API." });
+        // Server returned an error but may have useful JSON fallback
+        if (data && typeof data === "object") setReportData(data);
+        else setReportData({ title: "Error", content: data?.content || "Failed to connect to Anakin API. Showing evidence-only dossier." });
       }
-    } catch (err) {
-      setReportData({ title: "Error", content: "Failed to connect to Anakin API." });
+    } catch (err: any) {
+      // Network or other issue — construct a simple evidence-only fallback from entity properties
+      const fallbackSources = entity?.properties?.evidence || [];
+      const content = fallbackSources.length > 0
+        ? fallbackSources.map((s: any, i: number) => `${i + 1}. ${s.source} - ${s.title || s.content}`).join("\n")
+        : "No live evidence available.";
+      setReportData({ title: "Offline Evidence Dossier", content, sources: fallbackSources });
+    } finally {
+      setReportLoading(false);
     }
-    setReportLoading(false);
   };
 
   const renderOverview = () => (

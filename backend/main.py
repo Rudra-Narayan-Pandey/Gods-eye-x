@@ -10,7 +10,10 @@ from .database import SessionLocal, engine
 from .holocron.orchestrator import holocron_engine
 from .wire.ingestion import ALAKIN_SOURCE_CATALOG
 
-models.Base.metadata.create_all(bind=engine)
+try:
+    models.Base.metadata.create_all(bind=engine)
+except Exception as e:
+    print(f"Warning: failed to create DB schema at startup ({e}). Continuing without blocking startup.")
 
 app = FastAPI(title="GOD'S EYE X - Real-Time Intelligence OS")
 
