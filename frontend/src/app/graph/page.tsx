@@ -20,7 +20,7 @@ export default function GraphPage() {
 
   useEffect(() => {
     // Fetch live graph data from API
-    fetch("http://localhost:8000/api/graph")
+    fetch("https://gods-eye-x.onrender.com/api/graph")
       .then(res => res.json())
       .then(data => {
         setGraphData({
