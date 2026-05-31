@@ -165,7 +165,11 @@ def run_search_task(task_id: str, q: str):
     except Exception as e:
         import traceback
         print(traceback.format_exc())
-        SEARCH_TASKS[task_id] = {"status": "error", "message": str(e)}
+        SEARCH_TASKS[task_id] = {"status": "error", "message": str(e) + " || TRACEBACK: " + traceback.format_exc()}
+
+@app.get("/api/diagnostics/tasks")
+def dump_tasks():
+    return SEARCH_TASKS
     finally:
         db.close()
 
