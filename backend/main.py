@@ -166,13 +166,12 @@ def run_search_task(task_id: str, q: str):
         import traceback
         print(traceback.format_exc())
         SEARCH_TASKS[task_id] = {"status": "error", "message": str(e) + " || TRACEBACK: " + traceback.format_exc()}
+    finally:
+        db.close()
 
 @app.get("/api/diagnostics/tasks")
 def dump_tasks():
     return SEARCH_TASKS
-    finally:
-        db.close()
-
 @app.post("/api/reports/generate")
 async def generate_report(topic: str, report_type: str):
     """Hits the ReportAgent in the Holocron pipeline"""
