@@ -87,6 +87,7 @@ def diagnostic_agents():
         }
     }
 
+SEARCH_TASKS = {}
 
 @app.get("/api/search")
 async def search_entities_async(q: str, background_tasks: BackgroundTasks):
