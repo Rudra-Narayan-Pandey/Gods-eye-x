@@ -171,7 +171,7 @@ def run_search_task(task_id: str, q: str):
 
 @app.get("/api/diagnostics/tasks")
 def dump_tasks():
-    return SEARCH_TASKS
+    return {"data": str(SEARCH_TASKS)}
 @app.post("/api/reports/generate")
 async def generate_report(topic: str, report_type: str):
     """Hits the ReportAgent in the Holocron pipeline"""
