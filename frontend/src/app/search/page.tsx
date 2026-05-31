@@ -23,8 +23,34 @@ export default function SearchPage() {
       const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`, { cache: 'no-store' });
       if (res.ok) {
         const data = await res.json();
-        setEntities(data.entities || []);
-        setPipelineData(data.ultimate_pipeline || null);
+        if (data.status === "processing" && data.task_id) {
+          const pollInterval = setInterval(async () => {
+            try {
+              const pollRes = await fetch(`/api/search/status/${data.task_id}`);
+              if (pollRes.ok) {
+                const pollData = await pollRes.json();
+                if (pollData.status === "completed") {
+                  clearInterval(pollInterval);
+                  setEntities(pollData.data.entities || []);
+                  setPipelineData(pollData.data.ultimate_pipeline || null);
+                  setLoading(false);
+                } else if (pollData.status === "error") {
+                  clearInterval(pollInterval);
+                  console.error("Task failed", pollData.message);
+                  setEntities([]);
+                  setPipelineData(null);
+                  setLoading(false);
+                }
+              }
+            } catch (pollErr) {
+              console.error("Polling error", pollErr);
+            }
+          }, 5000);
+          return; // Wait for polling to finish
+        } else {
+          setEntities(data.entities || []);
+          setPipelineData(data.ultimate_pipeline || null);
+        }
       } else {
         console.error("Failed to fetch from backend");
         setEntities([]);
