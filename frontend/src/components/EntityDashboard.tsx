@@ -340,6 +340,9 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
         return;
       }
       
+      // Clear old state before searching new entity
+      setClientPmData([]);
+      
       // Cloudflare blocks datacenter IPs (Render, Proxies, etc). 
       // Fortunately, Gamma API allows CORS (*), so we can fetch directly from the user's residential IP!
       setIsClientFetchingPm(true);
