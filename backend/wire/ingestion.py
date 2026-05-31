@@ -130,39 +130,8 @@ class WireIngestionEngine:
                             "url": event.get("slug", "")
                         })
         except Exception as e:
-            print(f"Polymarket API Error / Network Timeout: {e}.")
+            print(f"Polymarket API Error / Network Timeout: {e}. No simulated market data will be injected.")
             
-        # Fallback to dynamic simulated markets if API fails or returns empty (e.g. Cloudflare IP block on Render)
-        if not pm_signals:
-            import random
-            q_clean = query.upper()
-            pm_signals = [
-                {
-                    "type": "polymarket",
-                    "title": f"Will {q_clean} announce a major strategic pivot before Q3?",
-                    "yes_prob": random.randint(35, 65),
-                    "no_prob": 100 - random.randint(35, 65), # Intentionally adding some spread
-                    "volume": random.randint(150000, 950000),
-                    "liquidity": random.randint(50000, 300000),
-                    "source": "Polymarket Gamma API (Simulated)",
-                    "url": "https://polymarket.com"
-                },
-                {
-                    "type": "polymarket",
-                    "title": f"Will a federal regulatory action target {q_clean} this year?",
-                    "yes_prob": random.randint(15, 45),
-                    "no_prob": 100 - random.randint(15, 45),
-                    "volume": random.randint(50000, 450000),
-                    "liquidity": random.randint(20000, 150000),
-                    "source": "Polymarket Gamma API (Simulated)",
-                    "url": "https://polymarket.com"
-                }
-            ]
-            
-            # Fix probabilities to add up to 100 exactly
-            for pm in pm_signals:
-                pm["no_prob"] = 100 - pm["yes_prob"]
-
         return pm_signals
 
     def _parse_anakin_results(self, payload):
