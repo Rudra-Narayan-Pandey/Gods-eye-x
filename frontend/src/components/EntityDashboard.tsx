@@ -356,25 +356,34 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
           else matched = matched.slice(0, 2);
 
           const newPmData = matched.map((event: any) => {
-            const markets = event.markets || [];
-            if (markets.length > 0) {
-              const market = markets[0];
-              const outcomes = JSON.parse(market.outcomes || "[]");
-              const prices = JSON.parse(market.outcomePrices || "[]");
+            const outcomesStr = event.outcomes || "[]";
+            const pricesStr = event.outcomePrices || "[]";
+            
+            try {
+              const outcomes = JSON.parse(outcomesStr);
+              const prices = JSON.parse(pricesStr);
               let yes_prob = 0, no_prob = 0;
+              
               if (outcomes.includes("Yes") && outcomes.includes("No")) {
                 const yes_idx = outcomes.indexOf("Yes");
                 const no_idx = outcomes.indexOf("No");
                 yes_prob = prices.length > yes_idx && prices[yes_idx] ? Math.round(parseFloat(prices[yes_idx]) * 100) : 0;
                 no_prob = prices.length > no_idx && prices[no_idx] ? Math.round(parseFloat(prices[no_idx]) * 100) : 0;
               }
+              
               return {
-                type: "polymarket", title: event.title || "", yes_prob, no_prob,
-                volume: event.volumeNum || 0, liquidity: event.liquidityNum || 0,
-                source: "Polymarket Gamma API (Client Bypass)", url: event.slug ? `https://polymarket.com/event/${event.slug}` : ""
+                type: "polymarket", 
+                title: event.title || event.question || "", 
+                yes_prob, 
+                no_prob,
+                volume: event.volumeNum || event.volume || 0, 
+                liquidity: event.liquidityNum || event.liquidity || 0,
+                source: "Polymarket Gamma API (Client Bypass)", 
+                url: event.slug ? `https://polymarket.com/event/${event.slug}` : ""
               };
+            } catch (err) {
+              return null;
             }
-            return null;
           }).filter(Boolean);
           
           setClientPmData(newPmData);
