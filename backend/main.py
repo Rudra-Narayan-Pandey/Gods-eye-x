@@ -276,24 +276,24 @@ def dump_tasks():
 
 
 @app.post("/api/reports/generate")
-async def generate_report(topic: str, report_type: str):
+async def generate_report(topic: str, report_type: str, max_evidence: int = 25, prefer_primary: bool = False):
     try:
         from backend.holocron.anakin_llm import anakin_chatgpt
         from backend.wire.ingestion import wire_engine
-
-        live_signals = wire_engine.fetch_dynamic_query(topic)
+        # Allow the caller to request more in-depth evidence; wire will obey max_results
+        live_signals = wire_engine.fetch_dynamic_query(topic, max_results=max_evidence, prefer_primary=prefer_primary)
         evidence = [
             {
                 "source": s.get("source", "Unknown source"),
                 "type": s.get("type", "unknown"),
                 "title": s.get("title", ""),
-                "content": (s.get("content", "") or "")[:800],
+                "content": (s.get("content", "") or "")[:1600],
                 "url": s.get("url", ""),
                 "timestamp": s.get("timestamp", ""),
             }
-            for s in live_signals[:15]
+            for s in live_signals
             if s.get("title") or s.get("content")
-        ]
+        ][:max_evidence]
         if not evidence:
             return {
                 "title": f"{topic} Report",
@@ -315,6 +315,8 @@ async def generate_report(topic: str, report_type: str):
             "- Include sections: Executive Summary, Verified Signals, Risks, Opportunities, Source Gaps, Next Checks.\n"
             "- If evidence is weak, say exactly what is weak."
         )
+        if prefer_primary:
+            prompt += "\n- Prefer primary sources (official filings, government sites, research papers) when available. Label derivative/aggregated sources clearly."
         try:
             response = anakin_chatgpt(prompt)
         except Exception as exc:
