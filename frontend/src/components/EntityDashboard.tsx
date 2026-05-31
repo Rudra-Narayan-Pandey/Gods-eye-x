@@ -340,14 +340,13 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
         return;
       }
       
-      // Use a free public CORS proxy to bypass browser restrictions on the Gamma API
+      // Cloudflare blocks datacenter IPs (Render, Proxies, etc). 
+      // Fortunately, Gamma API allows CORS (*), so we can fetch directly from the user's residential IP!
       setIsClientFetchingPm(true);
       try {
-        const targetUrl = encodeURIComponent('https://gamma-api.polymarket.com/events?limit=50&active=true&closed=false');
-        const res = await fetch(`https://api.allorigins.win/get?url=${targetUrl}`);
+        const res = await fetch('https://gamma-api.polymarket.com/events?limit=50&active=true&closed=false');
         if (res.ok) {
-          const proxyData = await res.json();
-          const events = JSON.parse(proxyData.contents);
+          const events = await res.json();
           const query = entity.name.toLowerCase();
           let matched = events.filter((e: any) => 
             (e.title || '').toLowerCase().includes(query) || 
