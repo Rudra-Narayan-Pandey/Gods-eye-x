@@ -84,9 +84,12 @@ opportunity_discovery, reality_drift, ultimate_summary.
 
 Rules:
 - Use only facts present in the evidence above.
-- Do not invent statistics, future years, secret access, terminal language, or unobserved sources.
+- Do not invent statistics, secret access, terminal language, or unobserved sources.
 - If evidence is insufficient for a section, return an empty list or a sentence saying the live evidence is insufficient.
 - Include source names inside each claim when possible.
+- ultimate_summary.horizon_20_year is required. It must include string keys "2026" through "2046".
+- Each horizon year must be an evidence-bound analyst scenario based on the live evidence, phrased as "If the current live signals persist..." or "Based on returned source coverage...", not as a guaranteed fact.
+- Each horizon year must cite at least one source name from the live evidence.
 """
             response = anakin_chatgpt(prompt, max_retries=12)
             json_str = response.strip()
@@ -97,6 +100,12 @@ Rules:
             parsed = json.loads(json_str)
             parsed["synthesis_mode"] = "anakin_live_evidence_bound"
             parsed["polymarket_data"] = [s for s in evidence if s.get("type") == "polymarket"]
+            parsed.setdefault("ultimate_summary", {})
+            parsed["ultimate_summary"]["horizon_20_year"] = self._complete_horizon(
+                query,
+                evidence,
+                parsed["ultimate_summary"].get("horizon_20_year", {}),
+            )
             return parsed
         except Exception as exc:
             print(f"[God's Eye X] Evidence-bound Anakin synthesis unavailable: {exc}")
@@ -189,6 +198,36 @@ Rules:
             "ultimate_summary": summary,
         }
 
+    def _complete_horizon(self, query, evidence, existing=None):
+        existing = existing or {}
+        horizon = {}
+        top_sources = ", ".join(sorted({s["source"] for s in evidence[:5]}))
+        themes = [s["title"] or s["content"][:160] for s in evidence if s.get("title") or s.get("content")]
+        if not themes:
+            themes = [f"returned live evidence about {query}"]
+
+        for year in range(2026, 2047):
+            key = str(year)
+            supplied = existing.get(key)
+            if supplied and isinstance(supplied, str) and supplied.strip():
+                horizon[key] = supplied.strip()
+                continue
+
+            theme = themes[(year - 2026) % len(themes)]
+            if year <= 2028:
+                phase = "near-term policy, market, and public narrative responses"
+            elif year <= 2032:
+                phase = "institutional adoption and regulatory normalization"
+            elif year <= 2038:
+                phase = "second-order economic, technology, and governance effects"
+            else:
+                phase = "long-range structural positioning and resilience planning"
+            horizon[key] = (
+                f"Based on returned source coverage from {top_sources}, the {year} scenario for {query} should monitor "
+                f"{phase}; the current evidence anchor is: {theme}"
+            )
+        return horizon
+
     def _contains_any(self, signal, words):
         text = f"{signal.get('title', '')} {signal.get('content', '')}".lower()
         return any(word in text for word in words)
@@ -202,7 +241,7 @@ Rules:
             "what_is_happening": f"Live sources returned {len(evidence)} evidence items for {query}. The leading signal is from {top['source']}: {top['title'] or top['content'][:220]}.",
             "why_it_is_happening": f"The current read is based on returned source coverage across {sources}. Supporting signal: {supporting}",
             "what_next": f"Monitor for corroboration from additional Alakin/live sources before making a stronger forecast. Next useful signal to verify: {third}",
-            "horizon_20_year": {},
+            "horizon_20_year": self._complete_horizon(query, evidence),
             "opportunities": [s["title"] for s in evidence[:3] if s["title"]],
             "risks": [s["title"] for s in evidence if self._contains_any(s, ["risk", "regulation", "lawsuit", "decline"])][:3],
         }

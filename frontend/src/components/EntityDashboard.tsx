@@ -285,7 +285,14 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
           </div>
         ) : reportData ? (
           <div className="text-sm font-mono text-white/80 leading-relaxed whitespace-pre-wrap">
-            <h5 className="text-[#00ff00]/70 font-bold mb-4 tracking-widest text-lg">{reportData.title}</h5>
+            <div className="flex flex-col gap-2 mb-4">
+              <h5 className="text-[#00ff00]/70 font-bold tracking-widest text-lg">{reportData.title}</h5>
+              {reportData.sources?.length > 0 && (
+                <div className="text-[10px] text-white/40 uppercase tracking-widest">
+                  SOURCES USED: {reportData.sources.map((s: any) => s.source).filter(Boolean).slice(0, 6).join(" | ")}
+                </div>
+              )}
+            </div>
             <p className="text-justify bg-[#00ff00]/5 p-4 border-l-2 border-[#00ff00]/30 shadow-inner min-h-[300px]">
               {reportData.content}
             </p>

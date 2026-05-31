@@ -223,12 +223,47 @@ def dump_tasks():
 async def generate_report(topic: str, report_type: str):
     try:
         from backend.holocron.anakin_llm import anakin_chatgpt
+        from backend.wire.ingestion import wire_engine
 
+        live_signals = wire_engine.fetch_dynamic_query(topic)
+        evidence = [
+            {
+                "source": s.get("source", "Unknown source"),
+                "type": s.get("type", "unknown"),
+                "title": s.get("title", ""),
+                "content": (s.get("content", "") or "")[:800],
+                "url": s.get("url", ""),
+                "timestamp": s.get("timestamp", ""),
+            }
+            for s in live_signals[:15]
+            if s.get("title") or s.get("content")
+        ]
+        if not evidence:
+            return {
+                "title": f"{topic} Report",
+                "content": "No live Alakin/Anakin evidence returned for this dossier request. The system did not generate an unsourced report.",
+                "sources": [],
+            }
+
+        evidence_block = "\n".join(
+            f"{idx + 1}. [{item['source']} / {item['type']}] {item['title']} | {item['url']} | {item['content']}"
+            for idx, item in enumerate(evidence)
+        )
         prompt = (
-            f"Write an evidence-bound executive summary about {topic} focusing on {report_type}. "
-            "Do not invent facts. If live evidence is insufficient, say so clearly."
+            f"Write a premium but strictly evidence-bound {report_type} dossier about {topic}.\n\n"
+            f"Live Alakin/Anakin-aligned evidence:\n{evidence_block}\n\n"
+            "Rules:\n"
+            "- Use only the evidence above.\n"
+            "- Cite source names inline for every important claim.\n"
+            "- Do not mention clearance levels, secret access, terminal fantasy, or unsupported numbers.\n"
+            "- Include sections: Executive Summary, Verified Signals, Risks, Opportunities, Source Gaps, Next Checks.\n"
+            "- If evidence is weak, say exactly what is weak."
         )
         response = anakin_chatgpt(prompt)
-        return {"title": f"{topic} Report", "content": response}
+        return {
+            "title": f"{topic} Report",
+            "content": response,
+            "sources": [{"source": item["source"], "title": item["title"], "url": item["url"]} for item in evidence],
+        }
     except Exception as e:
         return {"title": f"{topic} Report", "content": f"Real-time AI generation failed: {e}"}

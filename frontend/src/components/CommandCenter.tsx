@@ -73,10 +73,10 @@ export default function CommandCenter({ pipelineData }: { pipelineData: any }) {
                   <p><strong className="text-accent uppercase tracking-widest text-xs">WHY IT IS HAPPENING:</strong><br/>{ultimate_summary.why_it_is_happening}</p>
                   <p><strong className="text-accent uppercase tracking-widest text-xs">WHAT NEXT:</strong><br/>{ultimate_summary.what_next}</p>
                   
-                  {ultimate_summary.horizon_20_year && (
+                  {ultimate_summary.horizon_20_year && Object.keys(ultimate_summary.horizon_20_year).length > 0 && (
                     <div className="mt-4 border-t border-accent/30 pt-4">
                       <h4 className="text-accent font-mono font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
-                        <Radar className="w-3 h-3 animate-spin-slow" /> Evidence-Bound Forecasts
+                        <Radar className="w-3 h-3 animate-spin-slow" /> Year-By-Year Predictive Horizon Matrix
                       </h4>
                       <div className="flex flex-col gap-4 relative border-l border-accent/20 pl-4 ml-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                         {Object.entries(ultimate_summary.horizon_20_year).filter(([k]) => k !== "...").map(([year, prediction], idx) => {
