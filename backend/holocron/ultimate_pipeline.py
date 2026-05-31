@@ -110,7 +110,7 @@ Generate a strictly valid JSON object (no markdown, no backticks) with the follo
         }}
     }}
 }}"""
-                response = anakin_chatgpt(prompt, max_retries=60)
+                response = anakin_chatgpt(prompt, max_retries=120)
                 
                 import json
                 import re
