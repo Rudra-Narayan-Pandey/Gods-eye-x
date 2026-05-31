@@ -79,16 +79,32 @@ export default function CommandCenter({ pipelineData }: { pipelineData: any }) {
                         <Radar className="w-3 h-3 animate-spin-slow" /> Year-By-Year Predictive Horizon Matrix
                       </h4>
                       <div className="flex flex-col gap-4 relative border-l border-accent/20 pl-4 ml-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                        {Object.entries(ultimate_summary.horizon_20_year).filter(([k]) => k !== "...").map(([year, prediction], idx) => {
-                          // Alternate colors to make it look incredibly cool
+                        {Object.entries(ultimate_summary.horizon_20_year).filter(([k]) => k !== "...").map(([year, prediction]: [string, any], idx) => {
                           const colors = ["bg-accent shadow-[0_0_8px_#00ff00]", "bg-purple-500 shadow-[0_0_8px_#a855f7]", "bg-blue-500 shadow-[0_0_8px_#3b82f6]", "bg-rose-500 shadow-[0_0_8px_#f43f5e]"];
                           const textColors = ["text-accent bg-accent/10", "text-purple-400 bg-purple-500/10", "text-blue-400 bg-blue-500/10", "text-rose-400 bg-rose-500/10"];
                           const colorIdx = idx % colors.length;
+                          const isStructured = prediction && typeof prediction === "object";
                           return (
                             <div key={year} className="relative">
                               <div className={`absolute w-2 h-2 rounded-full -left-[21px] top-1.5 ${colors[colorIdx]} ${year === '2046' ? 'animate-pulse' : ''}`}></div>
                               <span className={`text-xs font-bold px-1 ${textColors[colorIdx]}`}>{year} PROJECTION:</span>
-                              <p className="text-xs text-white/80 mt-1 leading-relaxed text-justify">{prediction as string}</p>
+                              {isStructured ? (
+                                <div className="text-xs text-white/80 mt-2 leading-relaxed flex flex-col gap-2">
+                                  <p className="text-justify">{prediction.projection}</p>
+                                  <div className="grid grid-cols-1 gap-1 bg-black/40 border border-white/10 p-2">
+                                    <span><strong className="text-accent">Economic model:</strong> {prediction.economic_model}</span>
+                                    <span><strong className="text-accent">Statistical analysis:</strong> {prediction.statistical_analysis}</span>
+                                    <span><strong className="text-accent">Historical trend:</strong> {prediction.historical_trend}</span>
+                                    <span><strong className="text-accent">Confidence interval:</strong> {prediction.confidence_interval}</span>
+                                    <span><strong className="text-accent">Transition logic:</strong> {prediction.transition_logic}</span>
+                                    {prediction.sources?.length > 0 && (
+                                      <span><strong className="text-accent">Sources:</strong> {prediction.sources.join(" | ")}</span>
+                                    )}
+                                  </div>
+                                </div>
+                              ) : (
+                                <p className="text-xs text-white/80 mt-1 leading-relaxed text-justify">{prediction as string}</p>
+                              )}
                             </div>
                           );
                         })}
