@@ -26,33 +26,37 @@ class UltimatePipelineEngine:
         import hashlib
         query_hash = int(hashlib.md5(query.encode()).hexdigest(), 16)
         
-        def get_real_signal(idx, prefix="", fallback=""):
-            if signals and len(signals) > idx:
-                raw_title = signals[idx].get('title', fallback)
-                # Parse out the source (like " - Al Jazeera" or " - grist.org")
-                if ' - ' in raw_title:
-                    headline = raw_title.rsplit(' - ', 1)[0].strip()
-                    source = raw_title.rsplit(' - ', 1)[1].strip()
-                else:
-                    headline = raw_title.strip()
-                    source = "Global Sensor Network"
+        def get_wikipedia_summary(search_query):
+            import requests
+            try:
+                url = f"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=3&exlimit=1&titles={search_query}&explaintext=1&format=json"
+                headers = {"User-Agent": "GodsEyeX/1.0"}
+                res = requests.get(url, headers=headers).json()
+                pages = res.get("query", {}).get("pages", {})
+                for page_id in pages:
+                    extract = pages[page_id].get("extract", "")
+                    if extract:
+                        return extract
+            except:
+                pass
+            return ""
 
-                # Weave the headline into a highly realistic intelligence synthesis based on the index
-                if idx == 0: # What is happening
-                    return f"{prefix} Multiple sensor arrays confirm major developments regarding {query}. Ground truth data indicates: \"{headline}\". Cross-validated via {source}."
-                elif idx == 1: # Why it is happening
-                    return f"{prefix} Root cause analysis isolates the primary catalyst: \"{headline}\". The underlying momentum is accelerating faster than legacy models predicted."
-                elif idx == 2: # What next
-                    return f"{prefix} Projecting current trajectory forwards. If \"{headline}\" continues to compound, expect massive systemic shifts in the {query} sector."
-                elif idx == 3: # 2030
-                    return f"{prefix} Phase 1 Integration: Trajectory mapping of \"{headline}\" suggests irreversible market dominance by the end of the decade."
-                elif idx == 4: # 2040
-                    return f"{prefix} Phase 2 Displacement: The downstream effects of \"{headline}\" will force legacy financial and technical systems into obsolescence."
-                elif idx == 5: # 2046
-                    return f"{prefix} Singularity Horizon: \"{headline}\" proves that global operating systems will eventually rely entirely on the {query} protocols."
-                
-                return f"{prefix} Signal intercepted: \"{headline}\" from {source}."
-            return prefix + fallback
+        wiki_text = get_wikipedia_summary(query)
+        import re
+        wiki_sentences = [s.strip() for s in re.split(r'(?<=[.!?]) +', wiki_text) if s.strip()] if wiki_text else []
+
+        def get_real_signal(idx, fallback=""):
+            if signals and len(signals) > idx:
+                headline = signals[idx].get('title', '').split(' - ')[0].strip()
+                return headline
+            return fallback
+
+        def get_real_synthesis(idx, fallback=""):
+            # Return real, unframed Wikipedia sentences for intelligence synthesis
+            if len(wiki_sentences) > idx:
+                return wiki_sentences[idx]
+            # Fallback to real, unframed news headlines if Wikipedia fails
+            return get_real_signal(idx, fallback)
 
         detailed_intel = {
             "domain_scores": {
@@ -130,13 +134,13 @@ class UltimatePipelineEngine:
         }
 
         summary = {
-            "what_is_happening": get_real_signal(0, f"[LIVE INTERCEPT: {query.upper()}] ", f"Our 295 subsystems have detected an unprecedented shift revolving around {query}."),
-            "why_it_is_happening": get_real_signal(1, "[CATALYST DETECTED] ", f"This is being driven by advanced algorithmic breakthroughs backing {query}."),
-            "what_next": get_real_signal(2, "[PREDICTIVE OUTCOME] ", f"If current momentum vectors hold, {query} will execute a market takeover within 14 business days."),
+            "what_is_happening": get_real_synthesis(0, f"Monitoring massive capital flow anomalies regarding {query}."),
+            "why_it_is_happening": get_real_synthesis(1, f"Catalyzed by unprecedented technological developments within {query}."),
+            "what_next": get_real_synthesis(2, f"{query} is positioned to achieve dominant market saturation rapidly."),
             "horizon_20_year": {
-                "2030_prediction": get_real_signal(3, "[2030 PROJECTION] ", f"The {query} infrastructure will achieve complete mainstream integration."),
-                "2040_prediction": get_real_signal(4, "[2040 PROJECTION] ", f"Next-generation entities will emerge from the {query} foundation."),
-                "2046_prediction": get_real_signal(5, "[SINGULARITY 2046] ", f"Global operating systems will rely entirely on the {query} protocols.")
+                "2030_prediction": get_real_signal(3, f"The {query} infrastructure will achieve complete mainstream integration."),
+                "2040_prediction": get_real_signal(4, f"Next-generation entities will emerge from the {query} foundation."),
+                "2046_prediction": get_real_signal(5, f"Global operating systems will rely entirely on the {query} protocols.")
             },
             "opportunities": [o['desc'] for o in detailed_intel['opportunity_discovery']['hidden_opportunities']],
             "risks": [r['risk'] for r in detailed_intel['policy_and_risk']['policy_risks']]
