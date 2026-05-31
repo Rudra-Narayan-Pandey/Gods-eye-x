@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 ANAKIN_API_KEY = os.getenv("ANAKIN_API_KEY", "")
 
-def anakin_chatgpt(prompt: str, max_retries=15) -> str:
+def anakin_chatgpt(prompt: str, max_retries=60) -> str:
     """
     Sends a prompt to the Anakin Wire ChatGPT action asynchronously and polls for the response.
     Returns the answer_text.
