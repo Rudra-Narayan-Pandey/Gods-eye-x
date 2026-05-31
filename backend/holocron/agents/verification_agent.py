@@ -32,15 +32,11 @@ class VerificationAgent:
                 
             except Exception as exc:
                 print(f"[VerificationAgent] AI Verification failed for {e['name']}: {exc}")
-                e['verification_score'] = 0.90
-                e['consensus'] = "Simulated Strong"
-                e['verification_status'] = "Verified"
+                e['verification_score'] = 0.0
+                e['consensus'] = "Unavailable"
+                e['verification_status'] = "Unverified"
             
-            # Attaching mock evidence structure
-            e['evidence'] = [
-                {"source": "Reuters API", "url": "https://reuters.com"},
-                {"source": "Bloomberg Terminal", "url": "https://bloomberg.com"}
-            ]
+            e['evidence'] = e.get('evidence', [])
             verified_entities.append(e)
             
         print(f"[VerificationAgent] Verified {len(verified_entities)} entities via LLM Consensus.")

@@ -22,14 +22,6 @@ class KnowledgeGraphAgent:
                     "MERGE (n:Entity {name: $name}) SET n.type = $type, n.momentum = $momentum",
                     name=e['name'], type=e['type'], momentum=e.get('confidence', 0.85)
                 )
-                # Create fake relationship for hackathon demo if certain keywords are present
-                if e['name'] == "NVIDIA" or e['name'] == "AAPL":
-                    session.run(
-                        "MATCH (a:Entity {name: $name}) "
-                        "MERGE (b:Entity {name: 'AI Infrastructure'}) SET b.type = 'Technology' "
-                        "MERGE (a)-[r:ENABLES]->(b)",
-                        name=e['name']
-                    )
             print(f"[KnowledgeGraphAgent] Successfully persisted {len(entities)} entities to Graph.")
         except Exception as e:
             print(f"Neo4j Error: {e}")

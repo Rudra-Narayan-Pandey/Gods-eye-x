@@ -81,7 +81,7 @@ export default function IntelligencePanel({ selectedNode }: { selectedNode?: any
 
             {selectedNode.properties && Object.keys(selectedNode.properties).length > 0 && (
               <div className="flex flex-col gap-2 mt-2">
-                <div className="text-[10px] text-white/50 uppercase tracking-widest border-b border-white/10 pb-1">Cryptographic Metadata</div>
+                <div className="text-[10px] text-white/50 uppercase tracking-widest border-b border-white/10 pb-1">Source Metadata</div>
                 <div className="grid grid-cols-1 gap-2 font-mono text-[10px]">
                   {Object.entries(selectedNode.properties).map(([k, v]: [string, any], i) => (
                     <div key={i} className="flex justify-between border-b border-white/5 pb-1">
@@ -159,16 +159,16 @@ export default function IntelligencePanel({ selectedNode }: { selectedNode?: any
       <div className="p-3 border-t border-glass-border bg-black text-[9px] font-mono text-[#00ff00]/60 flex flex-col gap-1 h-20 overflow-hidden">
         {selectedNode ? (
           <>
-            <span className="animate-pulse text-accent">&gt; Establishing direct telemetry with Node {selectedNode.id?.substring(0,6)}...</span>
-            <span>&gt; Bypassing encryption layers...</span>
-            <span>&gt; Synchronizing neural pathways...</span>
+            <span className="animate-pulse text-accent">&gt; Loading source metadata for node {selectedNode.id?.substring(0,6)}...</span>
+            <span>&gt; Reading stored evidence links...</span>
+            <span>&gt; Rendering graph context...</span>
             <span>&gt; Data stream active.</span>
           </>
         ) : (
           <>
-            <span className="animate-pulse">&gt; Intercepting global signal streams...</span>
-            <span>&gt; Parsing 14,032 encrypted subnets...</span>
-            <span>&gt; Cryptographic consensus reached on 295 subsystems.</span>
+            <span className="animate-pulse">&gt; Reading live graph feed...</span>
+            <span>&gt; Parsing returned entities and edges...</span>
+            <span>&gt; Evidence consensus computed from returned live sources.</span>
             <span>&gt; Awaiting command...</span>
           </>
         )}

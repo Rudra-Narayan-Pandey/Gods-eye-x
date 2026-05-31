@@ -7,8 +7,21 @@ import requests
 import os
 import urllib.request
 import xml.etree.ElementTree as ET
+import json
+from urllib.parse import quote_plus
 
-ANAKIN_API_KEY = os.getenv("ANAKIN_API_KEY", "ask_a0ba623bd6752e230fbc5d15649722dd1b800f6bfff4e8e063b43aff8a38b833")
+ANAKIN_API_KEY = os.getenv("ANAKIN_API_KEY", "")
+
+ALAKIN_SOURCE_CATALOG = {
+    "news": ["AP News", "Al Jazeera", "BBC News", "CNBC", "Google News", "Reuters", "TechCrunch", "The Guardian"],
+    "finance": ["BIS", "BLS", "BSE India", "CBOE", "CFTC", "CoinGecko", "ECB", "EIA", "FRED", "NSE India", "SEC EDGAR", "US Treasury", "Yahoo Finance"],
+    "research": ["OpenAlex", "PubMed", "Semantic Scholar", "arXiv"],
+    "developer-tools": ["AlternativeTo", "DEV Community", "GitHub", "Hacker News", "npm", "PyPI", "StackOverflow"],
+    "prediction-markets": ["Kalshi", "Manifold Markets", "Polymarket"],
+    "travel": ["Agoda", "Airbnb", "Booking.com", "Google Flights", "Skyscanner", "seats.aero"],
+    "commerce": ["Amazon", "Costco", "eBay", "Flipkart", "Target", "Walmart"],
+    "domains": ["GoDaddy", "Instant Domain Search", "Name.com", "WHOIS / Domain Intel"],
+}
 
 class WireIngestionEngine:
     def __init__(self):
@@ -82,8 +95,8 @@ class WireIngestionEngine:
                     markets = event.get("markets", [])
                     if markets:
                         market = markets[0]
-                        outcomes = eval(market.get("outcomes", "[]"))
-                        prices = eval(market.get("outcomePrices", "[]"))
+                        outcomes = json.loads(market.get("outcomes", "[]"))
+                        prices = json.loads(market.get("outcomePrices", "[]"))
                         
                         yes_prob = 0
                         no_prob = 0
@@ -99,96 +112,88 @@ class WireIngestionEngine:
                             "yes_prob": yes_prob,
                             "no_prob": no_prob,
                             "volume": event.get("volume", 0),
-                            "liquidity": event.get("liquidity", 0)
+                            "liquidity": event.get("liquidity", 0),
+                            "source": "Polymarket Gamma API",
+                            "url": event.get("slug", "")
                         })
         except Exception as e:
-            print(f"Polymarket API Error / Network Timeout: {e}. Engaging Dynamic Wire Fallback...")
-            # Highly realistic dynamic generation based on the actual search query to bypass network blocks
-            import hashlib
-            query_hash = int(hashlib.md5(query.encode()).hexdigest(), 16)
-            base_vol = (query_hash % 50) + 10
-            base_prob = (query_hash % 60) + 20
-            pm_signals = [
-                {
-                    "type": "polymarket",
-                    "title": f"Will {query.title()} face federal regulation or antitrust action in 2026?",
-                    "yes_prob": base_prob,
-                    "no_prob": 100 - base_prob,
-                    "volume": base_vol * 1000000 + (query_hash % 900000),
-                    "liquidity": (base_vol * 1000000) // 4
-                },
-                {
-                    "type": "polymarket",
-                    "title": f"Will {query.title()} announce a major acquisition in Q4?",
-                    "yes_prob": (100 - base_prob) // 2 + 15,
-                    "no_prob": 100 - ((100 - base_prob) // 2 + 15),
-                    "volume": (base_vol // 2) * 1000000 + (query_hash % 500000),
-                    "liquidity": (base_vol // 2 * 1000000) // 5
-                }
-            ]
+            print(f"Polymarket API Error / Network Timeout: {e}. No simulated market data will be injected.")
         return pm_signals
+
+    def _parse_anakin_results(self, payload):
+        data = payload.get("data", payload)
+        candidates = data.get("results") or data.get("items") or data.get("articles") or data.get("data") or []
+        if isinstance(candidates, dict):
+            candidates = candidates.get("results") or candidates.get("items") or []
+
+        parsed = []
+        for item in candidates[:10]:
+            if not isinstance(item, dict):
+                continue
+            title = item.get("title") or item.get("headline") or item.get("name") or ""
+            content = item.get("description") or item.get("summary") or item.get("content") or title
+            if not title and not content:
+                continue
+            parsed.append({
+                "type": item.get("type", "news"),
+                "source": item.get("source") or item.get("publisher") or "Anakin Wire API",
+                "title": title,
+                "content": content,
+                "timestamp": item.get("published") or item.get("published_at") or datetime.datetime.now().isoformat(),
+                "url": item.get("url") or item.get("link") or "",
+            })
+        return parsed
+
+    def _run_anakin_action(self, action_id, params):
+        if not ANAKIN_API_KEY:
+            return []
+
+        anakin_url = "https://api.anakin.io/v1/holocron/task"
+        headers = {"X-API-Key": ANAKIN_API_KEY, "Content-Type": "application/json"}
+        response = requests.post(anakin_url, json={"action_id": action_id, "params": params}, headers=headers, timeout=10)
+        if response.status_code not in [200, 202]:
+            raise RuntimeError(f"Anakin action {action_id} returned {response.status_code}: {response.text[:300]}")
+
+        data = response.json()
+        if "job_id" not in data:
+            return self._parse_anakin_results(data)
+
+        poll_url = "https://api.anakin.io" + data["poll_url"]
+        import time
+        for _ in range(12):
+            time.sleep(1)
+            poll_res = requests.get(poll_url, headers={"X-API-Key": ANAKIN_API_KEY}, timeout=10)
+            if poll_res.status_code != 200:
+                continue
+            poll_data = poll_res.json()
+            if poll_data.get("status") == "completed":
+                return self._parse_anakin_results(poll_data)
+            if poll_data.get("status") == "error":
+                raise RuntimeError(f"Anakin action {action_id} failed: {poll_data}")
+        raise TimeoutError(f"Anakin action {action_id} polling timed out")
+
     def fetch_dynamic_query(self, query: str):
-        print(f"Anakin Wire: Authenticating with API Key... [OK]")
+        print(f"Anakin Wire: API key configured: {'yes' if ANAKIN_API_KEY else 'no'}")
         print(f"Anakin Wire: Executing live wire extraction for '{query}'...")
         signals = []
         
-        # 1. Attempt Official Anakin.io Wire API Call
-        try:
-            anakin_url = "https://api.anakin.io/v1/holocron/task" 
-            headers = {
-                "X-API-Key": ANAKIN_API_KEY,
-                "Content-Type": "application/json"
-            }
-            payload = {
-                "action_id": "gn_search",
-                "params": {"query": query}
-            }
-            
-            # Start Async Scraping Task
-            print(f"Anakin Wire: Dispatching async action 'gn_search' for '{query}'...")
-            response = requests.post(anakin_url, json=payload, headers=headers, timeout=5)
-            
-            if response.status_code == 200:
-                data = response.json()
-                if "job_id" in data:
-                    job_id = data["job_id"]
-                    poll_url = "https://api.anakin.io" + data["poll_url"]
-                    print(f"Anakin Wire: Task accepted. Job ID: {job_id}. Polling for completion...")
-                    
-                    # Poll for completion (max 10 seconds)
-                    import time
-                    for _ in range(10):
-                        time.sleep(1)
-                        poll_res = requests.get(poll_url, headers={"X-API-Key": ANAKIN_API_KEY}, timeout=5)
-                        if poll_res.status_code == 200:
-                            poll_data = poll_res.json()
-                            if poll_data.get("status") == "completed":
-                                # Parse Anakin Wire Response
-                                results = poll_data.get("data", {}).get("results", [])[:10]
-                                for item in results:
-                                    signals.append({
-                                        "type": "news",
-                                        "source": item.get("source", "Anakin Wire API"),
-                                        "title": item.get("title", ""),
-                                        "content": item.get("description", item.get("title", "")),
-                                        "timestamp": item.get("published", datetime.datetime.now().isoformat()),
-                                        "url": item.get("url", "")
-                                    })
-                                print(f"Anakin Wire: Job completed successfully. Extracted {len(signals)} signals.")
-                                return signals
-                            elif poll_data.get("status") == "error":
-                                print(f"Anakin Wire: Job failed remotely: {poll_data}")
-                                break
-                    else:
-                        print("Anakin Wire: Async job polling timed out.")
-                else:
-                    print(f"Anakin Wire: Unexpected synchronous response or error: {data}")
-        except Exception as e:
-            print(f"Anakin Wire API Connection Error: {e}. Falling back to Anakin-Simulated Node...")
+        if ANAKIN_API_KEY:
+            for action_id, params in [
+                ("google_news_search", {"keyword": query}),
+                ("gn_search", {"query": query}),
+            ]:
+                try:
+                    print(f"Anakin Wire: Dispatching live action '{action_id}' for '{query}'...")
+                    action_signals = self._run_anakin_action(action_id, params)
+                    signals.extend(action_signals)
+                    if action_signals:
+                        print(f"Anakin Wire: action '{action_id}' returned {len(action_signals)} signals.")
+                        break
+                except Exception as e:
+                    print(f"Anakin Wire action '{action_id}' unavailable: {e}")
 
-        # 2. Anakin-Simulated Node (Fallback to guarantee demo works if API structure changes)
-        print(f"Anakin Wire: Engaging Secondary Ingestion Node for '{query}'...")
-        url = f"https://news.google.com/rss/search?q={query}"
+        print(f"Anakin Wire: Querying public live sources for '{query}'...")
+        url = f"https://news.google.com/rss/search?q={quote_plus(query)}"
         try:
             res = requests.get(url, timeout=5)
             feed = feedparser.parse(res.content)
@@ -204,11 +209,11 @@ class WireIngestionEngine:
         except Exception as e:
             print(f"Wire Error fetching dynamic query {query}: {e}")
             
-        # Wikipedia Fallback to guarantee real data for any query
+        # Wikipedia only adds real encyclopedia context; it is skipped if no page exists.
         if len(signals) == 0:
             print(f"Anakin Wire: Google News returned 0 signals for '{query}'. Engaging Wikipedia fallback...")
             try:
-                wiki_url = f"https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro=True&explaintext=True&titles={query}"
+                wiki_url = f"https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro=True&explaintext=True&titles={quote_plus(query)}"
                 resp = requests.get(wiki_url, timeout=5)
                 if resp.status_code == 200:
                     data = resp.json()
@@ -221,7 +226,7 @@ class WireIngestionEngine:
                                 "title": page_data.get("title", query),
                                 "content": page_data["extract"],
                                 "timestamp": datetime.datetime.now().isoformat(),
-                                "url": f"https://en.wikipedia.org/wiki/{query}"
+                "url": f"https://en.wikipedia.org/wiki/{quote_plus(query)}"
                             })
             except Exception as e:
                 print(f"Wire Error fetching Wikipedia for {query}: {e}")
@@ -269,8 +274,7 @@ class WireIngestionEngine:
         # ── ANAKIN INTEGRATION: arXiv (Academic Research) ──
         print(f"Anakin Wire: Querying arXiv Academic Integration for '{query}'...")
         try:
-            # Replace spaces with + for URL
-            search_q = query.replace(' ', '+')
+            search_q = quote_plus(query)
             arxiv_url = f"http://export.arxiv.org/api/query?search_query=all:{search_q}&start=0&max_results=2"
             with urllib.request.urlopen(arxiv_url, timeout=5) as response:
                 xml_data = response.read()
@@ -293,7 +297,7 @@ class WireIngestionEngine:
         # ── ANAKIN INTEGRATION: GitHub (Developer Tools) ──
         print(f"Anakin Wire: Querying GitHub Integration for '{query}'...")
         try:
-            gh_url = f"https://api.github.com/search/repositories?q={query}&sort=stars&order=desc&per_page=2"
+            gh_url = f"https://api.github.com/search/repositories?q={quote_plus(query)}&sort=stars&order=desc&per_page=2"
             gh_resp = requests.get(gh_url, headers={"User-Agent": "GodsEyeX"}, timeout=5)
             if gh_resp.status_code == 200:
                 items = gh_resp.json().get("items", [])

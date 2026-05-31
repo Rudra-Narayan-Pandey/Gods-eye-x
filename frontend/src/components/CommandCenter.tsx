@@ -29,7 +29,7 @@ export default function CommandCenter({ pipelineData }: { pipelineData: any }) {
         <div className="glass p-4 h-96 flex flex-col font-mono text-xs border border-white/5 relative overflow-hidden group">
           <div className="flex items-center gap-2 mb-3 border-b border-white/10 pb-2">
             <Terminal className="w-4 h-4 text-green-400" />
-            <span className="text-white/70 uppercase tracking-widest">Live Execution Trace (295 Systems)</span>
+            <span className="text-white/70 uppercase tracking-widest">Live Evidence Trace</span>
           </div>
           <div 
             ref={scrollRef}
@@ -76,7 +76,7 @@ export default function CommandCenter({ pipelineData }: { pipelineData: any }) {
                   {ultimate_summary.horizon_20_year && (
                     <div className="mt-4 border-t border-accent/30 pt-4">
                       <h4 className="text-accent font-mono font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
-                        <Radar className="w-3 h-3 animate-spin-slow" /> Year-By-Year Predictive Horizon Matrix
+                        <Radar className="w-3 h-3 animate-spin-slow" /> Evidence-Bound Forecasts
                       </h4>
                       <div className="flex flex-col gap-4 relative border-l border-accent/20 pl-4 ml-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                         {Object.entries(ultimate_summary.horizon_20_year).filter(([k]) => k !== "...").map(([year, prediction], idx) => {

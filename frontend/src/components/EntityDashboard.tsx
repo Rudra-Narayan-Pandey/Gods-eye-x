@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function EntityDashboard({ entity, intelligence, confidenceThreshold = 50 }: { entity: any, intelligence?: any, confidenceThreshold?: number }) {
   const [activeTab, setActiveTab] = useState("overview");
-  const [showFakeNews, setShowFakeNews] = useState(true);
+  const [showClaims, setShowClaims] = useState(true);
   const [reportLoading, setReportLoading] = useState(false);
   const [reportData, setReportData] = useState<any>(null);
 
@@ -30,7 +30,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
       <div className="col-span-2 glass p-6 flex flex-col gap-4 border-l-4 border-accent-neon bg-black/50">
         <h4 className="text-white/50 text-xs font-mono uppercase tracking-widest border-b border-white/10 pb-2 flex justify-between">
           <span>[ SYSTEM SYNTHESIS ]</span>
-          <span className="text-accent-neon animate-pulse">LIVE INTERCEPT</span>
+          <span className="text-accent-neon animate-pulse">LIVE EVIDENCE</span>
         </h4>
         <div className="flex flex-col gap-4">
           <div>
@@ -60,14 +60,14 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
           <div className="text-7xl font-mono font-bold text-[#00ff00] drop-shadow-[0_0_15px_rgba(0,255,0,0.5)]">
             {(entity.momentum * 100).toFixed(0)}<span className="text-2xl text-[#00ff00]/50">.00</span>
           </div>
-          <p className="text-xs font-mono text-white/40 mt-2">AGGREGATING 295 SUBSYSTEMS...</p>
+          <p className="text-xs font-mono text-white/40 mt-2">AGGREGATING RETURNED LIVE SOURCES...</p>
         </div>
         
         <div className="border-t border-[#00ff00]/20 pt-4 mt-auto">
           <h4 className="text-[#00ff00]/70 text-[10px] font-mono uppercase tracking-widest mb-2">SYSTEM METRICS</h4>
           <div className="flex flex-col gap-2 text-xs font-mono">
-            <div className="flex justify-between"><span className="text-white/50">Nodes Active</span><span className="text-[#00ff00]">1.2M</span></div>
-            <div className="flex justify-between"><span className="text-white/50">Decryption</span><span className="text-[#00ff00]">Bypassed</span></div>
+            <div className="flex justify-between"><span className="text-white/50">Evidence Mode</span><span className="text-[#00ff00]">Live</span></div>
+            <div className="flex justify-between"><span className="text-white/50">Synthetic Data</span><span className="text-[#00ff00]">Off</span></div>
             <div className="flex justify-between"><span className="text-white/50">Confidence</span><span className="text-[#00ff00]">{(entity.momentum * 100).toFixed(1)}%</span></div>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
             </div>
             
             <div>
-              <h5 className="text-white/50 text-[10px] mb-1">COVERT HIRING ANOMALIES</h5>
+              <h5 className="text-white/50 text-[10px] mb-1">HIRING SIGNALS</h5>
               {startup?.hiring_anomalies?.map((h:any, i:number) => (
                 <div key={i} className="border-l-2 border-[#00ff00] pl-3 mb-3 text-white/80 bg-[#00ff00]/5 p-2">
                   <span className="text-[#00ff00] font-bold block mb-1">TARGET: {h.role}</span>
@@ -153,8 +153,8 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
         <div className="glass p-6 flex flex-col gap-4 border border-accent-alert bg-black/80 shadow-[0_0_30px_rgba(255,0,60,0.15)] relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-alert to-transparent opacity-50 animate-pulse"></div>
           <h4 className="text-accent-alert text-lg font-mono font-bold uppercase tracking-[0.2em] glitch flex justify-between" data-text="[ THREAT_DETECTION ]">
-            <span>[ THREAT_DETECTION & POLICY RISK ]</span>
-            <span className="text-xs bg-accent-alert/20 text-accent-alert px-2 py-1">DEFCON 2</span>
+          <span>[ POLICY RISK ]</span>
+            <span className="text-xs bg-accent-alert/20 text-accent-alert px-2 py-1">LIVE SOURCES</span>
           </h4>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
@@ -172,29 +172,29 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
             </div>
 
             <div className="flex flex-col gap-4 border-l border-white/10 pl-6">
-              {/* FAKE NEWS SECTION */}
+                {/* REALITY DRIFT SECTION */}
               <div className="flex flex-col gap-3 text-sm font-mono text-justify">
                 <div className="flex justify-between items-center mb-1">
                   <span className="text-[#ffff00] font-bold text-[10px] uppercase tracking-widest border-b border-white/10 pb-1 flex-1">Reality Drift Engine</span>
                   <button 
-                    onClick={() => setShowFakeNews(!showFakeNews)}
+                    onClick={() => setShowClaims(!showClaims)}
                     className="ml-2 text-[10px] bg-black border border-[#ffff00]/30 text-[#ffff00] px-2 py-1 hover:bg-[#ffff00]/10 transition-colors"
                   >
-                    {showFakeNews ? "[ OPT-OUT FAKE NEWS ]" : "[ SHOW FAKE NEWS ]"}
+                    {showClaims ? "[ HIDE CLAIMS ]" : "[ SHOW CLAIMS ]"}
                   </button>
                 </div>
                 
-                {showFakeNews ? (
+                {showClaims ? (
                   drift?.fake_news_detected?.map((f:any, i:number) => (
                     <div key={i} className="flex flex-col gap-2 p-4 bg-[#ff0000]/10 border border-[#ff0000]/30 shadow-[0_0_10px_rgba(255,0,0,0.1)]">
-                      <span className="text-[#ff0000] font-bold tracking-widest animate-pulse border-b border-[#ff0000]/20 pb-1">[FAKE NEWS DETECTED]</span>
+                      <span className="text-[#ff0000] font-bold tracking-widest animate-pulse border-b border-[#ff0000]/20 pb-1">[DISPUTED CLAIM]</span>
                       <span className="line-through text-white/50">{f.claim}</span>
                       <span className="text-white/90 bg-black/50 p-2 mt-1 border-l-2 border-[#ff0000]"><strong>DEBUNKED:</strong> {f.debunk}</span>
                     </div>
-                  )) || <div className="text-white/30">&gt; NO FAKE NEWS DETECTED.</div>
+                  )) || <div className="text-white/30">&gt; NO DISPUTED CLAIMS RETURNED BY LIVE SOURCES.</div>
                 ) : (
                   <div className="text-[#ffff00]/50 p-4 border border-dashed border-[#ffff00]/20 text-center animate-pulse">
-                    &gt; FAKE NEWS FILTER ACTIVE. SYNTHETIC NARRATIVES MUTED.
+                    &gt; CLAIM FILTER ACTIVE.
                   </div>
                 )}
               </div>
@@ -222,7 +222,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
       <div className="glass p-6 flex flex-col gap-6 border border-[#00ff00]/50 shadow-[0_0_30px_rgba(0,255,0,0.15)] bg-black/80 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00ff00]/5 rounded-full blur-[100px] pointer-events-none"></div>
         <h4 className="text-[#00ff00] text-lg font-mono font-bold uppercase tracking-[0.2em] border-b border-[#00ff00]/20 pb-2">
-          [ ASYMMETRIC_OPPORTUNITIES & EXPLOITS ]
+          [ EVIDENCE-BOUND OPPORTUNITIES ]
         </h4>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2">
@@ -240,12 +240,12 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
           </div>
 
           <div className="flex flex-col gap-4 text-sm font-mono text-justify">
-            <h5 className="text-[#00ff00]/50 font-bold mb-1 tracking-widest text-xs">HIDDEN SYSTEMIC SIGNALS</h5>
+            <h5 className="text-[#00ff00]/50 font-bold mb-1 tracking-widest text-xs">SOURCE-DERIVED SIGNALS</h5>
             {opp?.hidden_opportunities?.filter((h:any) => (h.score * 100) >= confidenceThreshold).map((h:any, i:number) => (
               <div key={i} className="bg-black/80 p-4 border border-white/10 relative overflow-hidden group hover:border-[#00ff00]/50 transition-colors">
                 <div className="absolute top-0 left-0 w-1 h-full bg-accent"></div>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-[10px] bg-accent/20 text-accent px-2 py-1">ALPHA SIGNAL</span>
+                  <span className="text-[10px] bg-accent/20 text-accent px-2 py-1">LIVE SIGNAL</span>
                   <span className="text-accent text-xs">CONFIDENCE: {(h.score * 100).toFixed(0)}%</span>
                 </div>
                 <span className="text-white/80 leading-relaxed block">{h.desc}</span>
@@ -275,13 +275,13 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#00ff00]/5 rounded-full blur-3xl pointer-events-none"></div>
         <h4 className="text-[#00ff00] text-lg font-mono font-bold uppercase tracking-[0.3em] border-b border-[#00ff00]/20 pb-2 flex items-center gap-3">
           <span className="w-2 h-2 bg-[#00ff00] animate-pulse"></span>
-          PREMIUM DOSSIER: LEVEL 9 CLEARANCE (ANAKIN LLM)
+            SOURCE-BOUND DOSSIER: ANAKIN LLM
         </h4>
         
         {reportLoading ? (
           <div className="text-[#00ff00] animate-pulse py-12 text-center font-mono flex flex-col items-center gap-4">
             <span className="text-4xl block w-12 h-12 border-4 border-[#00ff00] border-t-transparent rounded-full animate-spin"></span>
-            [ ANAKIN AI ]: INITIATING DEEP WEB EXTRACTION AND DOSSIER GENERATION. THIS MAY TAKE 30 SECONDS...
+            [ ANAKIN AI ]: GENERATING AN EVIDENCE-BOUND REPORT FROM LIVE SOURCES. THIS MAY TAKE 30 SECONDS...
           </div>
         ) : reportData ? (
           <div className="text-sm font-mono text-white/80 leading-relaxed whitespace-pre-wrap">
@@ -307,14 +307,14 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
         <h4 className="text-[#a855f7] text-lg font-mono font-bold uppercase tracking-[0.2em] border-b border-[#a855f7]/20 pb-2 flex justify-between items-center">
           <span className="flex items-center gap-3">
             <span className="w-2 h-2 bg-[#a855f7] animate-pulse"></span>
-            POLYMARKET WIRE TERMINAL
+            POLYMARKET LIVE MARKETS
           </span>
-          <span className="text-[10px] text-white/50 bg-[#a855f7]/10 px-2 py-1 rounded">LIVE API CONNECTION</span>
+          <span className="text-[10px] text-white/50 bg-[#a855f7]/10 px-2 py-1 rounded">SOURCE RETURNED</span>
         </h4>
 
         {pmData.length === 0 ? (
           <div className="text-white/50 p-4 font-mono text-center border border-dashed border-white/20">
-            &gt; AWAITING LIVE POLYMARKET DATA FEEDS FOR THIS ENTITY...
+            &gt; NO LIVE POLYMARKET MARKETS RETURNED FOR THIS ENTITY.
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -337,7 +337,7 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
               </div>
 
               <div className="p-4 border border-[#00ffff]/30 bg-[#00ffff]/5">
-                <h5 className="text-[#00ffff] font-bold text-xs tracking-widest mb-3">VOLUME MOVEMENTS</h5>
+                <h5 className="text-[#00ffff] font-bold text-xs tracking-widest mb-3">SOURCE METRICS</h5>
                 <div className="flex flex-col gap-2 font-mono text-sm">
                   <div className="flex justify-between border-b border-white/10 pb-1">
                     <span className="text-white/60">Top Market Volume</span>
@@ -348,43 +348,43 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
                     <span className="text-[#00ffff]">${pmData[0]?.liquidity?.toLocaleString() || "0"}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-white/60">Volatility Index</span>
-                    <span className="text-accent animate-pulse">EXTREME</span>
+                    <span className="text-white/60">Markets Returned</span>
+                    <span className="text-accent">{pmData.length}</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Smart Money & Arbitrage */}
+            {/* Source status */}
             <div className="flex flex-col gap-4">
               <div className="p-4 border border-[#00ff00]/30 bg-[#00ff00]/5">
-                <h5 className="text-[#00ff00] font-bold text-xs tracking-widest mb-3">ARBITRAGE SIGNALS</h5>
+                <h5 className="text-[#00ff00] font-bold text-xs tracking-widest mb-3">MARKET LINKS</h5>
                 <ul className="text-sm font-mono flex flex-col gap-2">
                   <li className="flex gap-2">
                     <span className="text-[#00ff00] animate-pulse">►</span>
-                    <span className="text-white/80">Discrepancy detected between Polymarket ({pmData[0]?.yes_prob}%) and FTX derivatives ({Math.max(0, (pmData[0]?.yes_prob || 68) - 16)}%). <strong className="text-[#00ff00]">16% Spread.</strong></span>
+                    <span className="text-white/80">{pmData[0]?.title}</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-[#00ff00] animate-pulse">►</span>
-                    <span className="text-white/80">Cross-exchange latency arbitrage window open: <strong className="text-[#00ff00]">Est. $42k profit potential.</strong></span>
+                    <span className="text-white/80">{pmData[1]?.title || "No second market returned by the live API."}</span>
                   </li>
                 </ul>
               </div>
 
               <div className="p-4 border border-[#ff00ff]/30 bg-[#ff00ff]/5">
-                <h5 className="text-[#ff00ff] font-bold text-xs tracking-widest mb-3">SMART MONEY POSITIONS</h5>
+                <h5 className="text-[#ff00ff] font-bold text-xs tracking-widest mb-3">SOURCE STATUS</h5>
                 <div className="flex flex-col gap-2 font-mono text-xs">
                   <div className="bg-black/50 p-2 border border-white/10 flex justify-between">
-                    <span className="text-white/50">Whale Wallet 0x8a...2f9</span>
-                    <span className="text-[#00ff00] font-bold">BOUGHT $450k YES</span>
+                    <span className="text-white/50">Provider</span>
+                    <span className="text-[#00ff00] font-bold">Polymarket Gamma API</span>
                   </div>
                   <div className="bg-black/50 p-2 border border-white/10 flex justify-between">
-                    <span className="text-white/50">Institution 'Alpha-7'</span>
-                    <span className="text-[#ff0000] font-bold">SOLD $1.2M NO</span>
+                    <span className="text-white/50">Synthetic Markets</span>
+                    <span className="text-[#00ff00] font-bold">OFF</span>
                   </div>
                   <div className="bg-black/50 p-2 border border-white/10 flex justify-between">
-                    <span className="text-white/50">Insider Cluster Map</span>
-                    <span className="text-accent font-bold">ACCUMULATING</span>
+                    <span className="text-white/50">Confidence</span>
+                    <span className="text-accent font-bold">SOURCE-RETURNED</span>
                   </div>
                 </div>
               </div>
