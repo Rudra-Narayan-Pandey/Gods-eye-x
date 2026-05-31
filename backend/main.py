@@ -115,7 +115,15 @@ def run_search_task(task_id: str, q: str):
         
         if not results:
             print(f"No results found in DB. Triggering dynamic pipeline for {search_term}...")
-            holocron_engine.run_dynamic_pipeline(search_term)
+            # Wrap in timeout — extraction_agent & verification_agent call Anakin
+            # which can hang for minutes when rate-limited
+            from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
+            try:
+                with ThreadPoolExecutor(max_workers=1) as executor:
+                    future = executor.submit(holocron_engine.run_dynamic_pipeline, search_term)
+                    future.result(timeout=10)
+            except (FuturesTimeout, Exception) as e:
+                print(f"[God's Eye X] Dynamic pipeline timed out or failed ({e}). Skipping to direct entity creation.")
             results = db.query(models.Entity).filter(models.Entity.name.ilike(f"%{search_term}%")).limit(20).all()
             
             if not results:

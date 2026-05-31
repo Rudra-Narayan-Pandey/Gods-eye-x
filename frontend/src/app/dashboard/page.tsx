@@ -11,7 +11,7 @@ export default function DashboardPage() {
   const fetchFeed = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/api/dashboard/feed");
+      const res = await fetch("/api/dashboard/feed");
       if (res.ok) {
         const data = await res.json();
         setFeed(data);
