@@ -364,13 +364,13 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
               if (outcomes.includes("Yes") && outcomes.includes("No")) {
                 const yes_idx = outcomes.indexOf("Yes");
                 const no_idx = outcomes.indexOf("No");
-                yes_prob = prices.length > yes_idx ? Math.round(parseFloat(prices[yes_idx]) * 100) : 0;
-                no_prob = prices.length > no_idx ? Math.round(parseFloat(prices[no_idx]) * 100) : 0;
+                yes_prob = prices.length > yes_idx && prices[yes_idx] ? Math.round(parseFloat(prices[yes_idx]) * 100) : 0;
+                no_prob = prices.length > no_idx && prices[no_idx] ? Math.round(parseFloat(prices[no_idx]) * 100) : 0;
               }
               return {
                 type: "polymarket", title: event.title || "", yes_prob, no_prob,
-                volume: event.volume || 0, liquidity: event.liquidity || 0,
-                source: "Polymarket Gamma API (Client Bypass)", url: event.slug || ""
+                volume: event.volumeNum || 0, liquidity: event.liquidityNum || 0,
+                source: "Polymarket Gamma API (Client Bypass)", url: event.slug ? `https://polymarket.com/event/${event.slug}` : ""
               };
             }
             return null;
