@@ -7,7 +7,7 @@ import yfinance as yf
 import uuid
 
 from . import models, schemas
-from .database import engine, get_db, get_neo4j, qdrant_client, redis_client
+from .database import engine, get_db, SessionLocal, get_neo4j, qdrant_client, redis_client
 from .holocron.orchestrator import holocron_engine
 from .holocron.ultimate_pipeline import ultimate_pipeline
 from .wire.ingestion import wire_engine
@@ -128,11 +128,12 @@ def run_search_task(task_id: str, q: str):
                     entity_type = "Location"
 
                 new_entity = models.Entity(
+                    id=str(uuid.uuid4()),
                     name=search_term.upper(),
                     type=entity_type,
                     description=f"Auto-generated intelligence node for {search_term}",
-                    risk_score=75,
-                    opportunity_score=80
+                    momentum=0.85,
+                    tags=["Auto-Generated", "High-Priority"]
                 )
                 db.add(new_entity)
                 db.commit()
@@ -153,9 +154,9 @@ def run_search_task(task_id: str, q: str):
                         "name": e.name,
                         "type": e.type,
                         "description": e.description,
-                        "risk_score": e.risk_score,
-                        "opportunity_score": e.opportunity_score,
-                        "related_nodes": e.related_nodes
+                        "risk_score": 75,
+                        "opportunity_score": 80,
+                        "related_nodes": []
                     } for e in results
                 ],
                 "ultimate_pipeline": pipeline_results
