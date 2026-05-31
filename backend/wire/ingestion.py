@@ -346,14 +346,16 @@ class WireIngestionEngine:
             from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
             stock = yf.Ticker(ticker)
             info = {}
-            with ThreadPoolExecutor(max_workers=1) as executor:
-                future = executor.submit(lambda: stock.info)
-                try:
-                    info = future.result(timeout=3)
-                except FuturesTimeout:
-                    print(f"Anakin Wire: Yahoo Finance timed out for {ticker} (possible datacenter block).")
-                except Exception as e:
-                    print(f"Anakin Wire: Yahoo Finance error for {ticker}: {e}")
+            executor = ThreadPoolExecutor(max_workers=1)
+            future = executor.submit(lambda: stock.info)
+            try:
+                info = future.result(timeout=3)
+            except FuturesTimeout:
+                print(f"Anakin Wire: Yahoo Finance timed out for {ticker} (possible datacenter block).")
+            except Exception as e:
+                print(f"Anakin Wire: Yahoo Finance error for {ticker}: {e}")
+            finally:
+                executor.shutdown(wait=False)
 
             if info and "currentPrice" in info:
                 price = info.get("currentPrice", "N/A")
