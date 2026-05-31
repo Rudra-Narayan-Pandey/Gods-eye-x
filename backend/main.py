@@ -163,6 +163,38 @@ def _entity_from_live_signals(db, search_term, live_signals, confidence):
     return [entity]
 
 
+def _build_evidence_dossier(topic: str, report_type: str, evidence: list) -> str:
+    source_names = ", ".join(sorted({item["source"] for item in evidence if item.get("source")}))
+    verified = "\n".join(
+        f"- {item['title'] or item['content'][:180]} ({item['source']})"
+        for item in evidence[:6]
+    )
+    risks = [
+        item for item in evidence
+        if any(word in f"{item.get('title', '')} {item.get('content', '')}".lower() for word in ["risk", "policy", "regulation", "court", "market", "security", "conflict"])
+    ]
+    opportunities = [
+        item for item in evidence
+        if any(word in f"{item.get('title', '')} {item.get('content', '')}".lower() for word in ["growth", "launch", "investment", "research", "market", "technology", "development"])
+    ]
+    risk_lines = "\n".join(f"- {item['title'] or item['content'][:180]} ({item['source']})" for item in risks[:4]) or "- No explicit risk signal was returned by the live sources."
+    opportunity_lines = "\n".join(f"- {item['title'] or item['content'][:180]} ({item['source']})" for item in opportunities[:4]) or "- No explicit opportunity signal was returned by the live sources."
+
+    return (
+        f"## Executive Summary\n"
+        f"This {report_type} dossier for {topic} is built from {len(evidence)} live evidence items returned by: {source_names}. "
+        f"The system did not use unsourced claims, clearance framing, or simulated data.\n\n"
+        f"## Verified Signals\n{verified}\n\n"
+        f"## Risks\n{risk_lines}\n\n"
+        f"## Opportunities\n{opportunity_lines}\n\n"
+        f"## Source Gaps\n"
+        f"The dossier is limited to sources that returned data during this request. Any missing Alakin-authenticated providers should be treated as coverage gaps, not negative evidence.\n\n"
+        f"## Next Checks\n"
+        f"- Re-run the scan with more specific keywords for deeper source coverage.\n"
+        f"- Validate high-impact claims against primary filings, official statistics, or authenticated Alakin connectors before action."
+    )
+
+
 def run_search_task(task_id: str, q: str):
     db = SessionLocal()
     try:
@@ -259,7 +291,13 @@ async def generate_report(topic: str, report_type: str):
             "- Include sections: Executive Summary, Verified Signals, Risks, Opportunities, Source Gaps, Next Checks.\n"
             "- If evidence is weak, say exactly what is weak."
         )
-        response = anakin_chatgpt(prompt)
+        try:
+            response = anakin_chatgpt(prompt)
+        except Exception as exc:
+            print(f"[Reports] Anakin dossier generation failed, using evidence fallback: {exc}")
+            response = ""
+        if not response or not response.strip():
+            response = _build_evidence_dossier(topic, report_type, evidence)
         return {
             "title": f"{topic} Report",
             "content": response,
