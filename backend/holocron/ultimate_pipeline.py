@@ -175,8 +175,26 @@ Generate a strictly valid JSON object (no markdown, no backticks, no commentary)
                 print(f"[God's Eye X] Anakin AI generation failed: {e}")
                 return None
 
-        # Try to get intelligence from Anakin AI
-        anakin_generated_data = generate_detailed_intel_with_anakin()
+        # ── PARALLEL RACE: Anakin AI vs Premium Fallback ──
+        # Run Anakin in a background thread with a 15s timeout.
+        # If Anakin finishes in time, we use its superior AI-generated data.
+        # If not, the premium fallback serves instantly. Zero data loss.
+        from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
+        
+        anakin_generated_data = None
+        with ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(generate_detailed_intel_with_anakin)
+            try:
+                anakin_generated_data = future.result(timeout=15)
+                if anakin_generated_data:
+                    print(f"[God's Eye X] Anakin AI completed within 15s — using AI-generated intelligence.")
+                else:
+                    print(f"[God's Eye X] Anakin returned None — using premium fallback.")
+            except FuturesTimeout:
+                print(f"[God's Eye X] Anakin timed out after 15s — serving premium fallback instantly.")
+                future.cancel()
+            except Exception as e:
+                print(f"[God's Eye X] Anakin thread error: {e} — using premium fallback.")
 
         # ── Premium Fallback: Signal-Derived Intelligence ──
         if not anakin_generated_data:
