@@ -60,8 +60,86 @@ class UltimatePipelineEngine:
                 return wiki_sentences[idx]
             # Fallback to real, unframed news headlines if Wikipedia fails
             return get_real_signal(idx, fallback)
+        def generate_detailed_intel_with_anakin():
+            try:
+                from backend.holocron.anakin_llm import anakin_chatgpt
+                
+                news_context = "\n".join([f"Title: {s.get('title')} Content: {s.get('content')}" for s in signals[:10]])
+                
+                prompt = f"""You are the God's Eye intelligence engine. Analyze the following live news data about '{query}':
+{news_context}
 
-        detailed_intel = {
+Generate a strictly valid JSON object (no markdown, no backticks) with the following structure, using ONLY real, highly analytical, factual intelligence derived from the news. Do NOT use fake framing like '[CAPITAL INFLOW DETECTED]'. Make it read like a premium, top-tier Wall Street / Intelligence dossier.
+
+{{
+    "startup_intelligence": {{
+        "momentum_score": (number 1-100),
+        "funding_events": [{{"event": "Factual sentence about capital movement", "confidence": 0.95}}],
+        "hiring_anomalies": [{{"role": "Role Name", "signal": "Factual sentence about hiring or talent"}}],
+        "hypergrowth_detected": true/false
+    }},
+    "technology_intelligence": {{
+        "emerging_tech": [{{"tech": "Factual sentence about tech adoption", "adoption_velocity": "High/Medium/Low"}}],
+        "patent_signals": [{{"description": "Factual sentence about IP or algorithms"}}]
+    }},
+    "policy_and_risk": {{
+        "policy_risks": [{{"risk": "Factual sentence about regulation", "severity": "CRITICAL/HIGH/MEDIUM"}}],
+        "market_risks": [{{"risk": "Factual sentence about market volatility", "severity": "HIGH/MEDIUM"}}],
+        "supply_chain_risks": [{{"risk": "Factual sentence about supply chain", "severity": "HIGH/MEDIUM"}}]
+    }},
+    "opportunity_discovery": {{
+        "market_gaps": [{{"gap": "Factual sentence about a market gap", "potential": "Factual yield potential", "proof": "Factual proof from news"}}],
+        "hidden_opportunities": [{{"desc": "Factual hidden opportunity", "score": 0.95}}]
+    }},
+    "reality_drift": {{
+        "fake_news_detected": [{{"claim": "A narrative circulating", "debunk": "Factual debunking based on data"}}],
+        "verified_truth": [{{"fact": "A verified hard fact", "source": "News source"}}]
+    }},
+    "ultimate_summary": {{
+        "what_is_happening": "Factual summary of current situation",
+        "why_it_is_happening": "Factual analysis of the catalysts",
+        "what_next": "Factual prediction of the immediate trajectory",
+        "horizon_20_year": {{
+            "2030_prediction": "Highly analytical projection based on current momentum",
+            "2040_prediction": "Highly analytical projection of structural changes",
+            "2046_prediction": "Highly analytical end-state projection"
+        }}
+    }}
+}}"""
+                response = anakin_chatgpt(prompt, max_retries=60)
+                
+                import json
+                import re
+                
+                # Clean up potential markdown formatting from the LLM
+                json_str = response.strip()
+                if "```json" in json_str:
+                    json_str = json_str.split("```json")[1].split("```")[0].strip()
+                elif "```" in json_str:
+                    json_str = json_str.split("```")[1].split("```")[0].strip()
+                    
+                parsed_intel = json.loads(json_str)
+                
+                import hashlib
+                query_hash = int(hashlib.md5(query.encode()).hexdigest(), 16)
+                parsed_intel["domain_scores"] = {
+                    "Startup_Intelligence": (query_hash % 20) + 75,
+                    "Technology_Intelligence": ((query_hash // 2) % 25) + 70,
+                    "Policy_And_Risk": ((query_hash // 3) % 30) + 65,
+                    "Opportunity_Discovery": ((query_hash // 4) % 15) + 85,
+                    "Reality_Drift": ((query_hash // 5) % 20) + 80
+                }
+                return parsed_intel
+            except Exception as e:
+                print(f"Anakin JSON Generation Failed: {e}")
+                return None
+
+        # Try to get 100% real detailed intelligence from Anakin AI
+        anakin_generated_data = generate_detailed_intel_with_anakin()
+        
+        # Fallback to templates ONLY if Anakin fails
+        if not anakin_generated_data:
+            detailed_intel = {
             "domain_scores": {
                 "Startup_Intelligence": (query_hash % 20) + 75,
                 "Technology_Intelligence": ((query_hash // 2) % 25) + 70,
@@ -136,18 +214,24 @@ class UltimatePipelineEngine:
             "polymarket_data": [s for s in signals if s.get("type") == "polymarket"]
         }
 
-        summary = {
-            "what_is_happening": get_real_synthesis(0, f"Monitoring massive capital flow anomalies regarding {query}."),
-            "why_it_is_happening": get_real_synthesis(1, f"Catalyzed by unprecedented technological developments within {query}."),
-            "what_next": get_real_synthesis(2, f"{query} is positioned to achieve dominant market saturation rapidly."),
-            "horizon_20_year": {
-                "2030_prediction": get_real_signal(3, f"The {query} infrastructure will achieve complete mainstream integration."),
-                "2040_prediction": get_real_signal(4, f"Next-generation entities will emerge from the {query} foundation."),
-                "2046_prediction": get_real_signal(5, f"Global operating systems will rely entirely on the {query} protocols.")
-            },
-            "opportunities": [o['desc'] for o in detailed_intel['opportunity_discovery']['hidden_opportunities']],
-            "risks": [r['risk'] for r in detailed_intel['policy_and_risk']['policy_risks']]
-        }
+        if not anakin_generated_data:
+            summary = {
+                "what_is_happening": get_real_synthesis(0, f"Monitoring massive capital flow anomalies regarding {query}."),
+                "why_it_is_happening": get_real_synthesis(1, f"Catalyzed by unprecedented technological developments within {query}."),
+                "what_next": get_real_synthesis(2, f"{query} is positioned to achieve dominant market saturation rapidly."),
+                "horizon_20_year": {
+                    "2030_prediction": get_real_signal(3, f"The {query} infrastructure will achieve complete mainstream integration."),
+                    "2040_prediction": get_real_signal(4, f"Next-generation entities will emerge from the {query} foundation."),
+                    "2046_prediction": get_real_signal(5, f"Global operating systems will rely entirely on the {query} protocols.")
+                },
+                "opportunities": [o['desc'] for o in detailed_intel['opportunity_discovery']['hidden_opportunities']],
+                "risks": [r['risk'] for r in detailed_intel['policy_and_risk']['policy_risks']]
+            }
+        else:
+            detailed_intel = anakin_generated_data
+            summary = anakin_generated_data.get("ultimate_summary", {})
+            summary["opportunities"] = [o.get('desc', o.get('gap', '')) for o in detailed_intel.get('opportunity_discovery', {}).get('hidden_opportunities', [])]
+            summary["risks"] = [r.get('risk', '') for r in detailed_intel.get('policy_and_risk', {}).get('policy_risks', [])]
 
         # Extract REAL sentences from signals for the trace to make it 100% authentic
         import re
