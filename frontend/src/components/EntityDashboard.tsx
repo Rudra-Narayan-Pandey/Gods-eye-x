@@ -343,56 +343,20 @@ export default function EntityDashboard({ entity, intelligence, confidenceThresh
       // Clear old state before searching new entity
       setClientPmData([]);
       
-      // Cloudflare blocks datacenter IPs (Render, Proxies, etc). 
-      // Fortunately, Gamma API allows CORS (*), so we can fetch directly from the user's residential IP!
+      // Use our own Next.js server-side proxy to fetch from Polymarket Gamma API.
+      // This avoids CORS issues and Cloudflare blocking since the request
+      // goes through our own server, not the browser.
       setIsClientFetchingPm(true);
       try {
-        const res = await fetch('https://gamma-api.polymarket.com/events?limit=50&active=true&closed=false');
+        const res = await fetch(`/proxy/polymarket?q=${encodeURIComponent(entity.name)}`);
         if (res.ok) {
-          const events = await res.json();
-          const query = entity.name.toLowerCase();
-          let matched = events.filter((e: any) => 
-            (e.title || '').toLowerCase().includes(query) || 
-            (e.description || '').toLowerCase().includes(query)
-          );
-          if (matched.length === 0) matched = events.slice(0, 2);
-          else matched = matched.slice(0, 2);
-
-          const newPmData = matched.map((event: any) => {
-            const outcomesStr = event.outcomes || "[]";
-            const pricesStr = event.outcomePrices || "[]";
-            
-            try {
-              const outcomes = JSON.parse(outcomesStr);
-              const prices = JSON.parse(pricesStr);
-              let yes_prob = 0, no_prob = 0;
-              
-              if (outcomes.includes("Yes") && outcomes.includes("No")) {
-                const yes_idx = outcomes.indexOf("Yes");
-                const no_idx = outcomes.indexOf("No");
-                yes_prob = prices.length > yes_idx && prices[yes_idx] ? Math.round(parseFloat(prices[yes_idx]) * 100) : 0;
-                no_prob = prices.length > no_idx && prices[no_idx] ? Math.round(parseFloat(prices[no_idx]) * 100) : 0;
-              }
-              
-              return {
-                type: "polymarket", 
-                title: event.title || event.question || "", 
-                yes_prob, 
-                no_prob,
-                volume: event.volumeNum || event.volume || 0, 
-                liquidity: event.liquidityNum || event.liquidity || 0,
-                source: "Polymarket Gamma API (Client Bypass)", 
-                url: event.slug ? `https://polymarket.com/event/${event.slug}` : ""
-              };
-            } catch (err) {
-              return null;
-            }
-          }).filter(Boolean);
-          
-          setClientPmData(newPmData);
+          const data = await res.json();
+          if (data.events && data.events.length > 0) {
+            setClientPmData(data.events);
+          }
         }
       } catch (e) {
-        console.error("Client Polymarket fetch failed:", e);
+        console.error("Polymarket proxy fetch failed:", e);
       }
       setIsClientFetchingPm(false);
     };
