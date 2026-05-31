@@ -57,9 +57,12 @@ class UltimatePipelineEngine:
         def get_real_synthesis(idx, fallback=""):
             # Return real, unframed Wikipedia sentences for intelligence synthesis
             if len(wiki_sentences) > idx:
-                return wiki_sentences[idx]
             # Fallback to real, unframed news headlines if Wikipedia fails
             return get_real_signal(idx, fallback)
+            
+        import hashlib
+        query_hash = int(hashlib.md5(query.encode()).hexdigest(), 16)
+        
         def generate_detailed_intel_with_anakin():
             try:
                 from backend.holocron.anakin_llm import anakin_chatgpt
@@ -121,8 +124,6 @@ Generate a strictly valid JSON object (no markdown, no backticks) with the follo
                     
                 parsed_intel = json.loads(json_str)
                 
-                import hashlib
-                query_hash = int(hashlib.md5(query.encode()).hexdigest(), 16)
                 parsed_intel["domain_scores"] = {
                     "Startup_Intelligence": (query_hash % 20) + 75,
                     "Technology_Intelligence": ((query_hash // 2) % 25) + 70,
