@@ -5,6 +5,8 @@ import yfinance as yf
 import datetime
 import requests
 import os
+import urllib.request
+import xml.etree.ElementTree as ET
 
 ANAKIN_API_KEY = os.getenv("ANAKIN_API_KEY", "ask_a0ba623bd6752e230fbc5d15649722dd1b800f6bfff4e8e063b43aff8a38b833")
 
@@ -223,6 +225,77 @@ class WireIngestionEngine:
                             })
             except Exception as e:
                 print(f"Wire Error fetching Wikipedia for {query}: {e}")
+
+        # ── ANAKIN INTEGRATION: YAHOO FINANCE (Financial Data) ──
+        print(f"Anakin Wire: Querying Yahoo Finance Integration for '{query}'...")
+        try:
+            # Map common names to tickers
+            ticker = query.upper()
+            if "APPLE" in ticker: ticker = "AAPL"
+            elif "MICROSOFT" in ticker: ticker = "MSFT"
+            elif "NVIDIA" in ticker: ticker = "NVDA"
+            elif "GOOGLE" in ticker or "ALPHABET" in ticker: ticker = "GOOGL"
+            elif "TESLA" in ticker: ticker = "TSLA"
+            
+            stock = yf.Ticker(ticker)
+            info = stock.info
+            if "currentPrice" in info:
+                price = info.get("currentPrice", "N/A")
+                market_cap = info.get("marketCap", "N/A")
+                if market_cap != "N/A": market_cap = f"${market_cap/1e9:.2f}B"
+                signals.append({
+                    "type": "financial",
+                    "source": "Yahoo Finance (Anakin Integration)",
+                    "title": f"{ticker} Live Market Data: ${price}",
+                    "content": f"Real-time Yahoo Finance data. Price: ${price}. Market Cap: {market_cap}. Day High: ${info.get('dayHigh', 'N/A')}. 52-Week High: ${info.get('fiftyTwoWeekHigh', 'N/A')}. Sector: {info.get('sector', 'N/A')}.",
+                    "timestamp": datetime.datetime.now().isoformat(),
+                    "url": f"https://finance.yahoo.com/quote/{ticker}"
+                })
+        except Exception as e:
+            print(f"Wire Error fetching Yahoo Finance for {query}: {e}")
+
+        # ── ANAKIN INTEGRATION: arXiv (Academic Research) ──
+        print(f"Anakin Wire: Querying arXiv Academic Integration for '{query}'...")
+        try:
+            # Replace spaces with + for URL
+            search_q = query.replace(' ', '+')
+            arxiv_url = f"http://export.arxiv.org/api/query?search_query=all:{search_q}&start=0&max_results=2"
+            with urllib.request.urlopen(arxiv_url, timeout=5) as response:
+                xml_data = response.read()
+                root = ET.fromstring(xml_data)
+                for entry in root.findall("{http://www.w3.org/2005/Atom}entry"):
+                    title = entry.find("{http://www.w3.org/2005/Atom}title").text.replace('\n', ' ')
+                    summary = entry.find("{http://www.w3.org/2005/Atom}summary").text.replace('\n', ' ')
+                    link = entry.find("{http://www.w3.org/2005/Atom}id").text
+                    signals.append({
+                        "type": "academic",
+                        "source": "arXiv (Anakin Integration)",
+                        "title": f"Academic Research: {title[:80]}...",
+                        "content": summary[:300] + "...",
+                        "timestamp": datetime.datetime.now().isoformat(),
+                        "url": link
+                    })
+        except Exception as e:
+            print(f"Wire Error fetching arXiv for {query}: {e}")
+
+        # ── ANAKIN INTEGRATION: GitHub (Developer Tools) ──
+        print(f"Anakin Wire: Querying GitHub Integration for '{query}'...")
+        try:
+            gh_url = f"https://api.github.com/search/repositories?q={query}&sort=stars&order=desc&per_page=2"
+            gh_resp = requests.get(gh_url, headers={"User-Agent": "GodsEyeX"}, timeout=5)
+            if gh_resp.status_code == 200:
+                items = gh_resp.json().get("items", [])
+                for item in items:
+                    signals.append({
+                        "type": "code",
+                        "source": "GitHub (Anakin Integration)",
+                        "title": f"Open Source: {item.get('full_name')}",
+                        "content": f"{item.get('description', 'No description')} - Stars: {item.get('stargazers_count')} - Language: {item.get('language')}",
+                        "timestamp": datetime.datetime.now().isoformat(),
+                        "url": item.get("html_url")
+                    })
+        except Exception as e:
+            print(f"Wire Error fetching GitHub for {query}: {e}")
                 
         # Append real Polymarket data
         pm_data = self.fetch_polymarket_signals(query)
