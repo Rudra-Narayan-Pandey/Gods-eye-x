@@ -237,9 +237,21 @@ class WireIngestionEngine:
             elif "GOOGLE" in ticker or "ALPHABET" in ticker: ticker = "GOOGL"
             elif "TESLA" in ticker: ticker = "TSLA"
             
+            from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
             stock = yf.Ticker(ticker)
-            info = stock.info
-            if "currentPrice" in info:
+            
+            # yfinance can hang indefinitely on datacenter IPs, wrap in strict timeout
+            info = {}
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(lambda: stock.info)
+                try:
+                    info = future.result(timeout=3)
+                except FuturesTimeout:
+                    print(f"Anakin Wire: Yahoo Finance timed out for {ticker} (possible datacenter block).")
+                except Exception as e:
+                    print(f"Anakin Wire: Yahoo Finance error for {ticker}: {e}")
+
+            if info and "currentPrice" in info:
                 price = info.get("currentPrice", "N/A")
                 market_cap = info.get("marketCap", "N/A")
                 if market_cap != "N/A": market_cap = f"${market_cap/1e9:.2f}B"
