@@ -1,0 +1,2681 @@
+[
+  {
+    "id": "openai",
+    "type": "company",
+    "name": "OpenAI",
+    "logo": "\ud83e\udd16",
+    "logo_color": null,
+    "description": "OpenAI is an AI research and deployment company whose mission is to ensure artificial general intelligence benefits all of humanity. Developers of ChatGPT, GPT-4o, Sora, and DALL-E 3.",
+    "momentum": 0.96,
+    "tags": [
+      "LLM",
+      "AGI",
+      "ChatGPT",
+      "API",
+      "Multimodal"
+    ],
+    "trend_data": [
+      40,
+      52,
+      58,
+      61,
+      70,
+      78,
+      85,
+      90,
+      88,
+      95,
+      98,
+      100
+    ],
+    "properties": {
+      "ticker": null,
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "Artificial Intelligence",
+      "founded": 2015,
+      "funding": 17700000000,
+      "valuation": 157000000000,
+      "revenue": 3400000000,
+      "employees": 1774,
+      "hiringVelocity": 67,
+      "website": "openai.com",
+      "mediaMentions": 8420,
+      "partnerships": 47,
+      "patents": 312,
+      "stage": "late",
+      "keyProducts": [
+        "ChatGPT",
+        "GPT-4o",
+        "DALL-E 3",
+        "Sora",
+        "OpenAI API"
+      ]
+    }
+  },
+  {
+    "id": "nvidia",
+    "type": "company",
+    "name": "NVIDIA",
+    "logo": "\u26a1",
+    "logo_color": null,
+    "description": "NVIDIA is the dominant AI infrastructure company producing GPUs that power virtually all AI training. Its H100 and Blackwell chips are the foundation of the AI revolution.",
+    "momentum": 0.98,
+    "tags": [
+      "GPU",
+      "AI Infrastructure",
+      "CUDA",
+      "Data Center",
+      "Blackwell"
+    ],
+    "trend_data": [
+      30,
+      38,
+      45,
+      60,
+      72,
+      80,
+      85,
+      91,
+      95,
+      98,
+      100,
+      100
+    ],
+    "properties": {
+      "ticker": "NVDA",
+      "headquarters": {
+        "city": "Santa Clara",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "Semiconductors",
+      "founded": 1993,
+      "funding": null,
+      "valuation": 3200000000000,
+      "revenue": 96000000000,
+      "employees": 29600,
+      "hiringVelocity": 42,
+      "website": "nvidia.com",
+      "mediaMentions": 12300,
+      "partnerships": 890,
+      "patents": 12400,
+      "stage": "public",
+      "keyProducts": [
+        "H100",
+        "Blackwell B200",
+        "DGX Cloud",
+        "CUDA",
+        "NIM"
+      ]
+    }
+  },
+  {
+    "id": "anthropic",
+    "type": "company",
+    "name": "Anthropic",
+    "logo": "\ud83e\udde0",
+    "logo_color": null,
+    "description": "Anthropic is an AI safety company building reliable, interpretable AI systems. Founded by ex-OpenAI researchers, it develops the Claude series and pioneered Constitutional AI.",
+    "momentum": 0.91,
+    "tags": [
+      "AI Safety",
+      "LLM",
+      "Claude",
+      "Constitutional AI",
+      "Research"
+    ],
+    "trend_data": [
+      20,
+      28,
+      35,
+      48,
+      55,
+      62,
+      70,
+      78,
+      82,
+      87,
+      91,
+      93
+    ],
+    "properties": {
+      "ticker": null,
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "AI Safety",
+      "founded": 2021,
+      "funding": 14300000000,
+      "valuation": 61000000000,
+      "revenue": 850000000,
+      "employees": 850,
+      "hiringVelocity": 89,
+      "website": "anthropic.com",
+      "mediaMentions": 3210,
+      "partnerships": 28,
+      "patents": 87,
+      "stage": "late",
+      "keyProducts": [
+        "Claude 3.5 Sonnet",
+        "Claude 3 Opus",
+        "Claude API",
+        "Claude for Work"
+      ]
+    }
+  },
+  {
+    "id": "google-deepmind",
+    "type": "company",
+    "name": "Google DeepMind",
+    "logo": "\ud83d\udd2c",
+    "logo_color": null,
+    "description": "Google DeepMind merges two world-class AI research teams to advance AI safety and scientific discovery. Home of Gemini Ultra, AlphaFold 3, and robotics research.",
+    "momentum": 0.89,
+    "tags": [
+      "Gemini",
+      "AlphaFold",
+      "Robotics",
+      "Science AI",
+      "Research"
+    ],
+    "trend_data": [
+      55,
+      58,
+      60,
+      65,
+      70,
+      72,
+      75,
+      80,
+      82,
+      86,
+      88,
+      89
+    ],
+    "properties": {
+      "ticker": "GOOG",
+      "headquarters": {
+        "city": "London",
+        "country": "UK",
+        "flag": "\ud83c\uddec\ud83c\udde7"
+      },
+      "industry": "AI Research",
+      "founded": 2010,
+      "funding": null,
+      "valuation": null,
+      "revenue": 280000000000,
+      "employees": 4800,
+      "hiringVelocity": 31,
+      "website": "deepmind.google",
+      "mediaMentions": 5670,
+      "partnerships": 120,
+      "patents": 8900,
+      "stage": "public",
+      "keyProducts": [
+        "Gemini Ultra",
+        "AlphaFold 3",
+        "Veo 2",
+        "Project Astra"
+      ]
+    }
+  },
+  {
+    "id": "microsoft",
+    "type": "company",
+    "name": "Microsoft",
+    "logo": "\ud83e\ude9f",
+    "logo_color": null,
+    "description": "Microsoft is the world's largest AI-enabled software company through its $13B OpenAI partnership. Azure AI, Copilot, and GitHub Copilot are reshaping enterprise productivity.",
+    "momentum": 0.87,
+    "tags": [
+      "Azure AI",
+      "Copilot",
+      "Enterprise",
+      "Cloud",
+      "OpenAI Partner"
+    ],
+    "trend_data": [
+      60,
+      62,
+      65,
+      68,
+      72,
+      74,
+      78,
+      80,
+      82,
+      84,
+      86,
+      87
+    ],
+    "properties": {
+      "ticker": "MSFT",
+      "headquarters": {
+        "city": "Redmond",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "Technology",
+      "founded": 1975,
+      "funding": null,
+      "valuation": 3100000000000,
+      "revenue": 245000000000,
+      "employees": 221000,
+      "hiringVelocity": 18,
+      "website": "microsoft.com",
+      "mediaMentions": 9100,
+      "partnerships": 2400,
+      "patents": 78000,
+      "stage": "public",
+      "keyProducts": [
+        "Azure OpenAI",
+        "Microsoft Copilot",
+        "GitHub Copilot",
+        "Phi-3"
+      ]
+    }
+  },
+  {
+    "id": "spacex",
+    "type": "company",
+    "name": "SpaceX",
+    "logo": "\ud83d\ude80",
+    "logo_color": null,
+    "description": "SpaceX is revolutionizing space transportation with reusable rockets and Starship \u2014 the most powerful rocket ever built. Starlink provides global satellite internet to 3M+ users.",
+    "momentum": 0.88,
+    "tags": [
+      "Space",
+      "Rockets",
+      "Starlink",
+      "Starship",
+      "Satellites"
+    ],
+    "trend_data": [
+      50,
+      55,
+      60,
+      65,
+      68,
+      72,
+      78,
+      82,
+      84,
+      86,
+      88,
+      88
+    ],
+    "properties": {
+      "ticker": null,
+      "headquarters": {
+        "city": "Hawthorne",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "Aerospace",
+      "founded": 2002,
+      "funding": 9000000000,
+      "valuation": 210000000000,
+      "revenue": 9000000000,
+      "employees": 13000,
+      "hiringVelocity": 24,
+      "website": "spacex.com",
+      "mediaMentions": 6540,
+      "partnerships": 78,
+      "patents": 2100,
+      "stage": "late",
+      "keyProducts": [
+        "Starship",
+        "Falcon 9",
+        "Starlink",
+        "Dragon Capsule"
+      ]
+    }
+  },
+  {
+    "id": "palantir",
+    "type": "company",
+    "name": "Palantir",
+    "logo": "\ud83d\udc41\ufe0f",
+    "logo_color": null,
+    "description": "Palantir builds AI-powered data intelligence platforms for government and enterprise. Its AIP platform is accelerating AI deployment in defense, intelligence, and commercial sectors.",
+    "momentum": 0.85,
+    "tags": [
+      "Defense AI",
+      "Data Intelligence",
+      "Government",
+      "AIP",
+      "Analytics"
+    ],
+    "trend_data": [
+      35,
+      40,
+      48,
+      55,
+      60,
+      68,
+      72,
+      75,
+      78,
+      81,
+      84,
+      85
+    ],
+    "properties": {
+      "ticker": "PLTR",
+      "headquarters": {
+        "city": "Denver",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "Defense Tech / AI",
+      "founded": 2003,
+      "funding": null,
+      "valuation": 85000000000,
+      "revenue": 2230000000,
+      "employees": 3900,
+      "hiringVelocity": 38,
+      "website": "palantir.com",
+      "mediaMentions": 2100,
+      "partnerships": 156,
+      "patents": 890,
+      "stage": "public",
+      "keyProducts": [
+        "Palantir AIP",
+        "Gotham",
+        "Foundry",
+        "Apollo"
+      ]
+    }
+  },
+  {
+    "id": "anduril",
+    "type": "company",
+    "name": "Anduril Industries",
+    "logo": "\u2694\ufe0f",
+    "logo_color": null,
+    "description": "Anduril builds autonomous defense systems powered by Lattice AI OS. Founded by tech veterans, it's redefining modern warfare with AI-enabled autonomous weapons and drones.",
+    "momentum": 0.9,
+    "tags": [
+      "Defense",
+      "Autonomous Weapons",
+      "Drones",
+      "Lattice AI",
+      "DoD"
+    ],
+    "trend_data": [
+      20,
+      28,
+      35,
+      45,
+      55,
+      62,
+      70,
+      76,
+      80,
+      85,
+      88,
+      90
+    ],
+    "properties": {
+      "ticker": null,
+      "headquarters": {
+        "city": "Costa Mesa",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "Defense Technology",
+      "founded": 2017,
+      "funding": 3900000000,
+      "valuation": 28000000000,
+      "revenue": 500000000,
+      "employees": 3000,
+      "hiringVelocity": 78,
+      "website": "anduril.com",
+      "mediaMentions": 1200,
+      "partnerships": 42,
+      "patents": 280,
+      "stage": "growth",
+      "keyProducts": [
+        "Lattice OS",
+        "Ghost Drone",
+        "Pulsar EW",
+        "Altius UAS"
+      ]
+    }
+  },
+  {
+    "id": "databricks",
+    "type": "company",
+    "name": "Databricks",
+    "logo": "\ud83d\udd25",
+    "logo_color": null,
+    "description": "Databricks is the Data + AI company providing a unified platform for data engineering and ML. Its DBRX open model and MosaicML acquisition position it as the enterprise AI data leader.",
+    "momentum": 0.87,
+    "tags": [
+      "Data Platform",
+      "MLOps",
+      "DBRX",
+      "Apache Spark",
+      "Lakehouse"
+    ],
+    "trend_data": [
+      30,
+      38,
+      45,
+      52,
+      58,
+      65,
+      70,
+      75,
+      79,
+      82,
+      85,
+      87
+    ],
+    "properties": {
+      "ticker": null,
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "Data & AI Platform",
+      "founded": 2013,
+      "funding": 14000000000,
+      "valuation": 62000000000,
+      "revenue": 1600000000,
+      "employees": 6800,
+      "hiringVelocity": 52,
+      "website": "databricks.com",
+      "mediaMentions": 1890,
+      "partnerships": 340,
+      "patents": 420,
+      "stage": "late",
+      "keyProducts": [
+        "Databricks Platform",
+        "DBRX",
+        "MosaicML",
+        "Delta Lake"
+      ]
+    }
+  },
+  {
+    "id": "scale-ai",
+    "type": "company",
+    "name": "Scale AI",
+    "logo": "\ud83d\udcd0",
+    "logo_color": null,
+    "description": "Scale AI provides the data infrastructure powering AI development with high-quality training data. Its RLHF and Government divisions serve OpenAI, Anthropic, and the US Department of Defense.",
+    "momentum": 0.82,
+    "tags": [
+      "Training Data",
+      "RLHF",
+      "AI Infrastructure",
+      "Government AI",
+      "Data Labeling"
+    ],
+    "trend_data": [
+      30,
+      36,
+      42,
+      50,
+      55,
+      60,
+      65,
+      70,
+      73,
+      77,
+      80,
+      82
+    ],
+    "properties": {
+      "ticker": null,
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "AI Data Infrastructure",
+      "founded": 2016,
+      "funding": 1600000000,
+      "valuation": 14000000000,
+      "revenue": 670000000,
+      "employees": 1000,
+      "hiringVelocity": 45,
+      "website": "scale.com",
+      "mediaMentions": 980,
+      "partnerships": 67,
+      "patents": 45,
+      "stage": "growth",
+      "keyProducts": [
+        "Scale Donovan",
+        "RLHF Platform",
+        "Scale Data Engine"
+      ]
+    }
+  },
+  {
+    "id": "mistral-ai",
+    "type": "company",
+    "name": "Mistral AI",
+    "logo": "\ud83c\udf2c\ufe0f",
+    "logo_color": null,
+    "description": "Mistral AI is Europe's leading AI company, building efficient open-weight models that rival GPT-4. Known for performance-per-compute efficiency and Apache 2.0 licensing.",
+    "momentum": 0.84,
+    "tags": [
+      "Open Source",
+      "LLM",
+      "European AI",
+      "Efficient AI",
+      "MoE"
+    ],
+    "trend_data": [
+      10,
+      18,
+      28,
+      40,
+      52,
+      62,
+      68,
+      73,
+      77,
+      80,
+      83,
+      84
+    ],
+    "properties": {
+      "ticker": null,
+      "headquarters": {
+        "city": "Paris",
+        "country": "France",
+        "flag": "\ud83c\uddeb\ud83c\uddf7"
+      },
+      "industry": "AI Research",
+      "founded": 2023,
+      "funding": 1100000000,
+      "valuation": 6000000000,
+      "revenue": 50000000,
+      "employees": 200,
+      "hiringVelocity": 120,
+      "website": "mistral.ai",
+      "mediaMentions": 1800,
+      "partnerships": 18,
+      "patents": 12,
+      "stage": "growth",
+      "keyProducts": [
+        "Mistral Large 2",
+        "Mixtral 8x22B",
+        "Codestral",
+        "Le Chat"
+      ]
+    }
+  },
+  {
+    "id": "crowdstrike",
+    "type": "company",
+    "name": "CrowdStrike",
+    "logo": "\ud83e\udd85",
+    "logo_color": null,
+    "description": "CrowdStrike is the AI-native cybersecurity leader protecting endpoints, cloud workloads, and identities. Its Falcon platform processes 2 trillion security events per week using AI.",
+    "momentum": 0.8,
+    "tags": [
+      "Cybersecurity",
+      "AI Security",
+      "EDR",
+      "Cloud Security",
+      "Falcon"
+    ],
+    "trend_data": [
+      55,
+      58,
+      60,
+      63,
+      65,
+      68,
+      70,
+      73,
+      75,
+      77,
+      79,
+      80
+    ],
+    "properties": {
+      "ticker": "CRWD",
+      "headquarters": {
+        "city": "Austin",
+        "country": "USA",
+        "flag": "\ud83c\uddfa\ud83c\uddf8"
+      },
+      "industry": "Cybersecurity",
+      "founded": 2011,
+      "funding": null,
+      "valuation": 87000000000,
+      "revenue": 3580000000,
+      "employees": 8200,
+      "hiringVelocity": 22,
+      "website": "crowdstrike.com",
+      "mediaMentions": 3400,
+      "partnerships": 420,
+      "patents": 1200,
+      "stage": "public",
+      "keyProducts": [
+        "Falcon Platform",
+        "Charlotte AI",
+        "Falcon Go"
+      ]
+    }
+  },
+  {
+    "id": "startup-001",
+    "type": "startup",
+    "name": "Groq",
+    "logo": "\u26a1",
+    "logo_color": null,
+    "description": "Building the world's fastest AI inference chips \u2014 LPU (Language Processing Unit) architecture delivers 10x speed and 10x lower cost than GPU-based inference. Making real-time AI accessible.",
+    "momentum": 0.91,
+    "tags": [
+      "AI Hardware",
+      "Inference",
+      "Custom Silicon",
+      "LPU"
+    ],
+    "trend_data": [
+      15,
+      20,
+      28,
+      38,
+      50,
+      62,
+      72,
+      80,
+      86,
+      91,
+      95,
+      100
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "Mountain View",
+        "country": "USA"
+      },
+      "founded": 2016,
+      "stage": "series-d",
+      "lastFunding": {
+        "amount": 640000000,
+        "date": "2024-08-05"
+      },
+      "totalFunding": 1060000000,
+      "valuation": 2800000000,
+      "employees": 320,
+      "hiringVelocity": 65,
+      "investors": [
+        "Tiger Global",
+        "D1 Capital",
+        "BlackRock",
+        "Samsung",
+        "Cisco Investments"
+      ],
+      "sector": "AI Infrastructure"
+    }
+  },
+  {
+    "id": "startup-002",
+    "type": "startup",
+    "name": "Cerebras",
+    "logo": "\ud83d\udd32",
+    "logo_color": null,
+    "description": "Creator of the world's largest chip \u2014 the Wafer Scale Engine. A single Cerebras system replaces thousands of GPUs for AI training, with radical simplicity and energy efficiency.",
+    "momentum": 0.84,
+    "tags": [
+      "AI Hardware",
+      "Wafer Scale",
+      "Training",
+      "HPC"
+    ],
+    "trend_data": [
+      22,
+      26,
+      30,
+      35,
+      40,
+      46,
+      52,
+      58,
+      64,
+      70,
+      76,
+      82
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "Sunnyvale",
+        "country": "USA"
+      },
+      "founded": 2016,
+      "stage": "series-d",
+      "lastFunding": {
+        "amount": 250000000,
+        "date": "2024-06-12"
+      },
+      "totalFunding": 720000000,
+      "valuation": 4200000000,
+      "employees": 450,
+      "hiringVelocity": 28,
+      "investors": [
+        "Alpha Wave Global",
+        "Altimeter Capital",
+        "Coatue",
+        "Abu Dhabi Growth Fund"
+      ],
+      "sector": "AI Infrastructure"
+    }
+  },
+  {
+    "id": "startup-003",
+    "type": "startup",
+    "name": "Together AI",
+    "logo": "\ud83e\udd1d",
+    "logo_color": null,
+    "description": "Open-source AI cloud platform enabling researchers and companies to train, fine-tune, and deploy open models at scale. Fastest growing open AI inference platform globally.",
+    "momentum": 0.87,
+    "tags": [
+      "Open Source",
+      "AI Cloud",
+      "Inference",
+      "Fine-tuning"
+    ],
+    "trend_data": [
+      8,
+      14,
+      22,
+      32,
+      42,
+      52,
+      60,
+      68,
+      75,
+      82,
+      89,
+      95
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "founded": 2022,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 305000000,
+        "date": "2025-01-22"
+      },
+      "totalFunding": 425000000,
+      "valuation": 3300000000,
+      "employees": 180,
+      "hiringVelocity": 72,
+      "investors": [
+        "Salesforce Ventures",
+        "Kleiner Perkins",
+        "NVIDIA",
+        "Tiger Global",
+        "Emergence Capital"
+      ],
+      "sector": "AI Infrastructure"
+    }
+  },
+  {
+    "id": "startup-004",
+    "type": "startup",
+    "name": "Runway",
+    "logo": "\ud83c\udfac",
+    "logo_color": null,
+    "description": "Pioneering generative AI for video and visual storytelling. Gen-3 Alpha creates cinematic-quality video from text prompts, redefining filmmaking, advertising, and creative production.",
+    "momentum": 0.86,
+    "tags": [
+      "Video AI",
+      "Creative Tools",
+      "Generative AI",
+      "Hollywood"
+    ],
+    "trend_data": [
+      18,
+      24,
+      30,
+      38,
+      46,
+      54,
+      62,
+      68,
+      74,
+      80,
+      86,
+      92
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "New York",
+        "country": "USA"
+      },
+      "founded": 2018,
+      "stage": "series-d",
+      "lastFunding": {
+        "amount": 141000000,
+        "date": "2024-06-17"
+      },
+      "totalFunding": 335000000,
+      "valuation": 4000000000,
+      "employees": 160,
+      "hiringVelocity": 45,
+      "investors": [
+        "Lux Capital",
+        "Felicis Ventures",
+        "Google",
+        "NVIDIA",
+        "Salesforce Ventures"
+      ],
+      "sector": "Creative AI"
+    }
+  },
+  {
+    "id": "startup-005",
+    "type": "startup",
+    "name": "Midjourney",
+    "logo": "\ud83c\udfa8",
+    "logo_color": null,
+    "description": "Self-funded AI art powerhouse generating stunning images from text descriptions. V6 model produces photorealistic imagery rivaling professional photography and illustration.",
+    "momentum": 0.82,
+    "tags": [
+      "Image Generation",
+      "Creative AI",
+      "Art",
+      "Design"
+    ],
+    "trend_data": [
+      25,
+      35,
+      48,
+      58,
+      65,
+      72,
+      76,
+      80,
+      83,
+      85,
+      87,
+      90
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "founded": 2021,
+      "stage": "series-a",
+      "lastFunding": {
+        "amount": 0,
+        "date": null
+      },
+      "totalFunding": 0,
+      "valuation": 10000000000,
+      "employees": 55,
+      "hiringVelocity": 18,
+      "investors": [
+        "Self-funded \u2014 profitable from day one"
+      ],
+      "sector": "Creative AI"
+    }
+  },
+  {
+    "id": "startup-006",
+    "type": "startup",
+    "name": "Perplexity",
+    "logo": "\ud83d\udd0d",
+    "logo_color": null,
+    "description": "AI-powered answer engine disrupting traditional search. Combines real-time web search with large language models to deliver instant, sourced, and accurate answers to complex queries.",
+    "momentum": 0.93,
+    "tags": [
+      "AI Search",
+      "Answer Engine",
+      "Knowledge",
+      "Research"
+    ],
+    "trend_data": [
+      10,
+      18,
+      28,
+      40,
+      52,
+      62,
+      72,
+      80,
+      86,
+      92,
+      96,
+      100
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "founded": 2022,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 250000000,
+        "date": "2025-03-15"
+      },
+      "totalFunding": 500000000,
+      "valuation": 9000000000,
+      "employees": 220,
+      "hiringVelocity": 85,
+      "investors": [
+        "IVP",
+        "NEA",
+        "Jeff Bezos",
+        "Tobi L\u00fctke",
+        "NVIDIA",
+        "Databricks"
+      ],
+      "sector": "AI Applications"
+    }
+  },
+  {
+    "id": "startup-007",
+    "type": "startup",
+    "name": "Character.AI",
+    "logo": "\ud83d\udcac",
+    "logo_color": null,
+    "description": "Platform for creating and chatting with AI characters, achieving massive consumer engagement. Pioneering personalized AI companions with emotional intelligence and persistent memory.",
+    "momentum": 0.74,
+    "tags": [
+      "Consumer AI",
+      "Characters",
+      "Entertainment",
+      "Social"
+    ],
+    "trend_data": [
+      30,
+      42,
+      55,
+      65,
+      72,
+      78,
+      80,
+      78,
+      75,
+      73,
+      72,
+      70
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "Palo Alto",
+        "country": "USA"
+      },
+      "founded": 2021,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 200000000,
+        "date": "2024-03-20"
+      },
+      "totalFunding": 350000000,
+      "valuation": 5000000000,
+      "employees": 140,
+      "hiringVelocity": 22,
+      "investors": [
+        "Andreessen Horowitz",
+        "Google",
+        "SV Angel",
+        "Nat Friedman"
+      ],
+      "sector": "Consumer AI"
+    }
+  },
+  {
+    "id": "startup-008",
+    "type": "startup",
+    "name": "Figure AI",
+    "logo": "\ud83e\uddbe",
+    "logo_color": null,
+    "description": "Building the world's first commercially viable general-purpose humanoid robot. Figure 02 integrates OpenAI vision-language models for natural human interaction and autonomous task completion.",
+    "momentum": 0.94,
+    "tags": [
+      "Humanoid Robot",
+      "Robotics",
+      "AI",
+      "Manufacturing"
+    ],
+    "trend_data": [
+      5,
+      10,
+      18,
+      28,
+      40,
+      52,
+      64,
+      74,
+      82,
+      89,
+      95,
+      100
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "Sunnyvale",
+        "country": "USA"
+      },
+      "founded": 2022,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 675000000,
+        "date": "2024-02-29"
+      },
+      "totalFunding": 754000000,
+      "valuation": 2600000000,
+      "employees": 850,
+      "hiringVelocity": 120,
+      "investors": [
+        "Microsoft",
+        "OpenAI",
+        "NVIDIA",
+        "Jeff Bezos",
+        "Intel Capital",
+        "Samsung"
+      ],
+      "sector": "Robotics"
+    }
+  },
+  {
+    "id": "startup-009",
+    "type": "startup",
+    "name": "Wayve",
+    "logo": "\ud83d\udee3\ufe0f",
+    "logo_color": null,
+    "description": "UK-based autonomous driving startup using end-to-end learned driving models instead of hand-coded rules. AV2.0 approach generalizes across cities, vehicles, and conditions with minimal mapping.",
+    "momentum": 0.85,
+    "tags": [
+      "Autonomous Driving",
+      "End-to-End AI",
+      "Embodied AI"
+    ],
+    "trend_data": [
+      20,
+      24,
+      28,
+      33,
+      38,
+      44,
+      50,
+      57,
+      64,
+      72,
+      80,
+      88
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "London",
+        "country": "UK"
+      },
+      "founded": 2017,
+      "stage": "series-c",
+      "lastFunding": {
+        "amount": 1050000000,
+        "date": "2024-05-07"
+      },
+      "totalFunding": 1280000000,
+      "valuation": 4500000000,
+      "employees": 380,
+      "hiringVelocity": 40,
+      "investors": [
+        "SoftBank",
+        "NVIDIA",
+        "Microsoft",
+        "Eclipse Ventures",
+        "Uber"
+      ],
+      "sector": "Autonomous Vehicles"
+    }
+  },
+  {
+    "id": "startup-010",
+    "type": "startup",
+    "name": "Aleph Alpha",
+    "logo": "\ud83c\udde9\ud83c\uddea",
+    "logo_color": null,
+    "description": "European sovereign AI champion building secure, GDPR-compliant large language models for government and enterprise. Luminous model family serves defense and critical infrastructure clients.",
+    "momentum": 0.72,
+    "tags": [
+      "Sovereign AI",
+      "Enterprise",
+      "European AI",
+      "Government"
+    ],
+    "trend_data": [
+      15,
+      18,
+      22,
+      28,
+      35,
+      40,
+      44,
+      48,
+      52,
+      55,
+      58,
+      62
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "Heidelberg",
+        "country": "Germany"
+      },
+      "founded": 2019,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 500000000,
+        "date": "2023-11-06"
+      },
+      "totalFunding": 653000000,
+      "valuation": 2200000000,
+      "employees": 210,
+      "hiringVelocity": 25,
+      "investors": [
+        "Innovation Park AI",
+        "Bosch Ventures",
+        "SAP",
+        "Christ&Company",
+        "Earlybird VC"
+      ],
+      "sector": "Enterprise AI"
+    }
+  },
+  {
+    "id": "startup-011",
+    "type": "startup",
+    "name": "Sakana AI",
+    "logo": "\ud83d\udc1f",
+    "logo_color": null,
+    "description": "Nature-inspired AI lab founded by ex-Google Brain researchers exploring evolutionary and swarm-intelligence approaches to building foundation models. Pioneering AI-generating-AI methods.",
+    "momentum": 0.8,
+    "tags": [
+      "Nature-Inspired AI",
+      "Research",
+      "Japan",
+      "Evolutionary AI"
+    ],
+    "trend_data": [
+      3,
+      8,
+      16,
+      25,
+      34,
+      42,
+      50,
+      58,
+      65,
+      72,
+      78,
+      85
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "Tokyo",
+        "country": "Japan"
+      },
+      "founded": 2023,
+      "stage": "series-a",
+      "lastFunding": {
+        "amount": 214000000,
+        "date": "2024-09-18"
+      },
+      "totalFunding": 314000000,
+      "valuation": 1500000000,
+      "employees": 55,
+      "hiringVelocity": 95,
+      "investors": [
+        "Lux Capital",
+        "Khosla Ventures",
+        "NVIDIA",
+        "NTT Group",
+        "Google"
+      ],
+      "sector": "AI Research"
+    }
+  },
+  {
+    "id": "startup-012",
+    "type": "startup",
+    "name": "Poolside",
+    "logo": "\ud83c\udfca",
+    "logo_color": null,
+    "description": "Building the next frontier in AI-assisted software engineering. Training models specifically for code generation, debugging, and full-stack development with reinforcement learning from execution.",
+    "momentum": 0.88,
+    "tags": [
+      "Coding AI",
+      "Developer Tools",
+      "SWE Agent",
+      "Code Generation"
+    ],
+    "trend_data": [
+      2,
+      6,
+      14,
+      24,
+      36,
+      48,
+      58,
+      68,
+      76,
+      84,
+      90,
+      96
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "founded": 2023,
+      "stage": "series-b",
+      "lastFunding": {
+        "amount": 500000000,
+        "date": "2024-10-03"
+      },
+      "totalFunding": 626000000,
+      "valuation": 3000000000,
+      "employees": 80,
+      "hiringVelocity": 110,
+      "investors": [
+        "Bain Capital Ventures",
+        "Redpoint Ventures",
+        "Balderton Capital",
+        "Felicis Ventures"
+      ],
+      "sector": "Developer Tools"
+    }
+  },
+  {
+    "id": "startup-013",
+    "type": "startup",
+    "name": "Magic AI",
+    "logo": "\ud83e\ude84",
+    "logo_color": null,
+    "description": "Building AI with ultra-long context windows exceeding 100M tokens. Magic's LTM (Long-Term Memory) architecture enables AI to reason over entire codebases, books, and organizational knowledge.",
+    "momentum": 0.83,
+    "tags": [
+      "Long Context",
+      "Coding AI",
+      "Memory",
+      "Developer Tools"
+    ],
+    "trend_data": [
+      5,
+      10,
+      18,
+      28,
+      38,
+      48,
+      56,
+      64,
+      70,
+      76,
+      82,
+      88
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "founded": 2022,
+      "stage": "series-c",
+      "lastFunding": {
+        "amount": 465000000,
+        "date": "2024-08-28"
+      },
+      "totalFunding": 645000000,
+      "valuation": 2500000000,
+      "employees": 95,
+      "hiringVelocity": 58,
+      "investors": [
+        "Sequoia Capital",
+        "CapitalG",
+        "Atlassian Ventures",
+        "NVIDIA",
+        "Eric Schmidt"
+      ],
+      "sector": "AI Research"
+    }
+  },
+  {
+    "id": "startup-014",
+    "type": "startup",
+    "name": "Replit",
+    "logo": "\ud83d\udcbb",
+    "logo_color": null,
+    "description": "AI-native collaborative coding platform with millions of developers. Replit Agent can build and deploy full-stack applications from natural language, democratizing software development.",
+    "momentum": 0.81,
+    "tags": [
+      "IDE",
+      "AI Coding",
+      "Developer Platform",
+      "Education"
+    ],
+    "trend_data": [
+      30,
+      34,
+      38,
+      42,
+      47,
+      52,
+      58,
+      64,
+      70,
+      75,
+      80,
+      85
+    ],
+    "properties": {
+      "headquarters": {
+        "city": "San Francisco",
+        "country": "USA"
+      },
+      "founded": 2016,
+      "stage": "series-c",
+      "lastFunding": {
+        "amount": 200000000,
+        "date": "2025-02-10"
+      },
+      "totalFunding": 346000000,
+      "valuation": 2000000000,
+      "employees": 280,
+      "hiringVelocity": 35,
+      "investors": [
+        "Andreessen Horowitz",
+        "Khosla Ventures",
+        "Craft Ventures",
+        "GV",
+        "Y Combinator"
+      ],
+      "sector": "Developer Tools"
+    }
+  },
+  {
+    "id": "tech-1",
+    "type": "technology",
+    "name": "Transformer Architecture",
+    "logo": "\ud83e\udde0",
+    "logo_color": null,
+    "description": "Self-attention-based neural network architecture that has become the foundation for modern language models, vision models, and multimodal AI systems.",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "type": "technology",
+      "category": "AI / Machine Learning",
+      "maturity": 92,
+      "adoptionRate": 88,
+      "trendDirection": "up",
+      "momentum": 0.95,
+      "tags": [
+        "Deep Learning",
+        "NLP",
+        "Computer Vision"
+      ],
+      "sparkline": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        82,
+        85,
+        88,
+        90,
+        92,
+        94,
+        95
+      ],
+      "relatedEntities": [
+        "Anthropic",
+        "OpenAI",
+        "Google DeepMind"
+      ]
+    }
+  },
+  {
+    "id": "tech-2",
+    "type": "technology",
+    "name": "Quantum Error Correction",
+    "logo": "\u269b\ufe0f",
+    "logo_color": null,
+    "description": "Techniques for protecting quantum information from errors due to decoherence and quantum noise, essential for building fault-tolerant quantum computers.",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "type": "technology",
+      "category": "Quantum Computing",
+      "maturity": 35,
+      "adoptionRate": 8,
+      "trendDirection": "up",
+      "momentum": 0.78,
+      "tags": [
+        "Quantum",
+        "Error Correction",
+        "Research"
+      ],
+      "sparkline": [
+        10,
+        12,
+        15,
+        18,
+        22,
+        25,
+        28,
+        32,
+        35,
+        38,
+        40,
+        42
+      ],
+      "relatedEntities": [
+        "IBM Quantum",
+        "Google Quantum AI",
+        "IonQ"
+      ]
+    }
+  },
+  {
+    "id": "tech-3",
+    "type": "technology",
+    "name": "Solid-State Batteries",
+    "logo": "\ud83d\udd0b",
+    "logo_color": null,
+    "description": "Next-generation battery technology using solid electrolytes instead of liquid, offering higher energy density, faster charging, and improved safety.",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "type": "technology",
+      "category": "Energy Storage",
+      "maturity": 45,
+      "adoptionRate": 5,
+      "trendDirection": "up",
+      "momentum": 0.72,
+      "tags": [
+        "Energy",
+        "EV",
+        "Materials Science"
+      ],
+      "sparkline": [
+        20,
+        22,
+        25,
+        28,
+        30,
+        33,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46
+      ],
+      "relatedEntities": [
+        "QuantumScape",
+        "Toyota",
+        "Samsung SDI"
+      ]
+    }
+  },
+  {
+    "id": "tech-4",
+    "type": "technology",
+    "name": "Neuromorphic Computing",
+    "logo": "\ud83d\udd2e",
+    "logo_color": null,
+    "description": "Brain-inspired computing architecture that processes information using spiking neural networks, enabling ultra-low-power edge AI and real-time pattern recognition.",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "type": "technology",
+      "category": "Computing",
+      "maturity": 28,
+      "adoptionRate": 3,
+      "trendDirection": "up",
+      "momentum": 0.65,
+      "tags": [
+        "Edge AI",
+        "Brain-Inspired",
+        "Low Power"
+      ],
+      "sparkline": [
+        8,
+        10,
+        12,
+        15,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32
+      ],
+      "relatedEntities": [
+        "Intel Loihi",
+        "IBM",
+        "BrainChip"
+      ]
+    }
+  },
+  {
+    "id": "tech-5",
+    "type": "technology",
+    "name": "CRISPR Gene Editing",
+    "logo": "\ud83e\uddec",
+    "logo_color": null,
+    "description": "Precise genome editing tool enabling targeted modifications to DNA sequences. Revolutionizing medicine, agriculture, and biological research.",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "type": "technology",
+      "category": "Biotechnology",
+      "maturity": 68,
+      "adoptionRate": 42,
+      "trendDirection": "stable",
+      "momentum": 0.8,
+      "tags": [
+        "Biotech",
+        "Gene Therapy",
+        "Medicine"
+      ],
+      "sparkline": [
+        45,
+        48,
+        50,
+        52,
+        55,
+        58,
+        60,
+        62,
+        64,
+        66,
+        68,
+        68
+      ],
+      "relatedEntities": [
+        "CRISPR Therapeutics",
+        "Editas",
+        "Intellia"
+      ]
+    }
+  },
+  {
+    "id": "tech-6",
+    "type": "technology",
+    "name": "Fusion Energy",
+    "logo": "\u2600\ufe0f",
+    "logo_color": null,
+    "description": "Clean energy technology that replicates the power of stars by fusing hydrogen atoms. Multiple startups approaching net energy gain with novel confinement approaches.",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "type": "technology",
+      "category": "Energy",
+      "maturity": 22,
+      "adoptionRate": 0,
+      "trendDirection": "up",
+      "momentum": 0.7,
+      "tags": [
+        "Clean Energy",
+        "Plasma Physics",
+        "Power"
+      ],
+      "sparkline": [
+        5,
+        8,
+        10,
+        12,
+        15,
+        16,
+        18,
+        20,
+        21,
+        22,
+        24,
+        26
+      ],
+      "relatedEntities": [
+        "Commonwealth Fusion",
+        "TAE Technologies",
+        "Helion"
+      ]
+    }
+  },
+  {
+    "id": "n-openai",
+    "type": "company",
+    "name": "OpenAI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 300000000000,
+      "employees": 3400,
+      "momentum": 0.97,
+      "stage": "late"
+    }
+  },
+  {
+    "id": "n-nvidia",
+    "type": "company",
+    "name": "NVIDIA",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 3400000000000,
+      "employees": 32000,
+      "momentum": 0.96,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-deepmind",
+    "type": "company",
+    "name": "Google DeepMind",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "employees": 4200,
+      "momentum": 0.93,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-anthropic",
+    "type": "company",
+    "name": "Anthropic",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 175000000000,
+      "employees": 1800,
+      "momentum": 0.95,
+      "stage": "late"
+    }
+  },
+  {
+    "id": "n-microsoft",
+    "type": "company",
+    "name": "Microsoft",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 3100000000000,
+      "employees": 228000,
+      "momentum": 0.88,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-tesla",
+    "type": "company",
+    "name": "Tesla",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 1200000000000,
+      "employees": 140000,
+      "momentum": 0.84,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-spacex",
+    "type": "company",
+    "name": "SpaceX",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 350000000000,
+      "employees": 14000,
+      "momentum": 0.91,
+      "stage": "late"
+    }
+  },
+  {
+    "id": "n-meta",
+    "type": "company",
+    "name": "Meta AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "employees": 5500,
+      "momentum": 0.87,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-apple",
+    "type": "company",
+    "name": "Apple",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 3600000000000,
+      "employees": 164000,
+      "momentum": 0.82,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-aws",
+    "type": "company",
+    "name": "Amazon AWS",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "revenue": 110000000000,
+      "employees": 85000,
+      "momentum": 0.86,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-palantir",
+    "type": "company",
+    "name": "Palantir",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 250000000000,
+      "employees": 4200,
+      "momentum": 0.89,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-crowdstrike",
+    "type": "company",
+    "name": "CrowdStrike",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 95000000000,
+      "employees": 9200,
+      "momentum": 0.81,
+      "stage": "public"
+    }
+  },
+  {
+    "id": "n-databricks",
+    "type": "company",
+    "name": "Databricks",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 62000000000,
+      "employees": 7800,
+      "momentum": 0.85,
+      "stage": "late"
+    }
+  },
+  {
+    "id": "n-scaleai",
+    "type": "company",
+    "name": "Scale AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 14000000000,
+      "employees": 1200,
+      "momentum": 0.83,
+      "stage": "late"
+    }
+  },
+  {
+    "id": "n-anduril",
+    "type": "company",
+    "name": "Anduril",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 28000000000,
+      "employees": 3800,
+      "momentum": 0.9,
+      "stage": "late"
+    }
+  },
+  {
+    "id": "n-mistral",
+    "type": "company",
+    "name": "Mistral AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 6200000000,
+      "employees": 85,
+      "momentum": 0.88,
+      "stage": "growth"
+    }
+  },
+  {
+    "id": "n-cohere",
+    "type": "company",
+    "name": "Cohere",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 5500000000,
+      "employees": 550,
+      "momentum": 0.78,
+      "stage": "growth"
+    }
+  },
+  {
+    "id": "n-inflection",
+    "type": "company",
+    "name": "Inflection AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 4000000000,
+      "employees": 200,
+      "momentum": 0.52,
+      "stage": "growth"
+    }
+  },
+  {
+    "id": "n-groq",
+    "type": "startup",
+    "name": "Groq",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 2800000000,
+      "sector": "AI Infrastructure",
+      "momentum": 0.91
+    }
+  },
+  {
+    "id": "n-cerebras",
+    "type": "startup",
+    "name": "Cerebras",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 4200000000,
+      "sector": "AI Infrastructure",
+      "momentum": 0.84
+    }
+  },
+  {
+    "id": "n-together",
+    "type": "startup",
+    "name": "Together AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 3300000000,
+      "sector": "AI Infrastructure",
+      "momentum": 0.87
+    }
+  },
+  {
+    "id": "n-runway",
+    "type": "startup",
+    "name": "Runway",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 4000000000,
+      "sector": "Creative AI",
+      "momentum": 0.86
+    }
+  },
+  {
+    "id": "n-midjourney",
+    "type": "startup",
+    "name": "Midjourney",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 10000000000,
+      "sector": "Creative AI",
+      "momentum": 0.82
+    }
+  },
+  {
+    "id": "n-perplexity",
+    "type": "startup",
+    "name": "Perplexity",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 9000000000,
+      "sector": "AI Applications",
+      "momentum": 0.93
+    }
+  },
+  {
+    "id": "n-characterai",
+    "type": "startup",
+    "name": "Character.AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 5000000000,
+      "sector": "Consumer AI",
+      "momentum": 0.74
+    }
+  },
+  {
+    "id": "n-figureai",
+    "type": "startup",
+    "name": "Figure AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 2600000000,
+      "sector": "Robotics",
+      "momentum": 0.94
+    }
+  },
+  {
+    "id": "n-wayve",
+    "type": "startup",
+    "name": "Wayve",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 4500000000,
+      "sector": "Autonomous Vehicles",
+      "momentum": 0.85
+    }
+  },
+  {
+    "id": "n-alephalpha",
+    "type": "startup",
+    "name": "Aleph Alpha",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 2200000000,
+      "sector": "Enterprise AI",
+      "momentum": 0.72
+    }
+  },
+  {
+    "id": "n-sakana",
+    "type": "startup",
+    "name": "Sakana AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 1500000000,
+      "sector": "AI Research",
+      "momentum": 0.8
+    }
+  },
+  {
+    "id": "n-poolside",
+    "type": "startup",
+    "name": "Poolside",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 3000000000,
+      "sector": "Developer Tools",
+      "momentum": 0.88
+    }
+  },
+  {
+    "id": "n-magicai",
+    "type": "startup",
+    "name": "Magic AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 2500000000,
+      "sector": "AI Research",
+      "momentum": 0.83
+    }
+  },
+  {
+    "id": "n-replit",
+    "type": "startup",
+    "name": "Replit",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "valuation": 2000000000,
+      "sector": "Developer Tools",
+      "momentum": 0.81
+    }
+  },
+  {
+    "id": "n-genai",
+    "type": "technology",
+    "name": "Generative AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.78,
+      "adoption": 67.5
+    }
+  },
+  {
+    "id": "n-quantum",
+    "type": "technology",
+    "name": "Quantum Computing",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.35,
+      "adoption": 4.2
+    }
+  },
+  {
+    "id": "n-fusion",
+    "type": "technology",
+    "name": "Nuclear Fusion",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.22,
+      "adoption": 0.1
+    }
+  },
+  {
+    "id": "n-bci",
+    "type": "technology",
+    "name": "Brain-Computer Interface",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.28,
+      "adoption": 0.3
+    }
+  },
+  {
+    "id": "n-av",
+    "type": "technology",
+    "name": "Autonomous Vehicles",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.62,
+      "adoption": 8.5
+    }
+  },
+  {
+    "id": "n-robotics",
+    "type": "technology",
+    "name": "Robotics",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.52,
+      "adoption": 14.2
+    }
+  },
+  {
+    "id": "n-edgeai",
+    "type": "technology",
+    "name": "Edge AI",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.65,
+      "adoption": 32.1
+    }
+  },
+  {
+    "id": "n-xr",
+    "type": "technology",
+    "name": "AR/VR Spatial Computing",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.48,
+      "adoption": 12.8
+    }
+  },
+  {
+    "id": "n-agents",
+    "type": "technology",
+    "name": "AI Agents",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.45,
+      "adoption": 18.4
+    }
+  },
+  {
+    "id": "n-synbio",
+    "type": "technology",
+    "name": "Synthetic Biology",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.42,
+      "adoption": 6.8
+    }
+  },
+  {
+    "id": "n-neuromorphic",
+    "type": "technology",
+    "name": "Neuromorphic Computing",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "maturity": 0.2,
+      "adoption": 1.2
+    }
+  },
+  {
+    "id": "n-usa",
+    "type": "country",
+    "name": "USA",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 120000000000,
+      "aiCompanies": 14000,
+      "policy": "Open innovation + defense"
+    }
+  },
+  {
+    "id": "n-china",
+    "type": "country",
+    "name": "China",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 55000000000,
+      "aiCompanies": 6500,
+      "policy": "State-directed AI development"
+    }
+  },
+  {
+    "id": "n-uk",
+    "type": "country",
+    "name": "UK",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 12000000000,
+      "aiCompanies": 3200,
+      "policy": "Research hub + light regulation"
+    }
+  },
+  {
+    "id": "n-germany",
+    "type": "country",
+    "name": "Germany",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 8000000000,
+      "aiCompanies": 1800,
+      "policy": "Industrial AI + sovereignty"
+    }
+  },
+  {
+    "id": "n-japan",
+    "type": "country",
+    "name": "Japan",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 15000000000,
+      "aiCompanies": 1200,
+      "policy": "AI semiconductor sovereignty"
+    }
+  },
+  {
+    "id": "n-india",
+    "type": "country",
+    "name": "India",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 4000000000,
+      "aiCompanies": 3600,
+      "policy": "AI talent + services hub"
+    }
+  },
+  {
+    "id": "n-france",
+    "type": "country",
+    "name": "France",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 7000000000,
+      "aiCompanies": 1400,
+      "policy": "Sovereign AI champion"
+    }
+  },
+  {
+    "id": "n-israel",
+    "type": "country",
+    "name": "Israel",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 3000000000,
+      "aiCompanies": 2100,
+      "policy": "Defense AI innovation"
+    }
+  },
+  {
+    "id": "n-uae",
+    "type": "country",
+    "name": "UAE",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 5000000000,
+      "aiCompanies": 600,
+      "policy": "AI-first national strategy"
+    }
+  },
+  {
+    "id": "n-southkorea",
+    "type": "country",
+    "name": "South Korea",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 6000000000,
+      "aiCompanies": 900,
+      "policy": "Semiconductor + AI convergence"
+    }
+  },
+  {
+    "id": "n-canada",
+    "type": "country",
+    "name": "Canada",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 3500000000,
+      "aiCompanies": 1500,
+      "policy": "AI research + responsible AI"
+    }
+  },
+  {
+    "id": "n-singapore",
+    "type": "country",
+    "name": "Singapore",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "aiSpending": 2000000000,
+      "aiCompanies": 800,
+      "policy": "Smart nation + AI governance"
+    }
+  },
+  {
+    "id": "n-ev-blackwell",
+    "type": "event",
+    "name": "NVIDIA Blackwell Ultra Sellout",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "date": "2026-05-28",
+      "impact": "high",
+      "category": "Product"
+    }
+  },
+  {
+    "id": "n-ev-eusovereignty",
+    "type": "event",
+    "name": "EU Digital Sovereignty Act",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "date": "2026-05-27",
+      "impact": "critical",
+      "category": "Regulation"
+    }
+  },
+  {
+    "id": "n-ev-figuredeploy",
+    "type": "event",
+    "name": "Figure AI BMW Deployment",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "date": "2026-05-23",
+      "impact": "high",
+      "category": "Deployment"
+    }
+  },
+  {
+    "id": "n-ev-andurilcontract",
+    "type": "event",
+    "name": "Anduril $3.2B Pentagon Contract",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "date": "2026-05-25",
+      "impact": "critical",
+      "category": "Defense"
+    }
+  },
+  {
+    "id": "n-ev-quantumerror",
+    "type": "event",
+    "name": "Quantum Error Correction Breakthrough",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "date": "2026-05-21",
+      "impact": "high",
+      "category": "Research"
+    }
+  },
+  {
+    "id": "n-ev-fusionmilestone",
+    "type": "event",
+    "name": "CFS SPARC Plasma Record",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "date": "2026-05-21",
+      "impact": "high",
+      "category": "Energy"
+    }
+  },
+  {
+    "id": "n-ev-starshiprefuel",
+    "type": "event",
+    "name": "Starship Orbital Refueling",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "date": "2026-05-17",
+      "impact": "critical",
+      "category": "Space"
+    }
+  },
+  {
+    "id": "n-ev-chinaai",
+    "type": "event",
+    "name": "China $40B AI Compute Plan",
+    "logo": null,
+    "logo_color": null,
+    "description": "",
+    "momentum": 0.5,
+    "tags": [],
+    "trend_data": [],
+    "properties": {
+      "date": "2026-05-09",
+      "impact": "critical",
+      "category": "Geopolitical"
+    }
+  }
+]

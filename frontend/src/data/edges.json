@@ -1,0 +1,891 @@
+[
+  {
+    "id": 1,
+    "source_id": "n-openai",
+    "target_id": "n-microsoft",
+    "type": "PARTNERS",
+    "weight": 10
+  },
+  {
+    "id": 2,
+    "source_id": "n-anthropic",
+    "target_id": "n-aws",
+    "type": "PARTNERS",
+    "weight": 9
+  },
+  {
+    "id": 3,
+    "source_id": "n-anthropic",
+    "target_id": "n-deepmind",
+    "type": "COMPETES",
+    "weight": 8
+  },
+  {
+    "id": 4,
+    "source_id": "n-openai",
+    "target_id": "n-figureai",
+    "type": "PARTNERS",
+    "weight": 7
+  },
+  {
+    "id": 5,
+    "source_id": "n-nvidia",
+    "target_id": "n-openai",
+    "type": "PARTNERS",
+    "weight": 8
+  },
+  {
+    "id": 6,
+    "source_id": "n-nvidia",
+    "target_id": "n-anthropic",
+    "type": "PARTNERS",
+    "weight": 6
+  },
+  {
+    "id": 7,
+    "source_id": "n-nvidia",
+    "target_id": "n-deepmind",
+    "type": "PARTNERS",
+    "weight": 7
+  },
+  {
+    "id": 8,
+    "source_id": "n-nvidia",
+    "target_id": "n-together",
+    "type": "PARTNERS",
+    "weight": 5
+  },
+  {
+    "id": 9,
+    "source_id": "n-nvidia",
+    "target_id": "n-wayve",
+    "type": "PARTNERS",
+    "weight": 5
+  },
+  {
+    "id": 10,
+    "source_id": "n-nvidia",
+    "target_id": "n-sakana",
+    "type": "PARTNERS",
+    "weight": 4
+  },
+  {
+    "id": 11,
+    "source_id": "n-microsoft",
+    "target_id": "n-wayve",
+    "type": "PARTNERS",
+    "weight": 6
+  },
+  {
+    "id": 12,
+    "source_id": "n-deepmind",
+    "target_id": "n-apple",
+    "type": "COMPETES",
+    "weight": 5
+  },
+  {
+    "id": 13,
+    "source_id": "n-palantir",
+    "target_id": "n-anduril",
+    "type": "PARTNERS",
+    "weight": 7
+  },
+  {
+    "id": 14,
+    "source_id": "n-palantir",
+    "target_id": "n-scaleai",
+    "type": "PARTNERS",
+    "weight": 6
+  },
+  {
+    "id": 15,
+    "source_id": "n-anduril",
+    "target_id": "n-scaleai",
+    "type": "PARTNERS",
+    "weight": 5
+  },
+  {
+    "id": 16,
+    "source_id": "n-databricks",
+    "target_id": "n-together",
+    "type": "PARTNERS",
+    "weight": 5
+  },
+  {
+    "id": 17,
+    "source_id": "n-mistral",
+    "target_id": "n-alephalpha",
+    "type": "COMPETES",
+    "weight": 4
+  },
+  {
+    "id": 18,
+    "source_id": "n-openai",
+    "target_id": "n-anthropic",
+    "type": "COMPETES",
+    "weight": 10
+  },
+  {
+    "id": 19,
+    "source_id": "n-openai",
+    "target_id": "n-deepmind",
+    "type": "COMPETES",
+    "weight": 9
+  },
+  {
+    "id": 20,
+    "source_id": "n-openai",
+    "target_id": "n-meta",
+    "type": "COMPETES",
+    "weight": 7
+  },
+  {
+    "id": 21,
+    "source_id": "n-openai",
+    "target_id": "n-mistral",
+    "type": "COMPETES",
+    "weight": 6
+  },
+  {
+    "id": 22,
+    "source_id": "n-groq",
+    "target_id": "n-nvidia",
+    "type": "COMPETES",
+    "weight": 8
+  },
+  {
+    "id": 23,
+    "source_id": "n-cerebras",
+    "target_id": "n-nvidia",
+    "type": "COMPETES",
+    "weight": 7
+  },
+  {
+    "id": 24,
+    "source_id": "n-groq",
+    "target_id": "n-cerebras",
+    "type": "COMPETES",
+    "weight": 6
+  },
+  {
+    "id": 25,
+    "source_id": "n-perplexity",
+    "target_id": "n-deepmind",
+    "type": "COMPETES",
+    "weight": 5
+  },
+  {
+    "id": 26,
+    "source_id": "n-figureai",
+    "target_id": "n-tesla",
+    "type": "COMPETES",
+    "weight": 8
+  },
+  {
+    "id": 27,
+    "source_id": "n-runway",
+    "target_id": "n-midjourney",
+    "type": "COMPETES",
+    "weight": 7
+  },
+  {
+    "id": 28,
+    "source_id": "n-microsoft",
+    "target_id": "n-aws",
+    "type": "COMPETES",
+    "weight": 9
+  },
+  {
+    "id": 29,
+    "source_id": "n-microsoft",
+    "target_id": "n-deepmind",
+    "type": "COMPETES",
+    "weight": 7
+  },
+  {
+    "id": 30,
+    "source_id": "n-crowdstrike",
+    "target_id": "n-palantir",
+    "type": "COMPETES",
+    "weight": 4
+  },
+  {
+    "id": 31,
+    "source_id": "n-poolside",
+    "target_id": "n-magicai",
+    "type": "COMPETES",
+    "weight": 6
+  },
+  {
+    "id": 32,
+    "source_id": "n-poolside",
+    "target_id": "n-replit",
+    "type": "COMPETES",
+    "weight": 5
+  },
+  {
+    "id": 33,
+    "source_id": "n-cohere",
+    "target_id": "n-mistral",
+    "type": "COMPETES",
+    "weight": 5
+  },
+  {
+    "id": 34,
+    "source_id": "n-together",
+    "target_id": "n-groq",
+    "type": "COMPETES",
+    "weight": 4
+  },
+  {
+    "id": 35,
+    "source_id": "n-aws",
+    "target_id": "n-databricks",
+    "type": "COMPETES",
+    "weight": 5
+  },
+  {
+    "id": 36,
+    "source_id": "n-microsoft",
+    "target_id": "n-openai",
+    "type": "FUNDS",
+    "weight": 10
+  },
+  {
+    "id": 37,
+    "source_id": "n-aws",
+    "target_id": "n-anthropic",
+    "type": "FUNDS",
+    "weight": 9
+  },
+  {
+    "id": 38,
+    "source_id": "n-nvidia",
+    "target_id": "n-perplexity",
+    "type": "FUNDS",
+    "weight": 5
+  },
+  {
+    "id": 39,
+    "source_id": "n-nvidia",
+    "target_id": "n-figureai",
+    "type": "FUNDS",
+    "weight": 6
+  },
+  {
+    "id": 40,
+    "source_id": "n-nvidia",
+    "target_id": "n-runway",
+    "type": "FUNDS",
+    "weight": 4
+  },
+  {
+    "id": 41,
+    "source_id": "n-nvidia",
+    "target_id": "n-magicai",
+    "type": "FUNDS",
+    "weight": 4
+  },
+  {
+    "id": 42,
+    "source_id": "n-microsoft",
+    "target_id": "n-figureai",
+    "type": "FUNDS",
+    "weight": 6
+  },
+  {
+    "id": 43,
+    "source_id": "n-microsoft",
+    "target_id": "n-mistral",
+    "type": "FUNDS",
+    "weight": 5
+  },
+  {
+    "id": 44,
+    "source_id": "n-deepmind",
+    "target_id": "n-characterai",
+    "type": "FUNDS",
+    "weight": 3
+  },
+  {
+    "id": 45,
+    "source_id": "n-openai",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 10
+  },
+  {
+    "id": 46,
+    "source_id": "n-openai",
+    "target_id": "n-agents",
+    "type": "DEVELOPS",
+    "weight": 9
+  },
+  {
+    "id": 47,
+    "source_id": "n-anthropic",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 9
+  },
+  {
+    "id": 48,
+    "source_id": "n-anthropic",
+    "target_id": "n-agents",
+    "type": "DEVELOPS",
+    "weight": 8
+  },
+  {
+    "id": 49,
+    "source_id": "n-deepmind",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 9
+  },
+  {
+    "id": 50,
+    "source_id": "n-deepmind",
+    "target_id": "n-quantum",
+    "type": "DEVELOPS",
+    "weight": 6
+  },
+  {
+    "id": 51,
+    "source_id": "n-deepmind",
+    "target_id": "n-synbio",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 52,
+    "source_id": "n-meta",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 8
+  },
+  {
+    "id": 53,
+    "source_id": "n-meta",
+    "target_id": "n-xr",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 54,
+    "source_id": "n-apple",
+    "target_id": "n-edgeai",
+    "type": "DEVELOPS",
+    "weight": 8
+  },
+  {
+    "id": 55,
+    "source_id": "n-apple",
+    "target_id": "n-xr",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 56,
+    "source_id": "n-tesla",
+    "target_id": "n-av",
+    "type": "DEVELOPS",
+    "weight": 9
+  },
+  {
+    "id": 57,
+    "source_id": "n-tesla",
+    "target_id": "n-robotics",
+    "type": "DEVELOPS",
+    "weight": 8
+  },
+  {
+    "id": 58,
+    "source_id": "n-nvidia",
+    "target_id": "n-edgeai",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 59,
+    "source_id": "n-nvidia",
+    "target_id": "n-robotics",
+    "type": "DEVELOPS",
+    "weight": 6
+  },
+  {
+    "id": 60,
+    "source_id": "n-figureai",
+    "target_id": "n-robotics",
+    "type": "DEVELOPS",
+    "weight": 10
+  },
+  {
+    "id": 61,
+    "source_id": "n-wayve",
+    "target_id": "n-av",
+    "type": "DEVELOPS",
+    "weight": 9
+  },
+  {
+    "id": 62,
+    "source_id": "n-runway",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 63,
+    "source_id": "n-midjourney",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 64,
+    "source_id": "n-groq",
+    "target_id": "n-edgeai",
+    "type": "DEVELOPS",
+    "weight": 5
+  },
+  {
+    "id": 65,
+    "source_id": "n-cerebras",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 5
+  },
+  {
+    "id": 66,
+    "source_id": "n-mistral",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 8
+  },
+  {
+    "id": 67,
+    "source_id": "n-cohere",
+    "target_id": "n-genai",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 68,
+    "source_id": "n-replit",
+    "target_id": "n-agents",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 69,
+    "source_id": "n-poolside",
+    "target_id": "n-agents",
+    "type": "DEVELOPS",
+    "weight": 6
+  },
+  {
+    "id": 70,
+    "source_id": "n-magicai",
+    "target_id": "n-agents",
+    "type": "DEVELOPS",
+    "weight": 6
+  },
+  {
+    "id": 71,
+    "source_id": "n-anduril",
+    "target_id": "n-robotics",
+    "type": "DEVELOPS",
+    "weight": 7
+  },
+  {
+    "id": 72,
+    "source_id": "n-crowdstrike",
+    "target_id": "n-agents",
+    "type": "DEVELOPS",
+    "weight": 5
+  },
+  {
+    "id": 73,
+    "source_id": "n-perplexity",
+    "target_id": "n-genai",
+    "type": "USES",
+    "weight": 9
+  },
+  {
+    "id": 74,
+    "source_id": "n-characterai",
+    "target_id": "n-genai",
+    "type": "USES",
+    "weight": 8
+  },
+  {
+    "id": 75,
+    "source_id": "n-palantir",
+    "target_id": "n-genai",
+    "type": "USES",
+    "weight": 7
+  },
+  {
+    "id": 76,
+    "source_id": "n-palantir",
+    "target_id": "n-agents",
+    "type": "USES",
+    "weight": 6
+  },
+  {
+    "id": 77,
+    "source_id": "n-scaleai",
+    "target_id": "n-genai",
+    "type": "USES",
+    "weight": 8
+  },
+  {
+    "id": 78,
+    "source_id": "n-databricks",
+    "target_id": "n-genai",
+    "type": "USES",
+    "weight": 7
+  },
+  {
+    "id": 79,
+    "source_id": "n-together",
+    "target_id": "n-genai",
+    "type": "USES",
+    "weight": 8
+  },
+  {
+    "id": 80,
+    "source_id": "n-sakana",
+    "target_id": "n-genai",
+    "type": "USES",
+    "weight": 6
+  },
+  {
+    "id": 81,
+    "source_id": "n-alephalpha",
+    "target_id": "n-genai",
+    "type": "USES",
+    "weight": 7
+  },
+  {
+    "id": 82,
+    "source_id": "n-openai",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 83,
+    "source_id": "n-nvidia",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 84,
+    "source_id": "n-anthropic",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 85,
+    "source_id": "n-microsoft",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 86,
+    "source_id": "n-tesla",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 87,
+    "source_id": "n-spacex",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 88,
+    "source_id": "n-meta",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 89,
+    "source_id": "n-apple",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 90,
+    "source_id": "n-aws",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 91,
+    "source_id": "n-palantir",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 92,
+    "source_id": "n-crowdstrike",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 93,
+    "source_id": "n-anduril",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 94,
+    "source_id": "n-scaleai",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 95,
+    "source_id": "n-databricks",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 96,
+    "source_id": "n-groq",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 97,
+    "source_id": "n-cerebras",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 98,
+    "source_id": "n-together",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 99,
+    "source_id": "n-perplexity",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 100,
+    "source_id": "n-figureai",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 101,
+    "source_id": "n-poolside",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 102,
+    "source_id": "n-magicai",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 103,
+    "source_id": "n-replit",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 104,
+    "source_id": "n-runway",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 105,
+    "source_id": "n-midjourney",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 106,
+    "source_id": "n-characterai",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 107,
+    "source_id": "n-inflection",
+    "target_id": "n-usa",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 108,
+    "source_id": "n-deepmind",
+    "target_id": "n-uk",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 109,
+    "source_id": "n-wayve",
+    "target_id": "n-uk",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 110,
+    "source_id": "n-mistral",
+    "target_id": "n-france",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 111,
+    "source_id": "n-alephalpha",
+    "target_id": "n-germany",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 112,
+    "source_id": "n-sakana",
+    "target_id": "n-japan",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 113,
+    "source_id": "n-cohere",
+    "target_id": "n-canada",
+    "type": "LOCATED_IN",
+    "weight": 5
+  },
+  {
+    "id": 114,
+    "source_id": "n-nvidia",
+    "target_id": "n-ev-blackwell",
+    "type": "AFFECTED_BY",
+    "weight": 9
+  },
+  {
+    "id": 115,
+    "source_id": "n-groq",
+    "target_id": "n-ev-blackwell",
+    "type": "AFFECTED_BY",
+    "weight": 6
+  },
+  {
+    "id": 116,
+    "source_id": "n-cerebras",
+    "target_id": "n-ev-blackwell",
+    "type": "AFFECTED_BY",
+    "weight": 5
+  },
+  {
+    "id": 117,
+    "source_id": "n-mistral",
+    "target_id": "n-ev-eusovereignty",
+    "type": "AFFECTED_BY",
+    "weight": 9
+  },
+  {
+    "id": 118,
+    "source_id": "n-alephalpha",
+    "target_id": "n-ev-eusovereignty",
+    "type": "AFFECTED_BY",
+    "weight": 9
+  },
+  {
+    "id": 119,
+    "source_id": "n-figureai",
+    "target_id": "n-ev-figuredeploy",
+    "type": "AFFECTED_BY",
+    "weight": 10
+  },
+  {
+    "id": 120,
+    "source_id": "n-tesla",
+    "target_id": "n-ev-figuredeploy",
+    "type": "AFFECTED_BY",
+    "weight": 6
+  },
+  {
+    "id": 121,
+    "source_id": "n-anduril",
+    "target_id": "n-ev-andurilcontract",
+    "type": "AFFECTED_BY",
+    "weight": 10
+  },
+  {
+    "id": 122,
+    "source_id": "n-palantir",
+    "target_id": "n-ev-andurilcontract",
+    "type": "AFFECTED_BY",
+    "weight": 5
+  },
+  {
+    "id": 123,
+    "source_id": "n-spacex",
+    "target_id": "n-ev-starshiprefuel",
+    "type": "AFFECTED_BY",
+    "weight": 10
+  },
+  {
+    "id": 124,
+    "source_id": "n-nvidia",
+    "target_id": "n-ev-chinaai",
+    "type": "AFFECTED_BY",
+    "weight": 7
+  },
+  {
+    "id": 125,
+    "source_id": "n-quantum",
+    "target_id": "n-ev-quantumerror",
+    "type": "AFFECTED_BY",
+    "weight": 9
+  },
+  {
+    "id": 126,
+    "source_id": "n-deepmind",
+    "target_id": "n-ev-quantumerror",
+    "type": "AFFECTED_BY",
+    "weight": 6
+  },
+  {
+    "id": 127,
+    "source_id": "n-fusion",
+    "target_id": "n-ev-fusionmilestone",
+    "type": "AFFECTED_BY",
+    "weight": 10
+  }
+]
