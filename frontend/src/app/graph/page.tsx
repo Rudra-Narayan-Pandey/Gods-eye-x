@@ -3,6 +3,8 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+// @ts-ignore
+import * as THREE from "three";
 import IntelligencePanel from "@/components/IntelligencePanel";
 
 // Dynamically import react-force-graph-3d to avoid SSR window issues
@@ -64,8 +66,6 @@ export default function GraphPage() {
 
   // Create text sprites for labels using Three.js Sprite
   const generateSprite = useCallback((label: string, color: string) => {
-    // This runs purely on client side, so we avoid importing THREE globally at top level
-    const THREE = require("three");
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");
     if (!context) return new THREE.Sprite();
@@ -147,7 +147,6 @@ export default function GraphPage() {
                 sprite.position.y = -8;
                 
                 // We must return a Group containing the default sphere and the sprite
-                const THREE = require("three");
                 const group = new THREE.Group();
                 const sphere = new THREE.Mesh(
                   new THREE.SphereGeometry(6, 16, 16),
