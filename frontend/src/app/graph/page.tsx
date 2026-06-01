@@ -123,23 +123,27 @@ export default function GraphPage() {
     }
   }, [containerRef.current]);
 
-  // Orbit camera slowly
+  // Native 3D Auto-Rotation and Living Force-Physics (Breathing Constellation)
   useEffect(() => {
     if (!loading && fgRef.current) {
-      let angle = 0;
-      const interval = setInterval(() => {
-        if (fgRef.current && typeof fgRef.current.cameraPosition === 'function') {
-          fgRef.current.cameraPosition({
-            x: 800 * Math.sin(angle),
-            y: 350,
-            z: 800 * Math.cos(angle)
-          }, { x: 0, y: 0, z: 0 });
-          angle += Math.PI / 1000;
-        }
-      }, 30);
-      return () => clearInterval(interval);
+      // 1. Enable Native Three.js OrbitControls Auto-Rotation for 60FPS cinematic panning
+      const controls = fgRef.current.controls();
+      if (controls) {
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.8; // Butter-smooth continuous rotation speed
+      }
+
+      // 2. Configure continuous force-physics so nodes gently sway and breathe forever
+      fgRef.current.d3AlphaTarget(0.015); // Maintain minor low-energy kinetic energy
+      fgRef.current.d3VelocityDecay(0.18); // Reduce air friction for organic sway
+      
+      // Pull nodes slightly towards center to keep graph perfectly framed
+      const linkForce = fgRef.current.d3Force('link');
+      if (linkForce) {
+        linkForce.distance(120); // Comfortable distance between connected nodes
+      }
     }
-  }, [loading, fgRef]);
+  }, [loading]);
 
   // Create text sprites for labels using Three.js Sprite
   const generateSprite = useCallback((label: string, color: string) => {
