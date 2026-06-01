@@ -46,12 +46,9 @@ export async function GET() {
   });
 
   const links = edgesData.map((edge: any) => {
-    // Strip "n-" prefix to match entity IDs
-    const source = edge.source_id.replace(/^n-/, '');
-    const target = edge.target_id.replace(/^n-/, '');
     return {
-      source,
-      target,
+      source: edge.source_id,
+      target: edge.target_id,
       value: parseInt(edge.weight) || 3,
       type: edge.type
     };

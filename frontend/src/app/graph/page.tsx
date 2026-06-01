@@ -130,10 +130,11 @@ export default function GraphPage() {
       const interval = setInterval(() => {
         if (fgRef.current && typeof fgRef.current.cameraPosition === 'function') {
           fgRef.current.cameraPosition({
-            x: 500 * Math.sin(angle),
-            z: 500 * Math.cos(angle)
-          });
-          angle += Math.PI / 800;
+            x: 800 * Math.sin(angle),
+            y: 350,
+            z: 800 * Math.cos(angle)
+          }, { x: 0, y: 0, z: 0 });
+          angle += Math.PI / 1000;
         }
       }, 30);
       return () => clearInterval(interval);
