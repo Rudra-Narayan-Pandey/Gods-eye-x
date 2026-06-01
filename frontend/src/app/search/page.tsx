@@ -31,8 +31,17 @@ export default function SearchPage() {
                 const pollData = await pollRes.json();
                 if (pollData.status === "completed") {
                   clearInterval(pollInterval);
-                  setEntities(pollData.data.entities || []);
-                  setPipelineData(pollData.data.ultimate_pipeline || null);
+                  const ents = pollData.data.entities || [];
+                  const pipe = pollData.data.ultimate_pipeline || null;
+                  setEntities(ents);
+                  setPipelineData(pipe);
+                  if (typeof window !== 'undefined') {
+                    window.localStorage.setItem("godseye_last_search", JSON.stringify({
+                      query,
+                      entities: ents,
+                      pipelineData: pipe
+                    }));
+                  }
                   setLoading(false);
                 } else if (pollData.status === "error") {
                   clearInterval(pollInterval);
@@ -48,8 +57,17 @@ export default function SearchPage() {
           }, 5000);
           return; // Wait for polling to finish
         } else {
-          setEntities(data.entities || []);
-          setPipelineData(data.ultimate_pipeline || null);
+          const ents = data.entities || [];
+          const pipe = data.ultimate_pipeline || null;
+          setEntities(ents);
+          setPipelineData(pipe);
+          if (typeof window !== 'undefined') {
+            window.localStorage.setItem("godseye_last_search", JSON.stringify({
+              query,
+              entities: ents,
+              pipelineData: pipe
+            }));
+          }
         }
       } else {
         console.error("Failed to fetch from backend");

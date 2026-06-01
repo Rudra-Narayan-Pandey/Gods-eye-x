@@ -10,8 +10,67 @@ import IntelligencePanel from "@/components/IntelligencePanel";
 // Dynamically import react-force-graph-3d to avoid SSR window issues
 const ForceGraph3D = dynamic(() => import("react-force-graph-3d"), { ssr: false });
 
+function buildGraphDataFromSearch(searchData: any) {
+  const query = searchData.query || "Global Intelligence";
+  const entities = searchData.entities || [];
+  const pipelineData = searchData.pipelineData || {};
+  const evidence = pipelineData.evidence || [];
+  const polymarket = pipelineData.detailed_intel?.polymarket_data || [];
+  const startup = pipelineData.detailed_intel?.startup_intelligence?.funding_events || [];
+  const policyRisks = pipelineData.detailed_intel?.policy_and_risk?.policy_risks || [];
+
+  const nodes: any[] = [];
+  const links: any[] = [];
+
+  // 1. Central Node (Searched Entity)
+  const centralId = "central-query";
+  nodes.push({
+    id: centralId,
+    name: query.toUpperCase(),
+    group: 1, // Green
+    momentum: 0.95,
+    type: "Central Target",
+    description: `Primary search vector for ${query.toUpperCase()}`
+  });
+
+  // Helper to add nodes & link them to the center
+  const addNodeWithLink = (id: string, name: string, group: number, type: string, desc: string, momentum: number = 0.7) => {
+    // Avoid duplicates
+    if (nodes.some(n => n.id === id)) return;
+    nodes.push({ id, name, group, type, description: desc, momentum });
+    links.push({ source: centralId, target: id, value: 3 });
+  };
+
+  // 2. Add Ingested Evidence Signals
+  evidence.forEach((s: any, idx: number) => {
+    const nodeId = `evidence-${idx}`;
+    const name = s.title || `Signal from ${s.source}`;
+    addNodeWithLink(nodeId, name, 3, s.type || "signal", `Source: ${s.source} | Raw Signal Ingested.`, s.confidence || 0.75);
+  });
+
+  // 3. Add Polymarket Live-Odds Nodes
+  polymarket.forEach((pm: any, idx: number) => {
+    const nodeId = `polymarket-${idx}`;
+    const name = `${pm.title} (YES: ${pm.yes_prob}%)`;
+    addNodeWithLink(nodeId, name, 1, "polymarket", `Live Contract Volume: $${pm.volume?.toLocaleString() || '0'}.`, pm.yes_prob / 100);
+  });
+
+  // 4. Add Policy & Risk Nodes
+  policyRisks.forEach((risk: any, idx: number) => {
+    const nodeId = `risk-${idx}`;
+    const name = risk.event || risk.risk || "Identified Regulatory Constraint";
+    addNodeWithLink(nodeId, name, 2, "threat", `Risk Impact Analysis: ${risk.description || 'Observed risk.'}`, risk.confidence || 0.85);
+  });
+
+  if (nodes.length <= 1) {
+    return null;
+  }
+
+  return { nodes, links };
+}
+
 export default function GraphPage() {
-  const [graphData, setGraphData] = useState({ nodes: [], links: [] });
+  const [graphData, setGraphData] = useState<any>({ nodes: [], links: [] });
   const [loading, setLoading] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
@@ -21,7 +80,24 @@ export default function GraphPage() {
   const fgRef = useRef<any>();
 
   useEffect(() => {
-    // Fetch live graph data from API
+    if (typeof window !== 'undefined') {
+      const stored = window.localStorage.getItem("godseye_last_search");
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          const dynamicGraph = buildGraphDataFromSearch(parsed);
+          if (dynamicGraph) {
+            setGraphData(dynamicGraph);
+            setLoading(false);
+            return;
+          }
+        } catch (e) {
+          console.error("Failed to parse cached search graph:", e);
+        }
+      }
+    }
+
+    // Fetch live default graph data from API
     fetch("/api/graph", { cache: 'no-store' })
       .then(res => res.json())
       .then(data => {
