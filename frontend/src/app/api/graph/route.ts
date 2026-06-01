@@ -1,29 +1,66 @@
 import { NextResponse } from 'next/server';
+import entitiesData from '@/data/entities.json';
+import edgesData from '@/data/edges.json';
 
-export const runtime = 'edge'; // Edge runtime for instant global delivery
+export const runtime = 'edge';
 
 export async function GET() {
-  const data = {
-    nodes: [
-      { id: "1", name: "Anakin AI Core", group: 1, momentum: 0.95, type: "Agent", description: "Primary LLM Cognitive Synthesis Core." },
-      { id: "2", name: "Signal Discovery Wire", group: 1, momentum: 0.88, type: "Agent", description: "Dynamic Web RSS and Scraping Layer." },
-      { id: "3", name: "Polymarket Edge Bypass", group: 1, momentum: 0.92, type: "Network", description: "High-speed edge proxy resolving sentiment odds." },
-      { id: "4", name: "Global News Syndicates", group: 3, momentum: 0.75, type: "Source", description: "Real-time news wires." },
-      { id: "5", name: "Yahoo Finance API", group: 3, momentum: 0.85, type: "Source", description: "Real-time market tickers and volume metrics." },
-      { id: "6", name: "arXiv Preprint Server", group: 3, momentum: 0.70, type: "Source", description: "Preprint scientific publications." },
-      { id: "7", name: "GitHub Activity Stream", group: 3, momentum: 0.82, type: "Source", description: "Developer and open-source codebase velocity." },
-      { id: "8", name: "Reality Drift Anomalies", group: 2, momentum: 0.90, type: "Risk", description: "Factual discrepancies detected in live statements." }
-    ],
-    links: [
-      { source: "1", target: "2", value: 5 },
-      { source: "1", target: "3", value: 4 },
-      { source: "2", target: "4", value: 3 },
-      { source: "2", target: "5", value: 3 },
-      { source: "2", target: "6", value: 2 },
-      { source: "2", target: "7", value: 3 },
-      { source: "1", target: "8", value: 4 }
-    ]
-  };
+  const nodes = entitiesData.map((e: any) => {
+    // Map types to group number (1: company/startup, 2: threat/risk, 3: general/other)
+    let group = 3;
+    const t = (e.type || '').toLowerCase();
+    if (t === 'company' || t === 'startup' || t === 'organization') {
+      group = 1;
+    } else if (t === 'threat' || t === 'risk' || t === 'anomaly') {
+      group = 2;
+    }
+    
+    // Safely parse tags
+    let tags = [];
+    if (e.tags) {
+      try {
+        tags = typeof e.tags === 'string' ? JSON.parse(e.tags) : e.tags;
+      } catch {
+        tags = String(e.tags).split(',').map(val => val.trim());
+      }
+    }
 
-  return NextResponse.json(data);
+    // Safely parse properties
+    let properties = {};
+    if (e.properties) {
+      try {
+        properties = typeof e.properties === 'string' ? JSON.parse(e.properties) : e.properties;
+      } catch {}
+    }
+
+    return {
+      id: e.id,
+      name: e.name,
+      group,
+      momentum: parseFloat(e.momentum) || 0.8,
+      type: e.type,
+      description: e.description,
+      tags,
+      properties
+    };
+  });
+
+  const links = edgesData.map((edge: any) => {
+    // Strip "n-" prefix to match entity IDs
+    const source = edge.source_id.replace(/^n-/, '');
+    const target = edge.target_id.replace(/^n-/, '');
+    return {
+      source,
+      target,
+      value: parseInt(edge.weight) || 3,
+      type: edge.type
+    };
+  }).filter((link: any) => {
+    // Only include links where both source and target exist in entities
+    const sourceExists = entitiesData.some((e: any) => e.id === link.source);
+    const targetExists = entitiesData.some((e: any) => e.id === link.target);
+    return sourceExists && targetExists;
+  });
+
+  return NextResponse.json({ nodes, links });
 }

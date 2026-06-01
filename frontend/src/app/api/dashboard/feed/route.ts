@@ -1,37 +1,48 @@
 import { NextResponse } from 'next/server';
+import opportunitiesData from '@/data/opportunities.json';
+import anomaliesData from '@/data/anomalies.json';
 
-export const runtime = 'edge'; // Edge runtime for instant global delivery
+export const runtime = 'edge';
 
 export async function GET() {
-  const feed = {
-    opportunities: [
-      {
-        title: "Arbitrage Asymmetry detected on Kraken IPO contract",
-        confidence_score: 0.92,
-        category: "Prediction Markets",
-        time_horizon: "Q4 2026",
-        properties: {
-          explainability_proof: "Kraken's active child contract pricing on Vercel Edge has diverged from local sentiment indicators by 7.2%. Recommendation: Long contract."
-        }
-      },
-      {
-        title: "MicroStrategy Bitcoin acquisition signals strong Q2 momentum",
-        confidence_score: 0.88,
-        category: "Finance",
-        time_horizon: "Q2 2026",
-        properties: {
-          explainability_proof: "Correlation analysis between Yahoo Finance stock tickers and Polymarket live contract sentiment shows 94% positive drift velocity."
-        }
+  // Parse and clean opportunities
+  const opportunities = opportunitiesData.map((o: any) => {
+    let properties = {};
+    if (o.properties) {
+      try {
+        properties = typeof o.properties === 'string' ? JSON.parse(o.properties) : o.properties;
+      } catch {
+        properties = { explainability_proof: o.description };
       }
-    ],
-    anomalies: [
-      {
-        entity_name: "France Geopolitical Volatility",
-        severity: "MODERATE",
-        description: "Live-wire crawler detected sharp contract price swings on Macron's exit probability. Reality drift variance has exceeded safety threshold (14.2% drift)."
-      }
-    ]
-  };
+    } else {
+      properties = { explainability_proof: o.description };
+    }
 
-  return NextResponse.json(feed);
+    return {
+      title: o.title,
+      confidence_score: parseFloat(o.confidence_score) || 0.85,
+      category: o.category,
+      time_horizon: o.time_horizon,
+      properties
+    };
+  });
+
+  // Parse and clean anomalies
+  const anomalies = anomaliesData.map((a: any) => {
+    // Map severity to friendly display
+    let severity = a.severity || 'moderate';
+    const s = severity.toLowerCase();
+    if (s === 'critical') severity = 'CRITICAL';
+    else if (s === 'high') severity = 'HIGH';
+    else if (s === 'moderate') severity = 'MODERATE';
+    else if (s === 'low') severity = 'LOW';
+
+    return {
+      entity_name: a.entity_name,
+      severity,
+      description: a.description || `Deviation detected in startup metrics for ${a.entity_name}.`
+    };
+  });
+
+  return NextResponse.json({ opportunities, anomalies });
 }
