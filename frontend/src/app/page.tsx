@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// Force Vercel cache purge and clean production rebuild v1.0.2
 export default function LandingPage() {
   return (
     <div className="page-content flex-center flex-col min-h-screen">
