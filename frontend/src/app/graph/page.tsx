@@ -52,7 +52,7 @@ export default function GraphPage() {
     if (!loading && fgRef.current) {
       let angle = 0;
       const interval = setInterval(() => {
-        if (fgRef.current) {
+        if (fgRef.current && typeof fgRef.current.cameraPosition === 'function') {
           fgRef.current.cameraPosition({
             x: 500 * Math.sin(angle),
             z: 500 * Math.cos(angle)
